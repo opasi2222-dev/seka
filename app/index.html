@@ -1,0 +1,2607 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Seka Mini App</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Seka Mini App" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Seka Mini App&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: var(--border-radius-lg, 12.5px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress {
+  display: flex;
+  height: 6px;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;style&gt;
+  #seka-mini-app {
+    --seka-ink: #f5f1e6;
+    --seka-muted: #91a79f;
+    --seka-bg: #04130f;
+    --seka-shell: #071d17;
+    --seka-surface: #0c2820;
+    --seka-surface-2: #11352a;
+    --seka-line: rgba(202, 239, 221, .12);
+    --seka-green: #42e58b;
+    --seka-green-dark: #123d2e;
+    --seka-gold: #f2c45d;
+    --seka-red: #ff6b73;
+    --seka-blue: #68b7ff;
+    --seka-safe-top: env(safe-area-inset-top, 0px);
+    --seka-safe-right: env(safe-area-inset-right, 0px);
+    --seka-safe-bottom: env(safe-area-inset-bottom, 0px);
+    --seka-safe-left: env(safe-area-inset-left, 0px);
+    width: 100%;
+    height: var(--seka-app-height, min(840px, calc(100dvh - 24px)));
+    min-height: min(720px, calc(100dvh - 24px));
+    overflow: hidden;
+    overflow: clip;
+    color: var(--seka-ink);
+    background:
+      radial-gradient(circle at 16% -10%, rgba(66, 229, 139, .18), transparent 30%),
+      radial-gradient(circle at 100% 20%, rgba(242, 196, 93, .08), transparent 28%),
+      var(--seka-bg);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 26px;
+    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .28);
+    position: relative;
+    isolation: isolate;
+    container-type: inline-size;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #seka-mini-app * { box-sizing: border-box; }
+  #seka-mini-app button,
+  #seka-mini-app input { font: inherit; }
+  #seka-mini-app button { -webkit-tap-highlight-color: transparent; }
+  #seka-mini-app button:focus-visible,
+  #seka-mini-app input:focus-visible { outline: 2px solid var(--seka-green); outline-offset: 2px; }
+
+  #seka-mini-app .seka-grain {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .035;
+    pointer-events: none;
+    background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox=&#x27;0 0 180 180&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%3E%3Cfilter id=&#x27;n&#x27;%3E%3CfeTurbulence type=&#x27;fractalNoise&#x27; baseFrequency=&#x27;.9&#x27; numOctaves=&#x27;3&#x27; stitchTiles=&#x27;stitch&#x27;/%3E%3C/filter%3E%3Crect width=&#x27;100%25&#x27; height=&#x27;100%25&#x27; filter=&#x27;url(%23n)&#x27; opacity=&#x27;.8&#x27;/%3E%3C/svg%3E&quot;);
+  }
+
+  #seka-mini-app .seka-product-shell {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 0;
+  }
+
+  #seka-mini-app.seka-telegram-host {
+    width: 100%;
+    height: var(--seka-app-height, 100dvh);
+    min-height: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #seka-mini-app.seka-immersive-table .seka-product-shell {
+    grid-template-rows: 1fr;
+  }
+
+  #seka-mini-app.seka-immersive-table .seka-topbar,
+  #seka-mini-app.seka-immersive-table .seka-bottom-nav {
+    display: none;
+  }
+
+  #seka-mini-app .seka-topbar {
+    min-height: 72px;
+    padding:
+      calc(14px + var(--seka-safe-top))
+      calc(clamp(14px, 4vw, 24px) + var(--seka-safe-right))
+      10px
+      calc(clamp(14px, 4vw, 24px) + var(--seka-safe-left));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--seka-line);
+    background: rgba(4, 19, 15, .82);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    position: relative;
+    z-index: 30;
+  }
+
+  #seka-mini-app .seka-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  #seka-mini-app .seka-brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    color: #062018;
+    font-size: 24px;
+    background: linear-gradient(145deg, #7df5ae, #30c977 68%, #1ba25f);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.2) inset, 0 8px 30px rgba(66,229,139,.18);
+    transform: translateZ(0);
+  }
+
+  #seka-mini-app .seka-brand-copy strong {
+    display: block;
+    letter-spacing: .16em;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  #seka-mini-app .seka-brand-copy small {
+    display: block;
+    color: var(--seka-muted);
+    font-size: 10px;
+    margin-top: 5px;
+    white-space: nowrap;
+  }
+
+  #seka-mini-app .seka-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #seka-mini-app .seka-role-toggle {
+    display: flex;
+    padding: 3px;
+    border: 1px solid var(--seka-line);
+    border-radius: 12px;
+    background: rgba(255,255,255,.035);
+  }
+
+  #seka-mini-app .seka-role-toggle button {
+    border: 0;
+    color: var(--seka-muted);
+    background: transparent;
+    border-radius: 9px;
+    min-height: 32px;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: color .18s ease, background .18s ease, transform .18s ease;
+  }
+
+  #seka-mini-app .seka-role-toggle button[aria-pressed=&quot;true&quot;] {
+    color: var(--seka-ink);
+    background: var(--seka-surface-2);
+    box-shadow: 0 1px 0 rgba(255,255,255,.06) inset;
+  }
+
+  #seka-mini-app .seka-balance-chip {
+    border: 1px solid rgba(242, 196, 93, .25);
+    border-radius: 12px;
+    min-height: 40px;
+    color: var(--seka-ink);
+    background: rgba(242, 196, 93, .07);
+    padding: 0 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: transform .18s ease, border-color .18s ease;
+  }
+
+  #seka-mini-app .seka-balance-chip:hover { border-color: rgba(242,196,93,.55); transform: translateY(-1px); }
+  #seka-mini-app .seka-coin-dot { width: 16px; height: 16px; display: inline-grid; place-items: center; border-radius: 50%; color: #3d2b05; background: var(--seka-gold); font-size: 9px; font-weight: 900; }
+  #seka-mini-app .seka-balance-chip strong { font-size: 13px; font-variant-numeric: tabular-nums; }
+
+  #seka-mini-app .seka-content {
+    overflow: hidden;
+    position: relative;
+    min-height: 0;
+  }
+
+  #seka-mini-app .seka-screen {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 18px clamp(14px, 4vw, 24px) 28px;
+    opacity: 0;
+    transform: translate3d(18px, 0, 0);
+    pointer-events: none;
+    scrollbar-width: none;
+    transition: opacity .24s ease, transform .24s cubic-bezier(.22,.8,.3,1);
+  }
+
+  #seka-mini-app .seka-screen::-webkit-scrollbar { display: none; }
+  #seka-mini-app .seka-screen.seka-visible { opacity: 1; transform: translate3d(0,0,0); pointer-events: auto; }
+  #seka-mini-app .seka-screen.seka-leaving { transform: translate3d(-16px,0,0); }
+
+  #seka-mini-app .seka-kicker { margin: 0 0 6px; color: var(--seka-green); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+  #seka-mini-app .seka-page-title { margin: 0; font-size: clamp(26px, 6vw, 38px); line-height: 1.06; letter-spacing: -.045em; }
+  #seka-mini-app .seka-page-subtitle { margin: 8px 0 0; color: var(--seka-muted); font-size: 13px; line-height: 1.45; }
+
+  #seka-mini-app .seka-hero {
+    border: 1px solid rgba(87, 238, 150, .2);
+    border-radius: 22px;
+    min-height: 174px;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    background:
+      linear-gradient(135deg, rgba(66,229,139,.12), transparent 48%),
+      linear-gradient(180deg, #12392c, #0a281f);
+    box-shadow: 0 20px 50px rgba(0,0,0,.18);
+  }
+
+  #seka-mini-app .seka-hero::after {
+    content: &quot;♠&quot;;
+    position: absolute;
+    right: 16px;
+    top: -34px;
+    color: rgba(66,229,139,.13);
+    font-size: 170px;
+    line-height: 1;
+    transform: rotate(11deg) translateZ(0);
+    animation: seka-float-mark 5s ease-in-out infinite;
+  }
+
+  #seka-mini-app .seka-hero-copy { position: relative; z-index: 2; max-width: 68%; }
+  #seka-mini-app .seka-hero-copy h2 { margin: 0; font-size: clamp(24px, 6vw, 34px); line-height: 1; letter-spacing: -.04em; }
+  #seka-mini-app .seka-hero-copy p { margin: 9px 0 17px; color: #b7c9c2; font-size: 13px; line-height: 1.4; }
+
+  #seka-mini-app .seka-primary-action,
+  #seka-mini-app .seka-secondary-action,
+  #seka-mini-app .seka-row-action,
+  #seka-mini-app .seka-table-action,
+  #seka-mini-app .seka-admin-action {
+    border: 0;
+    cursor: pointer;
+    transition: transform .16s ease, filter .16s ease, background .16s ease;
+  }
+
+  #seka-mini-app .seka-primary-action {
+    min-height: 44px;
+    border-radius: 13px;
+    padding: 0 18px;
+    color: #052116;
+    font-weight: 850;
+    background: linear-gradient(180deg, #6ef1a5, #39d580);
+    box-shadow: 0 10px 24px rgba(35,205,116,.2), 0 1px 0 rgba(255,255,255,.35) inset;
+  }
+
+  #seka-mini-app .seka-primary-action:hover { transform: translateY(-2px); filter: brightness(1.05); }
+  #seka-mini-app .seka-primary-action:active,
+  #seka-mini-app .seka-secondary-action:active,
+  #seka-mini-app .seka-row-action:active,
+  #seka-mini-app .seka-table-action:active { transform: translateY(1px) scale(.985); }
+
+  #seka-mini-app .seka-section-head { margin: 22px 0 12px; display: flex; justify-content: space-between; align-items: end; gap: 12px; }
+  #seka-mini-app .seka-section-head h3 { margin: 0; font-size: 17px; letter-spacing: -.02em; }
+  #seka-mini-app .seka-section-head span { color: var(--seka-muted); font-size: 11px; }
+
+  #seka-mini-app .seka-mode-strip,
+  #seka-mini-app .seka-filter-strip,
+  #seka-mini-app .seka-admin-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  #seka-mini-app .seka-mode-strip::-webkit-scrollbar,
+  #seka-mini-app .seka-filter-strip::-webkit-scrollbar,
+  #seka-mini-app .seka-admin-tabs::-webkit-scrollbar { display: none; }
+
+  #seka-mini-app .seka-mode-choice,
+  #seka-mini-app .seka-filter-choice,
+  #seka-mini-app .seka-admin-tab {
+    flex: 0 0 auto;
+    min-height: 36px;
+    border: 1px solid var(--seka-line);
+    border-radius: 11px;
+    padding: 0 13px;
+    color: var(--seka-muted);
+    background: rgba(255,255,255,.025);
+    cursor: pointer;
+    transition: color .16s ease, background .16s ease, border-color .16s ease;
+  }
+
+  #seka-mini-app .seka-mode-choice[aria-pressed=&quot;true&quot;],
+  #seka-mini-app .seka-filter-choice[aria-pressed=&quot;true&quot;],
+  #seka-mini-app .seka-admin-tab[aria-pressed=&quot;true&quot;] {
+    color: var(--seka-ink);
+    border-color: rgba(66,229,139,.3);
+    background: rgba(66,229,139,.11);
+  }
+
+  #seka-mini-app .seka-filter-strip { margin-top: 10px; }
+  #seka-mini-app .seka-filter-choice { min-height: 32px; font-size: 11px; border-radius: 10px; padding: 0 11px; }
+
+  #seka-mini-app .seka-table-list { display: grid; gap: 10px; }
+  #seka-mini-app .seka-lobby-row {
+    border: 1px solid var(--seka-line);
+    border-radius: 17px;
+    min-height: 90px;
+    padding: 13px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    background: linear-gradient(135deg, rgba(255,255,255,.035), rgba(255,255,255,.016));
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  }
+
+  #seka-mini-app .seka-lobby-row:hover { transform: translateY(-2px); border-color: rgba(66,229,139,.25); background: rgba(66,229,139,.045); }
+  #seka-mini-app .seka-table-name { display: flex; align-items: center; gap: 9px; }
+  #seka-mini-app .seka-table-emblem { width: 36px; height: 36px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 11px; color: var(--seka-green); background: rgba(66,229,139,.1); font-size: 18px; }
+  #seka-mini-app .seka-table-name strong { display: block; font-size: 14px; }
+  #seka-mini-app .seka-table-name small { display: block; margin-top: 4px; color: var(--seka-muted); font-size: 11px; }
+  #seka-mini-app .seka-table-data { margin-top: 11px; display: flex; flex-wrap: wrap; gap: 12px; color: #c2d0cb; font-size: 11px; }
+  #seka-mini-app .seka-table-data b { color: var(--seka-gold); }
+  #seka-mini-app .seka-row-actions { display: grid; align-content: center; gap: 7px; }
+  #seka-mini-app .seka-row-action { min-width: 78px; min-height: 31px; border-radius: 10px; color: #062116; background: var(--seka-green); font-size: 11px; font-weight: 800; }
+  #seka-mini-app .seka-row-action.seka-watch { color: var(--seka-ink); background: rgba(255,255,255,.07); border: 1px solid var(--seka-line); }
+  #seka-mini-app .seka-open-dot { width: 7px; height: 7px; display: inline-block; margin-right: 5px; border-radius: 50%; background: var(--seka-green); box-shadow: 0 0 0 4px rgba(66,229,139,.08); }
+
+  #seka-mini-app .seka-game-screen { padding: 0; overflow: hidden; background: #030d0a; }
+  #seka-mini-app .seka-game-head {
+    height: calc(58px + var(--seka-safe-top));
+    padding: calc(9px + var(--seka-safe-top)) calc(14px + var(--seka-safe-right)) 9px calc(14px + var(--seka-safe-left));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(180deg, rgba(0,0,0,.32), transparent);
+    position: relative;
+    z-index: 8;
+  }
+
+  #seka-mini-app .seka-game-head button { position: absolute; top: calc(9px + var(--seka-safe-top)); border: 1px solid var(--seka-line); width: 38px; height: 38px; border-radius: 12px; color: var(--seka-ink); background: rgba(9,31,24,.8); cursor: pointer; }
+  #seka-mini-app .seka-game-head button:first-child { left: calc(14px + var(--seka-safe-left)); }
+  #seka-mini-app .seka-game-head button:last-child { right: calc(14px + var(--seka-safe-right)); }
+  #seka-mini-app.seka-telegram-host .seka-fallback-back { display: none; }
+  #seka-mini-app .seka-game-title { text-align: center; }
+  #seka-mini-app .seka-game-title strong { display: block; font-size: 13px; }
+  #seka-mini-app .seka-game-title small { display: block; color: var(--seka-muted); font-size: 10px; margin-top: 3px; }
+  #seka-mini-app .seka-table-stage { position: absolute; inset: 0; overflow: hidden; background: radial-gradient(circle at 50% 42%, #0c3b2b, #03100c 72%); }
+  #seka-mini-app .seka-observer-banner { display: none; position: absolute; top: 66px; left: 50%; transform: translateX(-50%); z-index: 15; padding: 8px 13px; border-radius: 99px; color: #d5e4df; background: rgba(4,18,14,.86); border: 1px solid var(--seka-line); backdrop-filter: blur(12px); font-size: 11px; white-space: nowrap; }
+  #seka-mini-app .seka-observer-mode .seka-observer-banner { display: block; }
+
+  #seka-mini-app .seka-felt {
+    position: absolute;
+    left: 50%;
+    top: 44%;
+    width: min(88%, 660px);
+    height: 55%;
+    transform: translate(-50%,-50%) translateZ(0);
+    border-radius: 48%;
+    background:
+      radial-gradient(ellipse at 50% 45%, rgba(45,177,108,.18), transparent 55%),
+      linear-gradient(140deg, #0d6644, #07452f);
+    border: 9px solid #2b1c13;
+    box-shadow: 0 0 0 2px #6a4830, 0 0 0 10px rgba(0,0,0,.14), 0 30px 50px rgba(0,0,0,.38), inset 0 0 55px rgba(0,0,0,.32);
+  }
+
+  #seka-mini-app .seka-felt::before { content: &quot;SEKA  •  ЧЕСТНАЯ ИГРА&quot;; position: absolute; left: 50%; top: 58%; transform: translate(-50%,-50%); color: rgba(255,255,255,.08); font-size: clamp(11px, 2.4vw, 17px); font-weight: 900; letter-spacing: .18em; white-space: nowrap; }
+  #seka-mini-app .seka-pot { position: absolute; left: 50%; top: 36%; transform: translate(-50%,-50%); text-align: center; z-index: 5; }
+  #seka-mini-app .seka-pot small { display: block; color: #b6c9c2; font-size: 10px; text-transform: uppercase; letter-spacing: .11em; }
+  #seka-mini-app .seka-pot strong { display: block; margin-top: 4px; color: var(--seka-gold); font-size: 17px; font-variant-numeric: tabular-nums; }
+
+  #seka-mini-app .seka-chip-stack { height: 22px; margin: 5px auto 0; display: flex; justify-content: center; align-items: end; gap: 1px; }
+  #seka-mini-app .seka-chip-stack i { width: 16px; height: 7px; display: block; border-radius: 50%; background: #ecb83d; border: 2px dashed #65460b; box-shadow: 0 -5px 0 #efc457, 0 -10px 0 #e7ad2b; }
+  #seka-mini-app .seka-chip-stack i:nth-child(2) { background: #ff6b73; border-color: #631c21; box-shadow: 0 -5px 0 #ff8188; }
+  #seka-mini-app .seka-chip-stack i:nth-child(3) { background: #f4efe3; border-color: #5d5d5d; box-shadow: 0 -5px 0 #fff; }
+
+  #seka-mini-app .seka-deck { position: absolute; left: 50%; top: 52%; transform: translate(-50%,-50%) rotate(-5deg); width: 42px; height: 58px; border-radius: 7px; border: 2px solid #d5eadf; background: repeating-linear-gradient(45deg, #123b2e 0 4px, #1e5c45 4px 8px); box-shadow: 4px 4px 0 #eee8db; }
+
+  #seka-mini-app .seka-player {
+    position: absolute;
+    z-index: 6;
+    width: 84px;
+    text-align: center;
+    transform: translate(-50%,-50%) translateZ(0);
+  }
+
+  #seka-mini-app .seka-player[data-seat=&quot;1&quot;] { left: 50%; top: 13%; }
+  #seka-mini-app .seka-player[data-seat=&quot;2&quot;] { left: 78%; top: 20%; }
+  #seka-mini-app .seka-player[data-seat=&quot;3&quot;] { left: 88%; top: 42%; }
+  #seka-mini-app .seka-player[data-seat=&quot;4&quot;] { left: 77%; top: 61%; }
+  #seka-mini-app .seka-player[data-seat=&quot;5&quot;] { left: 50%; top: 64%; }
+  #seka-mini-app .seka-player[data-seat=&quot;6&quot;] { left: 23%; top: 61%; }
+  #seka-mini-app .seka-player[data-seat=&quot;7&quot;] { left: 12%; top: 42%; }
+  #seka-mini-app .seka-player[data-seat=&quot;8&quot;] { left: 22%; top: 20%; }
+
+  #seka-mini-app .seka-avatar {
+    width: 43px;
+    height: 43px;
+    margin: 0 auto 4px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    border: 2px solid rgba(255,255,255,.16);
+    color: #e6f5ef;
+    background: linear-gradient(145deg, #31594c, #173429);
+    box-shadow: 0 7px 17px rgba(0,0,0,.34);
+    font-size: 12px;
+    font-weight: 800;
+    position: relative;
+  }
+
+  #seka-mini-app .seka-player.seka-turn .seka-avatar { border-color: var(--seka-green); box-shadow: 0 0 0 4px rgba(66,229,139,.12), 0 7px 17px rgba(0,0,0,.34); }
+  #seka-mini-app .seka-player.seka-turn .seka-avatar::after { content: &quot;&quot;; position: absolute; inset: -6px; border: 2px solid var(--seka-green); border-radius: 19px; border-left-color: transparent; animation: seka-timer-ring 4s linear infinite; }
+  #seka-mini-app .seka-player-name { max-width: 84px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; }
+  #seka-mini-app .seka-player-stack { margin-top: 3px; color: var(--seka-gold); font-size: 10px; font-weight: 750; }
+  #seka-mini-app .seka-dark-badge { width: max-content; margin: 4px auto 0; padding: 3px 6px; border: 1px solid rgba(104,183,255,.32); border-radius: 6px; color: #9ed0ff; background: rgba(104,183,255,.1); font-size: 7px; font-weight: 900; letter-spacing: .08em; }
+  #seka-mini-app .seka-player.seka-eliminated { opacity: .42; filter: grayscale(.75); }
+  #seka-mini-app .seka-dealer { position: absolute; right: 10px; top: -2px; width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; color: #242000; background: #f7f1df; font-size: 8px; font-weight: 900; }
+  #seka-mini-app .seka-speech { position: absolute; left: 50%; bottom: calc(100% + 7px); transform: translateX(-50%) translateY(5px); width: max-content; max-width: 130px; padding: 7px 9px; border-radius: 10px 10px 10px 3px; opacity: 0; color: #092118; background: #e7f5ef; font-size: 9px; font-weight: 750; pointer-events: none; box-shadow: 0 8px 24px rgba(0,0,0,.24); transition: opacity .18s ease, transform .18s ease; }
+  #seka-mini-app .seka-speech.seka-say { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  #seka-mini-app .seka-hand {
+    position: absolute;
+    left: 50%;
+    bottom: 130px;
+    z-index: 12;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 224px;
+    height: 102px;
+    gap: 8px;
+    pointer-events: none;
+  }
+
+  #seka-mini-app .seka-playing-card {
+    width: 62px;
+    height: 92px;
+    margin: 0;
+    padding: 7px;
+    border-radius: 9px;
+    color: #161914;
+    background: linear-gradient(145deg, #fffef9, #e9e4d8);
+    border: 1px solid rgba(0,0,0,.14);
+    box-shadow: 0 10px 24px rgba(0,0,0,.3), 0 1px 0 white inset;
+    font-family: Georgia, serif;
+    font-weight: 800;
+    font-size: 20px;
+    transform-origin: 50% 100%;
+    opacity: 0;
+  }
+
+  #seka-mini-app .seka-playing-card span { display: block; font-size: 21px; line-height: .8; }
+  #seka-mini-app .seka-playing-card:nth-child(1) { transform: translateY(40px) rotate(-4deg); animation: seka-deal-left .46s .08s cubic-bezier(.18,.8,.26,1) forwards; }
+  #seka-mini-app .seka-playing-card:nth-child(2) { z-index: 2; transform: translateY(40px); animation: seka-deal-mid .46s .16s cubic-bezier(.18,.8,.26,1) forwards; }
+  #seka-mini-app .seka-playing-card:nth-child(3) { transform: translateY(40px) rotate(4deg); animation: seka-deal-right .46s .24s cubic-bezier(.18,.8,.26,1) forwards; }
+  #seka-mini-app .seka-playing-card.seka-red-suit { color: #d83a45; }
+  #seka-mini-app .seka-observer-mode .seka-hand { display: none; }
+
+  #seka-mini-app .seka-turn-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 14;
+    padding: 10px calc(12px + var(--seka-safe-right)) calc(12px + var(--seka-safe-bottom)) calc(12px + var(--seka-safe-left));
+    background: linear-gradient(180deg, transparent, rgba(1,9,7,.95) 25%);
+  }
+
+  #seka-mini-app .seka-combination-line { max-width: 680px; margin: 0 auto 7px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  #seka-mini-app .seka-combination-line strong { color: var(--seka-green); font-size: 11px; }
+  #seka-mini-app .seka-combination-line span { color: var(--seka-muted); font-size: 9px; }
+  #seka-mini-app .seka-turn-info { max-width: 680px; margin: 0 auto 8px; display: flex; justify-content: space-between; gap: 10px; color: var(--seka-muted); font-size: 10px; }
+  #seka-mini-app .seka-turn-info strong { color: var(--seka-ink); }
+  #seka-mini-app .seka-action-grid { max-width: 680px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  #seka-mini-app .seka-table-action { min-height: 44px; border-radius: 13px; color: var(--seka-ink); background: rgba(255,255,255,.075); border: 1px solid var(--seka-line); font-weight: 800; font-size: 12px; }
+  #seka-mini-app .seka-table-action.seka-call { color: #042016; background: linear-gradient(180deg, #6ef1a5, #39d580); border: 0; }
+  #seka-mini-app .seka-table-action.seka-raise { color: #2c1f02; background: linear-gradient(180deg, #f7d176, #eeb848); border: 0; }
+  #seka-mini-app .seka-table-action.seka-reveal { color: #d6eaff; background: rgba(104,183,255,.12); border-color: rgba(104,183,255,.3); }
+  #seka-mini-app .seka-observer-mode .seka-turn-panel { display: none; }
+
+  #seka-mini-app .seka-chat-fab {
+    position: absolute;
+    right: calc(13px + var(--seka-safe-right));
+    bottom: calc(142px + var(--seka-safe-bottom));
+    z-index: 18;
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 15px;
+    color: var(--seka-ink);
+    background: rgba(9,34,26,.9);
+    backdrop-filter: blur(14px);
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(0,0,0,.3);
+  }
+
+  #seka-mini-app .seka-chat-fab i { position: absolute; right: 7px; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--seka-red); box-shadow: 0 0 0 3px #0b241c; }
+  #seka-mini-app .seka-chat-sheet,
+  #seka-mini-app .seka-transfer-sheet,
+  #seka-mini-app .seka-bet-sheet,
+  #seka-mini-app .seka-deals-sheet {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    padding: 14px calc(16px + var(--seka-safe-right)) calc(18px + var(--seka-safe-bottom)) calc(16px + var(--seka-safe-left));
+    border-radius: 22px 22px 0 0;
+    background: #0b241c;
+    border-top: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 -28px 70px rgba(0,0,0,.44);
+    transform: translate3d(0,105%,0);
+    transition: transform .3s cubic-bezier(.22,.8,.25,1);
+  }
+
+  #seka-mini-app .seka-chat-sheet.seka-sheet-open,
+  #seka-mini-app .seka-transfer-sheet.seka-sheet-open,
+  #seka-mini-app .seka-bet-sheet.seka-sheet-open,
+  #seka-mini-app .seka-deals-sheet.seka-sheet-open { transform: translate3d(0,0,0); }
+  #seka-mini-app .seka-sheet-handle { width: 42px; height: 4px; margin: 0 auto 12px; border-radius: 4px; background: rgba(255,255,255,.2); }
+  #seka-mini-app .seka-sheet-head { display: flex; justify-content: space-between; align-items: center; }
+  #seka-mini-app .seka-sheet-head h3 { margin: 0; font-size: 16px; }
+  #seka-mini-app .seka-sheet-close { border: 0; width: 34px; height: 34px; border-radius: 11px; color: var(--seka-ink); background: rgba(255,255,255,.06); cursor: pointer; }
+  #seka-mini-app .seka-quick-messages { margin: 13px 0; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+  #seka-mini-app .seka-quick-message { flex: 0 0 auto; min-height: 34px; padding: 0 12px; border: 1px solid rgba(66,229,139,.25); border-radius: 11px; color: #c9f6dc; background: rgba(66,229,139,.08); cursor: pointer; }
+  #seka-mini-app .seka-chat-log { height: 120px; overflow-y: auto; display: grid; align-content: end; gap: 8px; padding: 5px 2px; }
+  #seka-mini-app .seka-chat-line { color: #bed0c9; font-size: 11px; }
+  #seka-mini-app .seka-chat-line b { color: var(--seka-green); }
+  #seka-mini-app .seka-chat-compose { margin-top: 10px; display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+  #seka-mini-app .seka-chat-compose input,
+  #seka-mini-app .seka-transfer-field input { min-width: 0; height: 42px; border: 1px solid var(--seka-line); border-radius: 12px; color: var(--seka-ink); background: rgba(255,255,255,.045); padding: 0 12px; }
+  #seka-mini-app .seka-chat-compose button { width: 45px; border: 0; border-radius: 12px; color: #062116; background: var(--seka-green); cursor: pointer; }
+
+  #seka-mini-app .seka-wallet-total {
+    margin-top: 18px;
+    padding: 22px;
+    border: 1px solid rgba(242,196,93,.2);
+    border-radius: 22px;
+    background: radial-gradient(circle at 90% 10%, rgba(242,196,93,.13), transparent 38%), linear-gradient(145deg,#153226,#0b251c);
+  }
+
+  #seka-mini-app .seka-wallet-total small { color: var(--seka-muted); font-size: 11px; }
+  #seka-mini-app .seka-wallet-total strong { display: block; margin-top: 7px; color: var(--seka-ink); font-size: 34px; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+  #seka-mini-app .seka-wallet-total strong em { color: var(--seka-gold); font-size: 17px; font-style: normal; }
+  #seka-mini-app .seka-wallet-actions { margin-top: 18px; display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; }
+  #seka-mini-app .seka-wallet-command { min-height: 64px; border: 1px solid var(--seka-line); border-radius: 15px; color: var(--seka-ink); background: rgba(255,255,255,.04); cursor: pointer; }
+  #seka-mini-app .seka-wallet-command b { display: block; margin-bottom: 4px; color: var(--seka-green); font-size: 17px; }
+  #seka-mini-app .seka-wallet-command span { color: #cbd8d3; font-size: 10px; }
+  #seka-mini-app .seka-history-list { display: grid; gap: 1px; overflow: hidden; border: 1px solid var(--seka-line); border-radius: 17px; background: var(--seka-line); }
+  #seka-mini-app .seka-history-row { min-height: 62px; padding: 11px 13px; display: grid; grid-template-columns: 38px minmax(0,1fr) auto; align-items: center; gap: 10px; background: #0a211a; }
+  #seka-mini-app .seka-history-icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 11px; color: var(--seka-green); background: rgba(66,229,139,.09); }
+  #seka-mini-app .seka-history-row strong { display: block; font-size: 12px; }
+  #seka-mini-app .seka-history-row small { display: block; margin-top: 4px; color: var(--seka-muted); font-size: 9px; }
+  #seka-mini-app .seka-history-amount { font-size: 12px; font-weight: 800; }
+  #seka-mini-app .seka-history-amount.seka-positive { color: var(--seka-green); }
+
+  #seka-mini-app .seka-transfer-form { display: grid; gap: 12px; margin-top: 14px; }
+  #seka-mini-app .seka-transfer-field label { display: block; margin: 0 0 6px 2px; color: var(--seka-muted); font-size: 10px; }
+  #seka-mini-app .seka-transfer-field input { width: 100%; }
+  #seka-mini-app .seka-transfer-submit { min-height: 45px; border: 0; border-radius: 13px; color: #052116; background: var(--seka-green); font-weight: 850; cursor: pointer; }
+  #seka-mini-app .seka-p2p-view { display: none; }
+  #seka-mini-app .seka-p2p-view.seka-p2p-visible { display: block; animation: seka-panel-in .18s ease; }
+  #seka-mini-app .seka-p2p-note { margin: 10px 0 12px; color: var(--seka-muted); font-size: 10px; line-height: 1.4; }
+  #seka-mini-app .seka-queue-lot { padding: 16px; border: 1px solid rgba(66,229,139,.22); border-radius: 17px; background: linear-gradient(145deg,rgba(66,229,139,.08),rgba(255,255,255,.025)); }
+  #seka-mini-app .seka-queue-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; color: var(--seka-muted); font-size: 9px; }
+  #seka-mini-app .seka-queue-head strong { color: var(--seka-ink); font-size: 11px; }
+  #seka-mini-app .seka-lot-amount { margin: 18px 0 5px; color: var(--seka-gold); font-size: 29px; font-weight: 900; letter-spacing: -.04em; }
+  #seka-mini-app .seka-lot-amount span { color: var(--seka-muted); font-size: 11px; font-weight: 650; letter-spacing: 0; }
+  #seka-mini-app .seka-lot-remaining { margin-bottom: 14px; color: var(--seka-muted); font-size: 9px; }
+  #seka-mini-app .seka-lot-buy { width: 100%; min-height: 44px; border: 0; border-radius: 12px; color: #052116; background: var(--seka-green); font-weight: 850; cursor: pointer; }
+  #seka-mini-app .seka-lot-buy:disabled { color: var(--seka-muted); background: rgba(255,255,255,.06); }
+  #seka-mini-app .seka-order-list { display: grid; gap: 8px; max-height: 330px; overflow-y: auto; scrollbar-width: none; }
+  #seka-mini-app .seka-order-row { min-height: 64px; padding: 11px; display: grid; grid-template-columns: minmax(0,1fr) auto auto; align-items: center; gap: 10px; border: 1px solid var(--seka-line); border-radius: 14px; background: rgba(255,255,255,.03); }
+  #seka-mini-app .seka-order-row strong { display: block; font-size: 11px; }
+  #seka-mini-app .seka-order-row small { display: block; margin-top: 4px; color: var(--seka-muted); font-size: 8px; }
+  #seka-mini-app .seka-order-amount { color: var(--seka-gold); font-size: 12px; font-weight: 850; white-space: nowrap; }
+  #seka-mini-app .seka-buy-order { min-height: 34px; border: 0; border-radius: 10px; padding: 0 12px; color: #052116; background: var(--seka-green); font-size: 10px; font-weight: 850; cursor: pointer; }
+  #seka-mini-app .seka-buy-order:disabled { color: var(--seka-muted); background: rgba(255,255,255,.06); cursor: default; }
+  #seka-mini-app .seka-sell-lock { display: block; margin-top: 10px; color: var(--seka-muted); font-size: 9px; line-height: 1.4; }
+  #seka-mini-app .seka-deals-sheet .seka-history-list { margin-top: 13px; max-height: 390px; overflow-y: auto; }
+  #seka-mini-app .seka-bet-value { margin: 15px 0 10px; display: flex; justify-content: space-between; align-items: end; }
+  #seka-mini-app .seka-bet-value small { color: var(--seka-muted); font-size: 10px; }
+  #seka-mini-app .seka-bet-value strong { color: var(--seka-gold); font-size: 24px; }
+  #seka-mini-app .seka-bet-range { width: 100%; accent-color: var(--seka-green); }
+  #seka-mini-app .seka-bet-limits { margin: 5px 0 14px; display: flex; justify-content: space-between; color: var(--seka-muted); font-size: 8px; }
+  #seka-mini-app .seka-bet-confirm { width: 100%; min-height: 44px; border: 0; border-radius: 13px; color: #052116; background: var(--seka-green); font-weight: 850; cursor: pointer; }
+
+  #seka-mini-app .seka-admin-order-list { display: grid; gap: 8px; }
+  #seka-mini-app .seka-admin-order-row { min-height: 62px; padding: 10px 12px; display: grid; grid-template-columns: minmax(0,1fr) auto auto; align-items: center; gap: 10px; border: 1px solid var(--seka-line); border-radius: 13px; background: rgba(255,255,255,.025); }
+  #seka-mini-app .seka-admin-order-row strong { display: block; font-size: 10px; }
+  #seka-mini-app .seka-admin-order-row small { display: block; margin-top: 4px; color: var(--seka-muted); font-size: 8px; }
+  #seka-mini-app .seka-order-status { color: var(--seka-green); font-size: 8px; }
+  #seka-mini-app .seka-admin-order-actions { display: flex; gap: 6px; }
+
+  #seka-mini-app .seka-profile-hero { margin-top: 18px; padding: 19px; border: 1px solid var(--seka-line); border-radius: 21px; display: flex; align-items: center; gap: 14px; background: linear-gradient(135deg,rgba(66,229,139,.08),rgba(255,255,255,.02)); }
+  #seka-mini-app .seka-profile-avatar { width: 62px; height: 62px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 20px; color: #082219; background: linear-gradient(145deg,#7cf3ad,#35ce7c); font-size: 19px; font-weight: 900; box-shadow: 0 12px 26px rgba(48,207,122,.16); }
+  #seka-mini-app .seka-profile-hero h2 { margin: 0; font-size: 19px; }
+  #seka-mini-app .seka-profile-hero p { margin: 5px 0 0; color: var(--seka-muted); font-size: 11px; }
+  #seka-mini-app .seka-profile-level { margin-top: 8px; display: inline-flex; min-height: 23px; align-items: center; padding: 0 9px; border-radius: 99px; color: var(--seka-gold); background: rgba(242,196,93,.09); font-size: 9px; font-weight: 800; }
+  #seka-mini-app .seka-profile-stats { margin-top: 12px; display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; }
+  #seka-mini-app .seka-profile-stat { min-height: 78px; padding: 13px; border: 1px solid var(--seka-line); border-radius: 15px; background: rgba(255,255,255,.025); }
+  #seka-mini-app .seka-profile-stat strong { display: block; font-size: 20px; }
+  #seka-mini-app .seka-profile-stat small { display: block; margin-top: 5px; color: var(--seka-muted); font-size: 9px; }
+  #seka-mini-app .seka-friend-list { display: grid; gap: 8px; }
+  #seka-mini-app .seka-friend-row { min-height: 56px; padding: 9px 11px; border: 1px solid var(--seka-line); border-radius: 15px; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,.025); }
+  #seka-mini-app .seka-friend-avatar { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 12px; color: #dcebe5; background: #23493b; font-size: 10px; font-weight: 800; }
+  #seka-mini-app .seka-friend-info { min-width: 0; flex: 1; }
+  #seka-mini-app .seka-friend-info strong { display: block; font-size: 11px; }
+  #seka-mini-app .seka-friend-info small { display: block; margin-top: 4px; color: var(--seka-muted); font-size: 9px; }
+  #seka-mini-app .seka-friend-invite { min-height: 31px; border: 1px solid rgba(66,229,139,.28); border-radius: 10px; padding: 0 10px; color: var(--seka-green); background: rgba(66,229,139,.07); cursor: pointer; font-size: 9px; }
+
+  #seka-mini-app .seka-admin-screen { padding-top: 15px; }
+  #seka-mini-app .seka-admin-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  #seka-mini-app .seka-admin-head h1 { margin: 0; font-size: 24px; letter-spacing: -.04em; }
+  #seka-mini-app .seka-admin-head p { margin: 5px 0 0; color: var(--seka-muted); font-size: 10px; }
+  #seka-mini-app .seka-live-status { display: inline-flex; align-items: center; gap: 7px; color: #c9e4d9; font-size: 10px; white-space: nowrap; }
+  #seka-mini-app .seka-live-status i { width: 7px; height: 7px; border-radius: 50%; background: var(--seka-green); box-shadow: 0 0 0 4px rgba(66,229,139,.08); animation: seka-live-pulse 2s ease-out infinite; }
+  #seka-mini-app .seka-admin-tabs { margin-top: 16px; }
+  #seka-mini-app .seka-admin-tab { min-height: 34px; font-size: 10px; }
+  #seka-mini-app .seka-admin-panel { display: none; animation: seka-panel-in .22s ease; }
+  #seka-mini-app .seka-admin-panel.seka-admin-panel-visible { display: block; }
+  #seka-mini-app .seka-admin-metrics { margin-top: 13px; display: grid; grid-template-columns: repeat(4,1fr); gap: 9px; }
+  #seka-mini-app .seka-admin-metric { min-height: 88px; padding: 13px; border: 1px solid var(--seka-line); border-radius: 15px; background: linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.015)); }
+  #seka-mini-app .seka-admin-metric small { color: var(--seka-muted); font-size: 9px; }
+  #seka-mini-app .seka-admin-metric strong { display: block; margin-top: 9px; font-size: 22px; letter-spacing: -.03em; }
+  #seka-mini-app .seka-admin-metric em { display: block; margin-top: 4px; color: var(--seka-green); font-size: 8px; font-style: normal; }
+  #seka-mini-app .seka-admin-columns { margin-top: 10px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 10px; }
+  #seka-mini-app .seka-admin-module { border: 1px solid var(--seka-line); border-radius: 16px; overflow: hidden; background: rgba(255,255,255,.018); }
+  #seka-mini-app .seka-admin-module-head { min-height: 48px; padding: 11px 13px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--seka-line); }
+  #seka-mini-app .seka-admin-module-head strong { font-size: 12px; }
+  #seka-mini-app .seka-admin-module-head span { color: var(--seka-muted); font-size: 9px; }
+  #seka-mini-app .seka-admin-table { width: 100%; border-collapse: collapse; }
+  #seka-mini-app .seka-admin-table th { padding: 9px 11px; text-align: left; color: var(--seka-muted); font-size: 8px; font-weight: 650; border-bottom: 1px solid var(--seka-line); }
+  #seka-mini-app .seka-admin-table td { padding: 10px 11px; color: #d5e0dc; font-size: 9px; border-bottom: 1px solid rgba(255,255,255,.05); }
+  #seka-mini-app .seka-admin-table tr:last-child td { border-bottom: 0; }
+  #seka-mini-app .seka-admin-action { min-height: 28px; border-radius: 8px; padding: 0 8px; color: var(--seka-ink); background: rgba(255,255,255,.06); border: 1px solid var(--seka-line); font-size: 8px; }
+  #seka-mini-app .seka-admin-action.seka-danger { color: #ffadb2; background: rgba(255,107,115,.08); border-color: rgba(255,107,115,.2); }
+  #seka-mini-app .seka-alert-list { display: grid; }
+  #seka-mini-app .seka-alert-row { padding: 11px 13px; display: grid; grid-template-columns: 8px 1fr auto; gap: 9px; align-items: start; border-bottom: 1px solid var(--seka-line); }
+  #seka-mini-app .seka-alert-row:last-child { border-bottom: 0; }
+  #seka-mini-app .seka-alert-row i { width: 7px; height: 7px; margin-top: 3px; border-radius: 50%; background: var(--seka-gold); }
+  #seka-mini-app .seka-alert-row strong { display: block; font-size: 9px; }
+  #seka-mini-app .seka-alert-row small { display: block; margin-top: 4px; color: var(--seka-muted); font-size: 8px; line-height: 1.3; }
+  #seka-mini-app .seka-alert-row span { color: var(--seka-muted); font-size: 8px; }
+  #seka-mini-app .seka-admin-placeholder { margin-top: 13px; padding: 18px; border: 1px solid var(--seka-line); border-radius: 16px; background: rgba(255,255,255,.02); }
+  #seka-mini-app .seka-admin-placeholder h3 { margin: 0 0 5px; font-size: 15px; }
+  #seka-mini-app .seka-admin-placeholder p { margin: 0 0 13px; color: var(--seka-muted); font-size: 10px; line-height: 1.45; }
+  #seka-mini-app .seka-admin-tools { display: flex; flex-wrap: wrap; gap: 8px; }
+  #seka-mini-app .seka-admin-tool { min-height: 35px; padding: 0 11px; border: 1px solid var(--seka-line); border-radius: 10px; color: var(--seka-ink); background: rgba(255,255,255,.04); cursor: pointer; font-size: 9px; }
+
+  #seka-mini-app .seka-bottom-nav {
+    min-height: 72px;
+    padding: 7px calc(10px + var(--seka-safe-right)) calc(7px + var(--seka-safe-bottom)) calc(10px + var(--seka-safe-left));
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    border-top: 1px solid var(--seka-line);
+    background: rgba(4,18,14,.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    z-index: 32;
+  }
+
+  #seka-mini-app .seka-bottom-nav.seka-nav-hidden { display: none; }
+  #seka-mini-app .seka-nav-choice { min-height: 55px; border: 0; border-radius: 13px; display: grid; place-items: center; align-content: center; gap: 4px; color: var(--seka-muted); background: transparent; cursor: pointer; transition: color .18s ease, background .18s ease, transform .18s ease; }
+  #seka-mini-app .seka-nav-choice b { font-size: 18px; line-height: 1; font-weight: 500; }
+  #seka-mini-app .seka-nav-choice span { font-size: 9px; }
+  #seka-mini-app .seka-nav-choice[aria-current=&quot;page&quot;] { color: var(--seka-green); background: rgba(66,229,139,.075); }
+  #seka-mini-app .seka-nav-choice:active { transform: scale(.95); }
+
+  #seka-mini-app .seka-toast { position: absolute; left: 50%; bottom: 86px; z-index: 90; max-width: calc(100% - 28px); padding: 10px 13px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; opacity: 0; color: #e8f4ef; background: rgba(8,31,24,.94); box-shadow: 0 12px 34px rgba(0,0,0,.3); transform: translate(-50%,10px); pointer-events: none; font-size: 10px; white-space: nowrap; transition: opacity .2s ease, transform .2s ease; }
+  #seka-mini-app .seka-toast.seka-toast-show { opacity: 1; transform: translate(-50%,0); }
+
+  @keyframes seka-float-mark { 0%,100% { transform: rotate(11deg) translate3d(0,0,0); } 50% { transform: rotate(8deg) translate3d(0,8px,0); } }
+  @keyframes seka-timer-ring { to { transform: rotate(360deg); } }
+  @keyframes seka-deal-left { to { opacity: 1; transform: translateY(0) rotate(-4deg); } }
+  @keyframes seka-deal-mid { to { opacity: 1; transform: translateY(-8px) rotate(0); } }
+  @keyframes seka-deal-right { to { opacity: 1; transform: translateY(0) rotate(4deg); } }
+  @keyframes seka-live-pulse { 0% { box-shadow: 0 0 0 0 rgba(66,229,139,.25); } 70%,100% { box-shadow: 0 0 0 8px rgba(66,229,139,0); } }
+  @keyframes seka-panel-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (min-width: 700px) {
+    #seka-mini-app .seka-screen:not(.seka-game-screen) { padding-left: 28px; padding-right: 28px; }
+    #seka-mini-app .seka-lobby-screen .seka-table-list { grid-template-columns: 1fr 1fr; }
+    #seka-mini-app .seka-lobby-screen .seka-lobby-row:first-child { grid-column: span 2; }
+    #seka-mini-app .seka-felt { height: 58%; width: min(78%,680px); }
+    #seka-mini-app .seka-player[data-seat=&quot;3&quot;] { left: 83%; }
+    #seka-mini-app .seka-player[data-seat=&quot;7&quot;] { left: 17%; }
+  }
+
+  @media (max-width: 520px) {
+    #seka-mini-app { height: var(--seka-app-height, min(800px, calc(100dvh - 24px))); min-height: min(680px, calc(100dvh - 24px)); border-radius: 20px; }
+    #seka-mini-app.seka-telegram-host { height: var(--seka-app-height, 100dvh); min-height: 0; border-radius: 0; }
+    #seka-mini-app .seka-brand-copy small { display: none; }
+    #seka-mini-app .seka-role-toggle button { padding: 0 8px; font-size: 10px; }
+    #seka-mini-app .seka-balance-chip { padding: 0 8px; }
+    #seka-mini-app .seka-hero-copy { max-width: 76%; }
+    #seka-mini-app .seka-felt { top: 43%; height: 48%; width: 82%; border-width: 7px; }
+    #seka-mini-app .seka-player { width: 68px; }
+    #seka-mini-app .seka-player[data-seat=&quot;1&quot;] { top: 13%; }
+    #seka-mini-app .seka-player[data-seat=&quot;2&quot;] { left: 77%; top: 20%; }
+    #seka-mini-app .seka-player[data-seat=&quot;3&quot;] { left: 87%; top: 39%; }
+    #seka-mini-app .seka-player[data-seat=&quot;4&quot;] { left: 76%; top: 56%; }
+    #seka-mini-app .seka-player[data-seat=&quot;5&quot;] { top: 59%; }
+    #seka-mini-app .seka-player[data-seat=&quot;6&quot;] { left: 24%; top: 56%; }
+    #seka-mini-app .seka-player[data-seat=&quot;7&quot;] { left: 13%; top: 39%; }
+    #seka-mini-app .seka-player[data-seat=&quot;8&quot;] { left: 23%; top: 20%; }
+    #seka-mini-app .seka-avatar { width: 38px; height: 38px; border-radius: 13px; }
+    #seka-mini-app .seka-player[data-seat=&quot;5&quot;] { top: 59%; }
+    #seka-mini-app .seka-hand { bottom: calc(170px + var(--seka-safe-bottom)); transform: translateX(-50%) scale(.84); transform-origin: bottom center; }
+    #seka-mini-app .seka-chat-fab { bottom: calc(170px + var(--seka-safe-bottom)); }
+    #seka-mini-app .seka-action-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    #seka-mini-app .seka-table-action { min-height: 38px; font-size: 10px; }
+    #seka-mini-app .seka-combination-line { margin-bottom: 5px; }
+    #seka-mini-app .seka-turn-info { margin-bottom: 6px; }
+    #seka-mini-app .seka-order-row { grid-template-columns: minmax(0,1fr) auto; }
+    #seka-mini-app .seka-buy-order { grid-column: span 2; width: 100%; }
+    #seka-mini-app .seka-admin-order-row { grid-template-columns: minmax(0,1fr) auto; }
+    #seka-mini-app .seka-admin-order-actions { grid-column: span 2; }
+    #seka-mini-app .seka-admin-metrics { grid-template-columns: 1fr 1fr; }
+    #seka-mini-app .seka-admin-columns { grid-template-columns: 1fr; }
+    #seka-mini-app .seka-admin-metric { min-height: 76px; }
+    #seka-mini-app .seka-admin-metric strong { font-size: 19px; }
+  }
+
+  @media (max-width: 380px) {
+    #seka-mini-app .seka-brand-copy { display: none; }
+    #seka-mini-app .seka-profile-stats { grid-template-columns: 1fr 1fr; }
+    #seka-mini-app .seka-profile-stat:last-child { grid-column: span 2; }
+    #seka-mini-app .seka-lobby-row { grid-template-columns: 1fr; }
+    #seka-mini-app .seka-row-actions { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (orientation: landscape) and (max-height: 600px) {
+    #seka-mini-app { height: var(--seka-app-height, 100dvh); min-height: 0; border-radius: 0; }
+    #seka-mini-app .seka-topbar { min-height: 54px; padding-top: calc(7px + var(--seka-safe-top)); padding-bottom: 7px; }
+    #seka-mini-app .seka-brand-mark { width: 36px; height: 36px; border-radius: 11px; }
+    #seka-mini-app .seka-bottom-nav { min-height: 56px; }
+    #seka-mini-app .seka-nav-choice { min-height: 43px; }
+    #seka-mini-app .seka-felt { top: 42%; width: min(72%, 650px); height: 60%; }
+    #seka-mini-app .seka-player[data-seat=&quot;1&quot;] { left: 50%; top: 15%; }
+    #seka-mini-app .seka-player[data-seat=&quot;2&quot;] { left: 70%; top: 21%; }
+    #seka-mini-app .seka-player[data-seat=&quot;3&quot;] { left: 78%; top: 42%; }
+    #seka-mini-app .seka-player[data-seat=&quot;4&quot;] { left: 69%; top: 59%; }
+    #seka-mini-app .seka-player[data-seat=&quot;5&quot;] { display: none; }
+    #seka-mini-app .seka-player[data-seat=&quot;6&quot;] { left: 31%; top: 59%; }
+    #seka-mini-app .seka-player[data-seat=&quot;7&quot;] { left: 22%; top: 42%; }
+    #seka-mini-app .seka-player[data-seat=&quot;8&quot;] { left: 30%; top: 21%; }
+    #seka-mini-app .seka-hand { left: 50%; bottom: calc(88px + var(--seka-safe-bottom)); transform: translateX(-50%) scale(.58); }
+    #seka-mini-app .seka-turn-panel { left: 0; right: 0; bottom: 0; width: auto; padding: 7px calc(12px + var(--seka-safe-right)) calc(8px + var(--seka-safe-bottom)) calc(12px + var(--seka-safe-left)); background: linear-gradient(180deg, transparent, rgba(1,9,7,.96) 24%); }
+    #seka-mini-app .seka-turn-info { display: none; }
+    #seka-mini-app .seka-combination-line { margin-bottom: 5px; }
+    #seka-mini-app .seka-action-grid { grid-template-columns: repeat(4,1fr); gap: 5px; }
+    #seka-mini-app .seka-table-action { min-height: 34px; }
+    #seka-mini-app .seka-chat-fab { right: auto; left: calc(13px + var(--seka-safe-left)); bottom: calc(88px + var(--seka-safe-bottom)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #seka-mini-app *,
+    #seka-mini-app *::before,
+    #seka-mini-app *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  }
+&lt;/style&gt;
+
+&lt;div id=&quot;seka-mini-app&quot;&gt;
+  &lt;div class=&quot;seka-grain&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;seka-product-shell&quot;&gt;
+    &lt;header class=&quot;seka-topbar&quot;&gt;
+      &lt;div class=&quot;seka-brand&quot; aria-label=&quot;SEKA&quot;&gt;
+        &lt;div class=&quot;seka-brand-mark&quot; aria-hidden=&quot;true&quot;&gt;♠&lt;/div&gt;
+        &lt;div class=&quot;seka-brand-copy&quot;&gt;
+          &lt;strong&gt;SEKA&lt;/strong&gt;
+          &lt;small&gt;Честная игра. Живой стол.&lt;/small&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;seka-header-actions&quot;&gt;
+        &lt;div class=&quot;seka-role-toggle&quot; aria-label=&quot;Режим прототипа&quot;&gt;
+          &lt;button type=&quot;button&quot; data-role=&quot;player&quot; aria-pressed=&quot;true&quot;&gt;Игрок&lt;/button&gt;
+          &lt;button type=&quot;button&quot; data-role=&quot;admin&quot; aria-pressed=&quot;false&quot;&gt;Админ&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;button&quot; class=&quot;seka-balance-chip&quot; data-go=&quot;wallet&quot; aria-label=&quot;Открыть кошелёк, баланс 24 850 фишек&quot;&gt;
+          &lt;span class=&quot;seka-coin-dot&quot;&gt;S&lt;/span&gt;&lt;strong data-wallet-balance&gt;24 850&lt;/strong&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;main class=&quot;seka-content&quot;&gt;
+      &lt;section class=&quot;seka-screen seka-lobby-screen seka-visible&quot; data-screen=&quot;lobby&quot; aria-label=&quot;Лобби&quot;&gt;
+        &lt;div class=&quot;seka-hero&quot;&gt;
+          &lt;div class=&quot;seka-hero-copy&quot;&gt;
+            &lt;p class=&quot;seka-kicker&quot;&gt;Быстрый старт&lt;/p&gt;
+            &lt;h2&gt;Стол уже ждёт&lt;/h2&gt;
+            &lt;p&gt;Подберём игру со ставкой 200 и свободным местом.&lt;/p&gt;
+            &lt;button type=&quot;button&quot; class=&quot;seka-primary-action&quot; data-enter=&quot;play&quot;&gt;Играть сейчас&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;seka-section-head&quot;&gt;&lt;h3&gt;Режим игры&lt;/h3&gt;&lt;span&gt;286 игроков онлайн&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;seka-mode-strip&quot; aria-label=&quot;Режимы&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-mode-choice&quot; aria-pressed=&quot;true&quot;&gt;Все столы&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-mode-choice&quot; aria-pressed=&quot;false&quot;&gt;Быстрая игра&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-mode-choice&quot; aria-pressed=&quot;false&quot;&gt;С друзьями&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-mode-choice&quot; aria-pressed=&quot;false&quot;&gt;Турниры&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-mode-choice&quot; aria-pressed=&quot;false&quot;&gt;Приватные&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;seka-filter-strip&quot; aria-label=&quot;Фильтры столов&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-filter-choice&quot; aria-pressed=&quot;true&quot;&gt;Есть места&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-filter-choice&quot; aria-pressed=&quot;false&quot;&gt;Ставка: любая&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-filter-choice&quot; aria-pressed=&quot;false&quot;&gt;2–8 игроков&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;seka-section-head&quot;&gt;&lt;h3&gt;Выберите стол&lt;/h3&gt;&lt;span&gt;Обновлено сейчас&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;seka-table-list&quot;&gt;
+          &lt;article class=&quot;seka-lobby-row&quot;&gt;
+            &lt;div&gt;
+              &lt;div class=&quot;seka-table-name&quot;&gt;
+                &lt;div class=&quot;seka-table-emblem&quot;&gt;♣&lt;/div&gt;
+                &lt;div&gt;&lt;strong&gt;Ташкент · 12&lt;/strong&gt;&lt;small&gt;&lt;span class=&quot;seka-open-dot&quot;&gt;&lt;/span&gt;5 из 8 игроков&lt;/small&gt;&lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;seka-table-data&quot;&gt;&lt;span&gt;Вход &lt;b&gt;1 000&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Ставка &lt;b&gt;200&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Банк 4 800&lt;/span&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;seka-row-actions&quot;&gt;
+              &lt;button type=&quot;button&quot; class=&quot;seka-row-action&quot; data-enter=&quot;play&quot;&gt;Войти&lt;/button&gt;
+              &lt;button type=&quot;button&quot; class=&quot;seka-row-action seka-watch&quot; data-enter=&quot;watch&quot;&gt;Наблюдать&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/article&gt;
+          &lt;article class=&quot;seka-lobby-row&quot;&gt;
+            &lt;div&gt;
+              &lt;div class=&quot;seka-table-name&quot;&gt;
+                &lt;div class=&quot;seka-table-emblem&quot;&gt;♦&lt;/div&gt;
+                &lt;div&gt;&lt;strong&gt;Самарканд · 04&lt;/strong&gt;&lt;small&gt;&lt;span class=&quot;seka-open-dot&quot;&gt;&lt;/span&gt;3 из 6 игроков&lt;/small&gt;&lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;seka-table-data&quot;&gt;&lt;span&gt;Вход &lt;b&gt;500&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Ставка &lt;b&gt;100&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;seka-row-actions&quot;&gt;
+              &lt;button type=&quot;button&quot; class=&quot;seka-row-action&quot; data-enter=&quot;play&quot;&gt;Войти&lt;/button&gt;
+              &lt;button type=&quot;button&quot; class=&quot;seka-row-action seka-watch&quot; data-enter=&quot;watch&quot;&gt;Смотреть&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/article&gt;
+          &lt;article class=&quot;seka-lobby-row&quot;&gt;
+            &lt;div&gt;
+              &lt;div class=&quot;seka-table-name&quot;&gt;
+                &lt;div class=&quot;seka-table-emblem&quot;&gt;★&lt;/div&gt;
+                &lt;div&gt;&lt;strong&gt;High Rollers&lt;/strong&gt;&lt;small&gt;&lt;span class=&quot;seka-open-dot&quot;&gt;&lt;/span&gt;6 из 8 игроков&lt;/small&gt;&lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;seka-table-data&quot;&gt;&lt;span&gt;Вход &lt;b&gt;10 000&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Ставка &lt;b&gt;1 000&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;seka-row-actions&quot;&gt;
+              &lt;button type=&quot;button&quot; class=&quot;seka-row-action&quot; data-enter=&quot;play&quot;&gt;Войти&lt;/button&gt;
+              &lt;button type=&quot;button&quot; class=&quot;seka-row-action seka-watch&quot; data-enter=&quot;watch&quot;&gt;Смотреть&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/article&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section class=&quot;seka-screen seka-game-screen&quot; data-screen=&quot;table&quot; aria-label=&quot;Игровой стол&quot;&gt;
+        &lt;div class=&quot;seka-table-stage&quot;&gt;
+          &lt;div class=&quot;seka-game-head&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;seka-fallback-back&quot; data-back aria-label=&quot;Вернуться назад&quot;&gt;‹&lt;/button&gt;
+            &lt;div class=&quot;seka-game-title&quot;&gt;&lt;strong&gt;Ташкент · 12&lt;/strong&gt;&lt;small&gt;Торги · круг 2 · потолок 2 000&lt;/small&gt;&lt;/div&gt;
+            &lt;button type=&quot;button&quot; data-action=&quot;menu&quot; aria-label=&quot;Меню стола&quot;&gt;•••&lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;seka-observer-banner&quot;&gt;Режим наблюдателя · 12 зрителей&lt;/div&gt;
+          &lt;div class=&quot;seka-felt&quot;&gt;
+            &lt;div class=&quot;seka-pot&quot;&gt;&lt;small&gt;Банк&lt;/small&gt;&lt;strong data-pot&gt;1 600&lt;/strong&gt;&lt;div class=&quot;seka-chip-stack&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
+            &lt;div class=&quot;seka-deck&quot; aria-label=&quot;Колода из 36 карт&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;seka-player&quot; data-seat=&quot;1&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Хорошей игры!&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;AK&lt;div class=&quot;seka-dealer&quot;&gt;D&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Akmal&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;8 400&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-player&quot; data-seat=&quot;2&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Смело 🔥&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;DV&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Davron&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;3 250&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-player seka-turn&quot; data-seat=&quot;3&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Ваш ход&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;AM&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Amir&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;6 100&lt;/div&gt;&lt;div class=&quot;seka-dark-badge&quot;&gt;ТЁМНАЯ&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-player&quot; data-seat=&quot;4&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Удачи!&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;RU&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Ruslan&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;2 900&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-player&quot; data-seat=&quot;5&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Отличный ход&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;TG&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Вы&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;12 850&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-player&quot; data-seat=&quot;6&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Ещё круг?&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;DI&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Diyor&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;4 720&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-player&quot; data-seat=&quot;7&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;👏👏👏&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;SA&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Sabina&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;7 600&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-player&quot; data-seat=&quot;8&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Играем&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;MI&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Misha&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;5 180&lt;/div&gt;&lt;/div&gt;
+
+          &lt;div class=&quot;seka-hand&quot; aria-label=&quot;Ваши карты: туз пик, десять пик, дама пик&quot;&gt;
+            &lt;div class=&quot;seka-playing-card&quot;&gt;A&lt;span&gt;♠&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;seka-playing-card&quot;&gt;10&lt;span&gt;♠&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;seka-playing-card&quot;&gt;Q&lt;span&gt;♠&lt;/span&gt;&lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;button type=&quot;button&quot; class=&quot;seka-chat-fab&quot; data-open-chat aria-label=&quot;Открыть чат&quot;&gt;💬&lt;i aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+
+          &lt;div class=&quot;seka-turn-panel&quot;&gt;
+            &lt;div class=&quot;seka-combination-line&quot;&gt;&lt;strong&gt;31 очко · пики&lt;/strong&gt;&lt;span&gt;Туз 11 + 10 + дама 10&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;seka-turn-info&quot;&gt;&lt;span&gt;Ваш ход · &lt;strong&gt;14 сек&lt;/strong&gt;&lt;/span&gt;&lt;span&gt;Темнящий поставил 200 · вам &lt;strong&gt;400&lt;/strong&gt;&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;seka-action-grid&quot;&gt;
+              &lt;button type=&quot;button&quot; class=&quot;seka-table-action&quot; data-game-action=&quot;Упасть&quot;&gt;Упасть&lt;/button&gt;
+              &lt;button type=&quot;button&quot; class=&quot;seka-table-action seka-call&quot; data-game-action=&quot;Поддержать&quot;&gt;Поддержать · 400&lt;/button&gt;
+              &lt;button type=&quot;button&quot; class=&quot;seka-table-action seka-raise&quot; data-game-action=&quot;Повысить&quot;&gt;Повысить&lt;/button&gt;
+              &lt;button type=&quot;button&quot; class=&quot;seka-table-action seka-reveal&quot; data-game-action=&quot;Вскрыться&quot;&gt;Вскрыться · 400&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section class=&quot;seka-screen&quot; data-screen=&quot;wallet&quot; aria-label=&quot;Кошелёк&quot;&gt;
+        &lt;p class=&quot;seka-kicker&quot;&gt;Кошелёк&lt;/p&gt;
+        &lt;h1 class=&quot;seka-page-title&quot;&gt;Ваши фишки&lt;/h1&gt;
+        &lt;p class=&quot;seka-page-subtitle&quot;&gt;Единый игровой баланс. Покупка и продажа фишек проходят через очередь P2P-ордеров.&lt;/p&gt;
+        &lt;div class=&quot;seka-wallet-total&quot;&gt;&lt;small&gt;Доступно для игры&lt;/small&gt;&lt;strong&gt;&lt;span data-wallet-balance&gt;24 850&lt;/span&gt; &lt;em&gt;фишек&lt;/em&gt;&lt;/strong&gt;&lt;/div&gt;
+        &lt;div class=&quot;seka-wallet-actions&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-wallet-command&quot; data-p2p=&quot;buy&quot;&gt;&lt;b&gt;↓&lt;/b&gt;&lt;span&gt;Купить&lt;/span&gt;&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-wallet-command&quot; data-p2p=&quot;sell&quot;&gt;&lt;b&gt;↑&lt;/b&gt;&lt;span&gt;Продать&lt;/span&gt;&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-wallet-command&quot; data-deals&gt;&lt;b&gt;↻&lt;/b&gt;&lt;span&gt;Сделки&lt;/span&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section class=&quot;seka-screen&quot; data-screen=&quot;profile&quot; aria-label=&quot;Профиль&quot;&gt;
+        &lt;p class=&quot;seka-kicker&quot;&gt;Telegram-профиль&lt;/p&gt;
+        &lt;h1 class=&quot;seka-page-title&quot;&gt;Ваш игровой путь&lt;/h1&gt;
+        &lt;div class=&quot;seka-profile-hero&quot;&gt;
+          &lt;div class=&quot;seka-profile-avatar&quot;&gt;DU&lt;/div&gt;
+          &lt;div&gt;&lt;h2&gt;Данил Усманов&lt;/h2&gt;&lt;p&gt;@dan_us · ID 104829&lt;/p&gt;&lt;span class=&quot;seka-profile-level&quot;&gt;Уровень 18 · Мастер&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;seka-profile-stats&quot;&gt;
+          &lt;div class=&quot;seka-profile-stat&quot;&gt;&lt;strong&gt;248&lt;/strong&gt;&lt;small&gt;Сыграно партий&lt;/small&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-profile-stat&quot;&gt;&lt;strong&gt;46%&lt;/strong&gt;&lt;small&gt;Побед&lt;/small&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-profile-stat&quot;&gt;&lt;strong&gt;+18K&lt;/strong&gt;&lt;small&gt;Баланс за сезон&lt;/small&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;seka-section-head&quot;&gt;&lt;h3&gt;Друзья&lt;/h3&gt;&lt;span&gt;12 друзей&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;seka-friend-list&quot;&gt;
+          &lt;div class=&quot;seka-friend-row&quot;&gt;&lt;div class=&quot;seka-friend-avatar&quot;&gt;AK&lt;/div&gt;&lt;div class=&quot;seka-friend-info&quot;&gt;&lt;strong&gt;Акмаль&lt;/strong&gt;&lt;small&gt;&lt;span class=&quot;seka-open-dot&quot;&gt;&lt;/span&gt;За столом · 5/8&lt;/small&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; class=&quot;seka-friend-invite&quot; data-action=&quot;join-friend&quot;&gt;Присоединиться&lt;/button&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-friend-row&quot;&gt;&lt;div class=&quot;seka-friend-avatar&quot;&gt;SA&lt;/div&gt;&lt;div class=&quot;seka-friend-info&quot;&gt;&lt;strong&gt;Сабина&lt;/strong&gt;&lt;small&gt;Была в сети 12 минут назад&lt;/small&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; class=&quot;seka-friend-invite&quot; data-action=&quot;invite&quot;&gt;Позвать&lt;/button&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-friend-row&quot;&gt;&lt;div class=&quot;seka-friend-avatar&quot;&gt;DI&lt;/div&gt;&lt;div class=&quot;seka-friend-info&quot;&gt;&lt;strong&gt;Диёр&lt;/strong&gt;&lt;small&gt;В лобби&lt;/small&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; class=&quot;seka-friend-invite&quot; data-action=&quot;invite&quot;&gt;Позвать&lt;/button&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;button&quot; class=&quot;seka-primary-action&quot; style=&quot;width:100%;margin-top:14px&quot; data-action=&quot;share&quot;&gt;Пригласить друга из Telegram&lt;/button&gt;
+      &lt;/section&gt;
+
+      &lt;section class=&quot;seka-screen seka-admin-screen&quot; data-screen=&quot;admin&quot; aria-label=&quot;Админ-панель&quot;&gt;
+        &lt;div class=&quot;seka-admin-head&quot;&gt;
+          &lt;div&gt;&lt;h1&gt;Центр управления&lt;/h1&gt;&lt;p&gt;Игры, игроки, экономика и обращения в реальном времени&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;seka-live-status&quot;&gt;&lt;i&gt;&lt;/i&gt;Система работает&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;seka-admin-tabs&quot; aria-label=&quot;Разделы админ-панели&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;overview&quot; aria-pressed=&quot;true&quot;&gt;Обзор&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;players&quot; aria-pressed=&quot;false&quot;&gt;Игроки&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;tables&quot; aria-pressed=&quot;false&quot;&gt;Столы&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;games&quot; aria-pressed=&quot;false&quot;&gt;Все игры&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;economy&quot; aria-pressed=&quot;false&quot;&gt;Экономика&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;support&quot; aria-pressed=&quot;false&quot;&gt;Споры и жалобы&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;settings&quot; aria-pressed=&quot;false&quot;&gt;Настройки&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;seka-admin-panel seka-admin-panel-visible&quot; data-admin-panel=&quot;overview&quot;&gt;
+          &lt;div class=&quot;seka-admin-metrics&quot;&gt;
+            &lt;div class=&quot;seka-admin-metric&quot;&gt;&lt;small&gt;Игроки онлайн&lt;/small&gt;&lt;strong&gt;286&lt;/strong&gt;&lt;em&gt;+12% за час&lt;/em&gt;&lt;/div&gt;
+            &lt;div class=&quot;seka-admin-metric&quot;&gt;&lt;small&gt;Активные столы&lt;/small&gt;&lt;strong&gt;48&lt;/strong&gt;&lt;em&gt;8 почти заполнены&lt;/em&gt;&lt;/div&gt;
+            &lt;div class=&quot;seka-admin-metric&quot;&gt;&lt;small&gt;Фишек в игре&lt;/small&gt;&lt;strong&gt;1.8M&lt;/strong&gt;&lt;em&gt;оборот сегодня&lt;/em&gt;&lt;/div&gt;
+            &lt;div class=&quot;seka-admin-metric&quot;&gt;&lt;small&gt;Открытые жалобы&lt;/small&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;em style=&quot;color:#f2c45d&quot;&gt;2 требуют внимания&lt;/em&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;seka-admin-columns&quot;&gt;
+            &lt;div class=&quot;seka-admin-module&quot;&gt;
+              &lt;div class=&quot;seka-admin-module-head&quot;&gt;&lt;strong&gt;Активные игры&lt;/strong&gt;&lt;span&gt;Обновление в реальном времени&lt;/span&gt;&lt;/div&gt;
+              &lt;table class=&quot;seka-admin-table&quot;&gt;
+                &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Стол&lt;/th&gt;&lt;th&gt;Игроки&lt;/th&gt;&lt;th&gt;Ставка&lt;/th&gt;&lt;th&gt;Банк&lt;/th&gt;&lt;th&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+                &lt;tbody&gt;
+                  &lt;tr&gt;&lt;td&gt;Ташкент · 12&lt;/td&gt;&lt;td&gt;5 / 8&lt;/td&gt;&lt;td&gt;200&lt;/td&gt;&lt;td&gt;4 800&lt;/td&gt;&lt;td&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-action=&quot;inspect&quot;&gt;Открыть&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
+                  &lt;tr&gt;&lt;td&gt;High Rollers&lt;/td&gt;&lt;td&gt;6 / 8&lt;/td&gt;&lt;td&gt;1 000&lt;/td&gt;&lt;td&gt;28 000&lt;/td&gt;&lt;td&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-action=&quot;inspect&quot;&gt;Открыть&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
+                  &lt;tr&gt;&lt;td&gt;Самарканд · 04&lt;/td&gt;&lt;td&gt;3 / 6&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;1 200&lt;/td&gt;&lt;td&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action seka-danger&quot; data-action=&quot;pause&quot;&gt;Пауза&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
+                &lt;/tbody&gt;
+              &lt;/table&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;seka-admin-module&quot;&gt;
+              &lt;div class=&quot;seka-admin-module-head&quot;&gt;&lt;strong&gt;Требует внимания&lt;/strong&gt;&lt;span&gt;7 всего&lt;/span&gt;&lt;/div&gt;
+              &lt;div class=&quot;seka-alert-list&quot;&gt;
+                &lt;div class=&quot;seka-alert-row&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;div&gt;&lt;strong&gt;Спор по игре #18382&lt;/strong&gt;&lt;small&gt;Два игрока оспаривают результат&lt;/small&gt;&lt;/div&gt;&lt;span&gt;4 мин&lt;/span&gt;&lt;/div&gt;
+                &lt;div class=&quot;seka-alert-row&quot;&gt;&lt;i style=&quot;background:#ff6b73&quot;&gt;&lt;/i&gt;&lt;div&gt;&lt;strong&gt;Подозрительная активность&lt;/strong&gt;&lt;small&gt;Игрок @nightfox · 4 связанных аккаунта&lt;/small&gt;&lt;/div&gt;&lt;span&gt;11 мин&lt;/span&gt;&lt;/div&gt;
+                &lt;div class=&quot;seka-alert-row&quot;&gt;&lt;i style=&quot;background:#68b7ff&quot;&gt;&lt;/i&gt;&lt;div&gt;&lt;strong&gt;Предложение&lt;/strong&gt;&lt;small&gt;Запрос приватных турниров&lt;/small&gt;&lt;/div&gt;&lt;span&gt;28 мин&lt;/span&gt;&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;players&quot;&gt;
+          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;&lt;h3&gt;Управление игроками&lt;/h3&gt;&lt;p&gt;Поиск по Telegram ID, никнейму и игровой активности. Баланс, блокировка и удаление со стола фиксируются в журнале аудита.&lt;/p&gt;&lt;div class=&quot;seka-admin-tools&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;find-player&quot;&gt;Найти игрока&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;chips-add&quot;&gt;Добавить фишки&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;chips-remove&quot;&gt;Забрать фишки&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;block-player&quot;&gt;Заблокировать&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;remove-player&quot;&gt;Удалить со стола&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;tables&quot;&gt;
+          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;&lt;h3&gt;Столы и лимиты&lt;/h3&gt;&lt;p&gt;Создание и остановка столов, настройки количества мест, входа, ставок, таймеров и режима наблюдения.&lt;/p&gt;&lt;div class=&quot;seka-admin-tools&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;create-table&quot;&gt;Создать стол&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;edit-limits&quot;&gt;Настроить лимиты&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;pause&quot;&gt;Остановить стол&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;games&quot;&gt;
+          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;&lt;h3&gt;Все игры и история действий&lt;/h3&gt;&lt;p&gt;Полный журнал раундов: участники, раздачи, ставки, победитель, системные события, чат и запись решения спорной ситуации.&lt;/p&gt;&lt;div class=&quot;seka-admin-tools&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;game-search&quot;&gt;Найти игру по ID&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;export&quot;&gt;Экспорт истории&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;replay&quot;&gt;Открыть повтор&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;economy&quot;&gt;
+          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;
+            &lt;h3&gt;P2P-ордера на продажу&lt;/h3&gt;
+            &lt;p&gt;Игрок публикует количество и номер для выплаты. Система выдаёт ордера покупателям строго по очереди лотами по 5 000 фишек. Редактировать и отменять их может только администратор.&lt;/p&gt;
+            &lt;div class=&quot;seka-admin-order-list&quot; data-admin-order-list&gt;
+              &lt;div class=&quot;seka-admin-order-row&quot; data-order-id=&quot;1051&quot;&gt;&lt;div&gt;&lt;strong&gt;Ордер №1051 · 10 000 фишек&lt;/strong&gt;&lt;small&gt;Осталось 10 000 · номер **** 8602&lt;/small&gt;&lt;/div&gt;&lt;span class=&quot;seka-order-status&quot;&gt;Активен&lt;/span&gt;&lt;div class=&quot;seka-admin-order-actions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-edit-order=&quot;1051&quot;&gt;Изменить&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action seka-danger&quot; data-cancel-order=&quot;1051&quot;&gt;Отменить&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;div class=&quot;seka-admin-order-row&quot; data-order-id=&quot;1050&quot;&gt;&lt;div&gt;&lt;strong&gt;Ордер №1050 · 15 000 фишек&lt;/strong&gt;&lt;small&gt;Осталось 15 000 · номер **** 1148&lt;/small&gt;&lt;/div&gt;&lt;span class=&quot;seka-order-status&quot;&gt;Активен&lt;/span&gt;&lt;div class=&quot;seka-admin-order-actions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-edit-order=&quot;1050&quot;&gt;Изменить&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action seka-danger&quot; data-cancel-order=&quot;1050&quot;&gt;Отменить&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;div class=&quot;seka-admin-order-row&quot; data-order-id=&quot;1049&quot;&gt;&lt;div&gt;&lt;strong&gt;Ордер №1049 · 5 000 фишек&lt;/strong&gt;&lt;small&gt;Осталось 5 000 · номер **** 9320&lt;/small&gt;&lt;/div&gt;&lt;span class=&quot;seka-order-status&quot;&gt;Активен&lt;/span&gt;&lt;div class=&quot;seka-admin-order-actions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-edit-order=&quot;1049&quot;&gt;Изменить&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action seka-danger&quot; data-cancel-order=&quot;1049&quot;&gt;Отменить&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;seka-admin-tools&quot; style=&quot;margin-top:12px&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;audit&quot;&gt;Аудит операций&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;p2p-settings&quot;&gt;Настройки P2P&lt;/button&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;support&quot;&gt;
+          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;&lt;h3&gt;Споры, жалобы и предложения&lt;/h3&gt;&lt;p&gt;Единая очередь обращений со связью с игрой, игроком, историей чата и решением администратора.&lt;/p&gt;&lt;div class=&quot;seka-admin-tools&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;disputes&quot;&gt;Открытые споры · 3&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;complaints&quot;&gt;Жалобы · 4&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;suggestions&quot;&gt;Предложения · 18&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;settings&quot;&gt;
+          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;&lt;h3&gt;Системные настройки&lt;/h3&gt;&lt;p&gt;Правила игры, таймеры, комиссии фишек, шаблонные сообщения, права администраторов и параметры технического обслуживания.&lt;/p&gt;&lt;div class=&quot;seka-admin-tools&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;game-rules&quot;&gt;Правила игры&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;roles&quot;&gt;Роли и доступы&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;templates&quot;&gt;Шаблоны чата&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;nav class=&quot;seka-bottom-nav&quot; aria-label=&quot;Основная навигация&quot;&gt;
+      &lt;button type=&quot;button&quot; class=&quot;seka-nav-choice&quot; data-go=&quot;lobby&quot; aria-current=&quot;page&quot;&gt;&lt;b&gt;⌂&lt;/b&gt;&lt;span&gt;Главная&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;seka-nav-choice&quot; data-go=&quot;table&quot; aria-current=&quot;false&quot;&gt;&lt;b&gt;♠&lt;/b&gt;&lt;span&gt;Стол&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;seka-nav-choice&quot; data-go=&quot;wallet&quot; aria-current=&quot;false&quot;&gt;&lt;b&gt;◫&lt;/b&gt;&lt;span&gt;Кошелёк&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;seka-nav-choice&quot; data-go=&quot;profile&quot; aria-current=&quot;false&quot;&gt;&lt;b&gt;○&lt;/b&gt;&lt;span&gt;Профиль&lt;/span&gt;&lt;/button&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+
+  &lt;aside class=&quot;seka-chat-sheet&quot; aria-label=&quot;Чат за столом&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;div class=&quot;seka-sheet-handle&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;seka-sheet-head&quot;&gt;&lt;h3&gt;Чат стола&lt;/h3&gt;&lt;button type=&quot;button&quot; class=&quot;seka-sheet-close&quot; data-close-sheet aria-label=&quot;Закрыть чат&quot;&gt;×&lt;/button&gt;&lt;/div&gt;
+    &lt;div class=&quot;seka-quick-messages&quot; aria-label=&quot;Шаблонные сообщения&quot;&gt;
+      &lt;button type=&quot;button&quot; class=&quot;seka-quick-message&quot;&gt;Удачи!&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-quick-message&quot;&gt;Хорошая игра&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-quick-message&quot;&gt;Смело 🔥&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-quick-message&quot;&gt;👏👏👏&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seka-chat-log&quot; aria-live=&quot;polite&quot;&gt;
+      &lt;div class=&quot;seka-chat-line&quot;&gt;&lt;b&gt;Akmal:&lt;/b&gt; Всем хорошей игры!&lt;/div&gt;
+      &lt;div class=&quot;seka-chat-line&quot;&gt;&lt;b&gt;Sabina:&lt;/b&gt; Кто после этой партии в турнир?&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seka-chat-compose&quot;&gt;&lt;input type=&quot;text&quot; aria-label=&quot;Сообщение&quot; placeholder=&quot;Написать сообщение…&quot;&gt;&lt;button type=&quot;button&quot; data-send-chat aria-label=&quot;Отправить&quot;&gt;➜&lt;/button&gt;&lt;/div&gt;
+  &lt;/aside&gt;
+
+  &lt;aside class=&quot;seka-transfer-sheet&quot; aria-label=&quot;P2P-маркет&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;div class=&quot;seka-sheet-handle&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;seka-sheet-head&quot;&gt;&lt;h3 data-p2p-title&gt;Купить фишки&lt;/h3&gt;&lt;button type=&quot;button&quot; class=&quot;seka-sheet-close&quot; data-close-sheet aria-label=&quot;Закрыть&quot;&gt;×&lt;/button&gt;&lt;/div&gt;
+    &lt;div class=&quot;seka-p2p-view seka-p2p-visible&quot; data-p2p-view=&quot;buy&quot;&gt;
+      &lt;p class=&quot;seka-p2p-note&quot;&gt;Выбор продавца и ордера не требуется. Система автоматически выдаёт первый доступный ордер очереди.&lt;/p&gt;
+      &lt;div class=&quot;seka-queue-lot&quot; data-current-order&gt;
+        &lt;div class=&quot;seka-queue-head&quot;&gt;&lt;strong&gt;Ордер №&lt;span data-queue-id&gt;1051&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;Первый в очереди&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;seka-lot-amount&quot;&gt;5 000 &lt;span&gt;фишек&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;seka-lot-remaining&quot;&gt;В ордере осталось: &lt;strong data-queue-remaining&gt;10 000&lt;/strong&gt; фишек&lt;/div&gt;
+        &lt;button type=&quot;button&quot; class=&quot;seka-lot-buy&quot; data-buy-lot&gt;Купить 5 000 фишек&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seka-p2p-view&quot; data-p2p-view=&quot;sell&quot;&gt;
+      &lt;div class=&quot;seka-transfer-form&quot;&gt;
+        &lt;div class=&quot;seka-transfer-field&quot;&gt;&lt;label for=&quot;seka-order-amount&quot;&gt;Количество фишек&lt;/label&gt;&lt;input id=&quot;seka-order-amount&quot; type=&quot;number&quot; value=&quot;10000&quot; min=&quot;5000&quot; step=&quot;5000&quot; aria-label=&quot;Количество фишек&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;seka-transfer-field&quot;&gt;&lt;label for=&quot;seka-payment-number&quot;&gt;Номер для выплаты&lt;/label&gt;&lt;input id=&quot;seka-payment-number&quot; type=&quot;text&quot; value=&quot;8600 1234 5678 8602&quot; aria-label=&quot;Номер для выплаты&quot;&gt;&lt;/div&gt;
+        &lt;button type=&quot;button&quot; class=&quot;seka-transfer-submit&quot; data-create-order&gt;Выставить ордер на продажу&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;small class=&quot;seka-sell-lock&quot;&gt;Количество должно быть кратно 5 000 фишек. После публикации изменить или отменить ордер может только администратор.&lt;/small&gt;
+    &lt;/div&gt;
+  &lt;/aside&gt;
+
+  &lt;aside class=&quot;seka-bet-sheet&quot; aria-label=&quot;Повышение ставки&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;div class=&quot;seka-sheet-handle&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;seka-sheet-head&quot;&gt;&lt;h3&gt;Повысить ставку&lt;/h3&gt;&lt;button type=&quot;button&quot; class=&quot;seka-sheet-close&quot; data-close-sheet aria-label=&quot;Закрыть&quot;&gt;×&lt;/button&gt;&lt;/div&gt;
+    &lt;div class=&quot;seka-bet-value&quot;&gt;&lt;small&gt;Ставка в банк&lt;/small&gt;&lt;strong&gt;&lt;span data-bet-value&gt;600&lt;/span&gt; фишек&lt;/strong&gt;&lt;/div&gt;
+    &lt;input class=&quot;seka-bet-range&quot; type=&quot;range&quot; min=&quot;500&quot; max=&quot;2000&quot; value=&quot;600&quot; step=&quot;100&quot; aria-label=&quot;Размер ставки&quot;&gt;
+    &lt;div class=&quot;seka-bet-limits&quot;&gt;&lt;span&gt;Минимум 500&lt;/span&gt;&lt;span&gt;Потолок 2 000&lt;/span&gt;&lt;/div&gt;
+    &lt;button type=&quot;button&quot; class=&quot;seka-bet-confirm&quot; data-confirm-bet&gt;Повысить ставку&lt;/button&gt;
+  &lt;/aside&gt;
+
+  &lt;aside class=&quot;seka-deals-sheet&quot; aria-label=&quot;Сделки&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;div class=&quot;seka-sheet-handle&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;seka-sheet-head&quot;&gt;&lt;h3&gt;Сделки&lt;/h3&gt;&lt;button type=&quot;button&quot; class=&quot;seka-sheet-close&quot; data-close-sheet aria-label=&quot;Закрыть&quot;&gt;×&lt;/button&gt;&lt;/div&gt;
+    &lt;div class=&quot;seka-history-list&quot; data-deals-list&gt;
+      &lt;div class=&quot;seka-history-row&quot;&gt;&lt;div class=&quot;seka-history-icon&quot;&gt;♠&lt;/div&gt;&lt;div&gt;&lt;strong&gt;Победа · Ташкент 12&lt;/strong&gt;&lt;small&gt;Сегодня, 18:42 · игра #18391&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;seka-history-amount seka-positive&quot;&gt;+1 600&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;seka-history-row&quot;&gt;&lt;div class=&quot;seka-history-icon&quot;&gt;↓&lt;/div&gt;&lt;div&gt;&lt;strong&gt;Покупка · ордер №1044&lt;/strong&gt;&lt;small&gt;Сегодня, 16:05 · завершено&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;seka-history-amount seka-positive&quot;&gt;+5 000&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;seka-history-row&quot;&gt;&lt;div class=&quot;seka-history-icon&quot;&gt;↑&lt;/div&gt;&lt;div&gt;&lt;strong&gt;Продажа · ордер №1038&lt;/strong&gt;&lt;small&gt;Вчера, 21:18 · завершено&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;seka-history-amount&quot;&gt;−5 000&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/aside&gt;
+
+  &lt;div class=&quot;seka-toast&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;Готово&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+(() =&gt; {
+  const root = document.getElementById(&#x27;seka-mini-app&#x27;);
+  if (!root || root.dataset.ready === &#x27;true&#x27;) return;
+  root.dataset.ready = &#x27;true&#x27;;
+
+  const screens = [...root.querySelectorAll(&#x27;[data-screen]&#x27;)];
+  const nav = root.querySelector(&#x27;.seka-bottom-nav&#x27;);
+  const tableScreen = root.querySelector(&#x27;[data-screen=&quot;table&quot;]&#x27;);
+  const chatSheet = root.querySelector(&#x27;.seka-chat-sheet&#x27;);
+  const transferSheet = root.querySelector(&#x27;.seka-transfer-sheet&#x27;);
+  const betSheet = root.querySelector(&#x27;.seka-bet-sheet&#x27;);
+  const dealsSheet = root.querySelector(&#x27;.seka-deals-sheet&#x27;);
+  const toast = root.querySelector(&#x27;.seka-toast&#x27;);
+  const telegramApp = window.Telegram?.WebApp || null;
+  const routeHistory = [];
+  const orderQueue = [
+    { id: 1051, total: 10000, remaining: 10000 },
+    { id: 1050, total: 15000, remaining: 15000 },
+    { id: 1049, total: 5000, remaining: 5000 }
+  ];
+  let activeScreen = &#x27;lobby&#x27;;
+  let activeObserver = false;
+  let toastTimer;
+
+  const haptic = (kind = &#x27;selection&#x27;) =&gt; {
+    try {
+      const feedback = telegramApp?.HapticFeedback;
+      if (!feedback) return;
+      if (kind === &#x27;success&#x27;) feedback.notificationOccurred(&#x27;success&#x27;);
+      else feedback.selectionChanged();
+    } catch (_) {}
+  };
+
+  const showToast = message =&gt; {
+    clearTimeout(toastTimer);
+    toast.textContent = message;
+    toast.classList.add(&#x27;seka-toast-show&#x27;);
+    toastTimer = setTimeout(() =&gt; toast.classList.remove(&#x27;seka-toast-show&#x27;), 1700);
+  };
+
+  const closeSheets = () =&gt; {
+    [chatSheet, transferSheet, betSheet, dealsSheet].forEach(sheet =&gt; {
+      sheet.classList.remove(&#x27;seka-sheet-open&#x27;);
+      sheet.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+    });
+  };
+
+  const renderQueueHead = () =&gt; {
+    while (orderQueue.length &amp;&amp; orderQueue[0].remaining &lt;= 0) orderQueue.shift();
+    const current = orderQueue[0];
+    const panel = root.querySelector(&#x27;[data-current-order]&#x27;);
+    const buyButton = panel.querySelector(&#x27;[data-buy-lot]&#x27;);
+    if (!current) {
+      panel.querySelector(&#x27;[data-queue-id]&#x27;).textContent = &#x27;—&#x27;;
+      panel.querySelector(&#x27;[data-queue-remaining]&#x27;).textContent = &#x27;0&#x27;;
+      buyButton.textContent = &#x27;Нет доступных ордеров&#x27;;
+      buyButton.disabled = true;
+      return;
+    }
+    panel.dataset.orderId = String(current.id);
+    panel.querySelector(&#x27;[data-queue-id]&#x27;).textContent = String(current.id);
+    panel.querySelector(&#x27;[data-queue-remaining]&#x27;).textContent = current.remaining.toLocaleString(&#x27;ru-RU&#x27;);
+    buyButton.textContent = &#x27;Купить 5 000 фишек&#x27;;
+    buyButton.disabled = false;
+
+    const adminRow = root.querySelector(`.seka-admin-order-row[data-order-id=&quot;${current.id}&quot;]`);
+    const adminDetails = adminRow?.querySelector(&#x27;small&#x27;);
+    if (adminDetails) {
+      const numberText = adminDetails.textContent.includes(&#x27;номер&#x27;) ? adminDetails.textContent.split(&#x27;номер&#x27;)[1] : &#x27;&#x27;;
+      adminDetails.textContent = `Осталось ${current.remaining.toLocaleString(&#x27;ru-RU&#x27;)} · номер${numberText}`;
+    }
+  };
+
+  const syncNativeBackButton = () =&gt; {
+    if (!telegramApp?.BackButton) return;
+    if (activeScreen === &#x27;lobby&#x27;) telegramApp.BackButton.hide();
+    else telegramApp.BackButton.show();
+  };
+
+  const syncTelegramViewport = () =&gt; {
+    if (!telegramApp) return;
+    const height = telegramApp.viewportHeight || telegramApp.viewportStableHeight || window.innerHeight;
+    if (height &gt; 0) root.style.setProperty(&#x27;--seka-app-height&#x27;, `${Math.round(height)}px`);
+    const inset = telegramApp.contentSafeAreaInset || telegramApp.safeAreaInset;
+    if (inset) {
+      root.style.setProperty(&#x27;--seka-safe-top&#x27;, `${inset.top || 0}px`);
+      root.style.setProperty(&#x27;--seka-safe-right&#x27;, `${inset.right || 0}px`);
+      root.style.setProperty(&#x27;--seka-safe-bottom&#x27;, `${inset.bottom || 0}px`);
+      root.style.setProperty(&#x27;--seka-safe-left&#x27;, `${inset.left || 0}px`);
+    }
+  };
+
+  const navigate = (name, observer = false, options = {}) =&gt; {
+    if (!screens.some(screen =&gt; screen.dataset.screen === name)) return;
+    if (name !== activeScreen &amp;&amp; options.record !== false) {
+      routeHistory.push({ screen: activeScreen, observer: activeObserver });
+    }
+    closeSheets();
+    screens.forEach(screen =&gt; {
+      const isCurrent = screen.dataset.screen === name;
+      screen.classList.toggle(&#x27;seka-visible&#x27;, isCurrent);
+      screen.classList.toggle(&#x27;seka-leaving&#x27;, !isCurrent &amp;&amp; screen.dataset.screen === activeScreen);
+      if (isCurrent) screen.scrollTop = 0;
+    });
+    root.querySelectorAll(&#x27;[data-go]&#x27;).forEach(button =&gt; {
+      if (button.classList.contains(&#x27;seka-nav-choice&#x27;)) button.setAttribute(&#x27;aria-current&#x27;, button.dataset.go === name ? &#x27;page&#x27; : &#x27;false&#x27;);
+    });
+    nav.classList.toggle(&#x27;seka-nav-hidden&#x27;, name === &#x27;admin&#x27;);
+    root.querySelector(&#x27;.seka-balance-chip&#x27;).style.visibility = name === &#x27;admin&#x27; ? &#x27;hidden&#x27; : &#x27;visible&#x27;;
+    tableScreen.classList.toggle(&#x27;seka-observer-mode&#x27;, name === &#x27;table&#x27; &amp;&amp; observer);
+    root.classList.toggle(&#x27;seka-immersive-table&#x27;, name === &#x27;table&#x27;);
+    activeScreen = name;
+    activeObserver = name === &#x27;table&#x27; &amp;&amp; observer;
+    syncNativeBackButton();
+    try {
+      if (telegramApp?.disableVerticalSwipes &amp;&amp; name === &#x27;table&#x27;) telegramApp.disableVerticalSwipes();
+      if (telegramApp?.enableVerticalSwipes &amp;&amp; name !== &#x27;table&#x27;) telegramApp.enableVerticalSwipes();
+    } catch (_) {}
+    haptic();
+  };
+
+  const navigateBack = () =&gt; {
+    closeSheets();
+    const previous = routeHistory.pop();
+    if (previous) navigate(previous.screen, previous.observer, { record: false });
+    else if (activeScreen !== &#x27;lobby&#x27;) navigate(&#x27;lobby&#x27;, false, { record: false });
+  };
+
+  root.addEventListener(&#x27;click&#x27;, event =&gt; {
+    const go = event.target.closest(&#x27;[data-go]&#x27;);
+    if (go) navigate(go.dataset.go);
+
+    if (event.target.closest(&#x27;[data-back]&#x27;)) navigateBack();
+
+    const enter = event.target.closest(&#x27;[data-enter]&#x27;);
+    if (enter) navigate(&#x27;table&#x27;, enter.dataset.enter === &#x27;watch&#x27;);
+
+    const role = event.target.closest(&#x27;[data-role]&#x27;);
+    if (role) {
+      root.querySelectorAll(&#x27;[data-role]&#x27;).forEach(button =&gt; button.setAttribute(&#x27;aria-pressed&#x27;, button === role ? &#x27;true&#x27; : &#x27;false&#x27;));
+      navigate(role.dataset.role === &#x27;admin&#x27; ? &#x27;admin&#x27; : &#x27;lobby&#x27;);
+    }
+
+    const modeChoice = event.target.closest(&#x27;.seka-mode-choice&#x27;);
+    if (modeChoice) {
+      root.querySelectorAll(&#x27;.seka-mode-choice&#x27;).forEach(button =&gt; button.setAttribute(&#x27;aria-pressed&#x27;, button === modeChoice ? &#x27;true&#x27; : &#x27;false&#x27;));
+      showToast(`Режим: ${modeChoice.textContent.trim()}`);
+    }
+
+    const filterChoice = event.target.closest(&#x27;.seka-filter-choice&#x27;);
+    if (filterChoice) {
+      filterChoice.setAttribute(&#x27;aria-pressed&#x27;, filterChoice.getAttribute(&#x27;aria-pressed&#x27;) === &#x27;true&#x27; ? &#x27;false&#x27; : &#x27;true&#x27;);
+      showToast(&#x27;Фильтр обновлён&#x27;);
+    }
+
+    const adminTab = event.target.closest(&#x27;[data-admin]&#x27;);
+    if (adminTab) {
+      root.querySelectorAll(&#x27;[data-admin]&#x27;).forEach(button =&gt; button.setAttribute(&#x27;aria-pressed&#x27;, button === adminTab ? &#x27;true&#x27; : &#x27;false&#x27;));
+      root.querySelectorAll(&#x27;[data-admin-panel]&#x27;).forEach(panel =&gt; panel.classList.toggle(&#x27;seka-admin-panel-visible&#x27;, panel.dataset.adminPanel === adminTab.dataset.admin));
+      haptic();
+    }
+
+    if (event.target.closest(&#x27;[data-open-chat]&#x27;)) {
+      chatSheet.classList.add(&#x27;seka-sheet-open&#x27;);
+      chatSheet.setAttribute(&#x27;aria-hidden&#x27;, &#x27;false&#x27;);
+      haptic();
+    }
+
+    if (event.target.closest(&#x27;[data-close-sheet]&#x27;)) closeSheets();
+
+    const quick = event.target.closest(&#x27;.seka-quick-message&#x27;);
+    if (quick) {
+      const speech = root.querySelector(&#x27;.seka-player[data-seat=&quot;5&quot;] .seka-speech&#x27;);
+      speech.textContent = quick.textContent.trim();
+      speech.classList.add(&#x27;seka-say&#x27;);
+      closeSheets();
+      setTimeout(() =&gt; speech.classList.remove(&#x27;seka-say&#x27;), 2200);
+      haptic(&#x27;success&#x27;);
+    }
+
+    const gameAction = event.target.closest(&#x27;[data-game-action]&#x27;);
+    if (gameAction) {
+      if (gameAction.dataset.gameAction === &#x27;Повысить&#x27;) {
+        betSheet.classList.add(&#x27;seka-sheet-open&#x27;);
+        betSheet.setAttribute(&#x27;aria-hidden&#x27;, &#x27;false&#x27;);
+        haptic();
+        return;
+      }
+      const pot = root.querySelector(&#x27;[data-pot]&#x27;);
+      const values = { &#x27;Упасть&#x27;: 1600, &#x27;Поддержать&#x27;: 2000, &#x27;Вскрыться&#x27;: 2000 };
+      pot.textContent = values[gameAction.dataset.gameAction].toLocaleString(&#x27;ru-RU&#x27;);
+      pot.animate([{ transform: &#x27;translate(-50%,-50%) scale(1)&#x27; }, { transform: &#x27;translate(-50%,-50%) scale(1.12)&#x27; }, { transform: &#x27;translate(-50%,-50%) scale(1)&#x27; }], { duration: 320, easing: &#x27;ease-out&#x27; });
+      if (gameAction.dataset.gameAction === &#x27;Вскрыться&#x27;) {
+        const opponent = root.querySelector(&#x27;.seka-player[data-seat=&quot;4&quot;]&#x27;);
+        opponent.classList.add(&#x27;seka-eliminated&#x27;);
+        const speech = opponent.querySelector(&#x27;.seka-speech&#x27;);
+        speech.textContent = &#x27;Комбинация слабее · выбыл&#x27;;
+        speech.classList.add(&#x27;seka-say&#x27;);
+        setTimeout(() =&gt; speech.classList.remove(&#x27;seka-say&#x27;), 2400);
+        showToast(&#x27;Сравнение выполнено без показа карт соперника&#x27;);
+      } else if (gameAction.dataset.gameAction === &#x27;Упасть&#x27;) {
+        showToast(&#x27;Карты сброшены · место за столом сохранено&#x27;);
+      } else showToast(&#x27;Ставка поддержана · 400 фишек в банк&#x27;);
+      haptic(&#x27;success&#x27;);
+    }
+
+    const p2p = event.target.closest(&#x27;[data-p2p]&#x27;);
+    if (p2p) {
+      const mode = p2p.dataset.p2p;
+      if (mode === &#x27;buy&#x27;) renderQueueHead();
+      root.querySelector(&#x27;[data-p2p-title]&#x27;).textContent = mode === &#x27;buy&#x27; ? &#x27;Купить фишки&#x27; : &#x27;Продать фишки&#x27;;
+      root.querySelectorAll(&#x27;[data-p2p-view]&#x27;).forEach(view =&gt; view.classList.toggle(&#x27;seka-p2p-visible&#x27;, view.dataset.p2pView === mode));
+      transferSheet.classList.add(&#x27;seka-sheet-open&#x27;);
+      transferSheet.setAttribute(&#x27;aria-hidden&#x27;, &#x27;false&#x27;);
+      haptic();
+    }
+
+    if (event.target.closest(&#x27;[data-deals]&#x27;)) {
+      dealsSheet.classList.add(&#x27;seka-sheet-open&#x27;);
+      dealsSheet.setAttribute(&#x27;aria-hidden&#x27;, &#x27;false&#x27;);
+      haptic();
+    }
+
+    if (event.target.closest(&#x27;[data-buy-lot]&#x27;)) {
+      const current = orderQueue[0];
+      if (!current) return;
+      current.remaining -= 5000;
+      const balances = [...root.querySelectorAll(&#x27;[data-wallet-balance]&#x27;)];
+      const currentBalance = Number(balances[0].textContent.replace(/\D/g, &#x27;&#x27;)) || 0;
+      balances.forEach(node =&gt; node.textContent = (currentBalance + 5000).toLocaleString(&#x27;ru-RU&#x27;));
+
+      const dealRow = document.createElement(&#x27;div&#x27;);
+      dealRow.className = &#x27;seka-history-row&#x27;;
+      dealRow.innerHTML = `&lt;div class=&quot;seka-history-icon&quot;&gt;↓&lt;/div&gt;&lt;div&gt;&lt;strong&gt;Покупка · ордер №${current.id}&lt;/strong&gt;&lt;small&gt;Только что · завершено&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;seka-history-amount seka-positive&quot;&gt;+5 000&lt;/div&gt;`;
+      root.querySelector(&#x27;[data-deals-list]&#x27;).prepend(dealRow);
+
+      if (current.remaining &lt;= 0) {
+        const completedRow = root.querySelector(`.seka-admin-order-row[data-order-id=&quot;${current.id}&quot;]`);
+        if (completedRow) {
+          completedRow.querySelector(&#x27;.seka-order-status&#x27;).textContent = &#x27;Исполнен&#x27;;
+          completedRow.querySelector(&#x27;.seka-order-status&#x27;).style.color = &#x27;var(--seka-muted)&#x27;;
+          completedRow.querySelector(&#x27;.seka-admin-order-actions&#x27;).innerHTML = &#x27;&#x27;;
+          const details = completedRow.querySelector(&#x27;small&#x27;);
+          const numberText = details.textContent.includes(&#x27;номер&#x27;) ? details.textContent.split(&#x27;номер&#x27;)[1] : &#x27;&#x27;;
+          details.textContent = `Осталось 0 · номер${numberText}`;
+        }
+      }
+
+      showToast(`Куплено 5 000 фишек из ордера №${current.id}`);
+      renderQueueHead();
+      haptic(&#x27;success&#x27;);
+    }
+
+    const editOrder = event.target.closest(&#x27;[data-edit-order]&#x27;);
+    if (editOrder) {
+      const id = editOrder.dataset.editOrder;
+      const adminRow = root.querySelector(`.seka-admin-order-row[data-order-id=&quot;${id}&quot;]`);
+      const queueItem = orderQueue.find(order =&gt; order.id === Number(id));
+      const currentAmount = queueItem?.total || 0;
+      const nextAmount = currentAmount + 5000;
+      if (queueItem) {
+        queueItem.total = nextAmount;
+        queueItem.remaining += 5000;
+      }
+      if (adminRow) {
+        const title = adminRow.querySelector(&#x27;strong&#x27;);
+        title.textContent = `Ордер №${id} · ${nextAmount.toLocaleString(&#x27;ru-RU&#x27;)} фишек`;
+        const details = adminRow.querySelector(&#x27;small&#x27;);
+        const numberText = details.textContent.includes(&#x27;номер&#x27;) ? details.textContent.split(&#x27;номер&#x27;)[1] : &#x27;&#x27;;
+        details.textContent = `Осталось ${(queueItem?.remaining || nextAmount).toLocaleString(&#x27;ru-RU&#x27;)} · номер${numberText}`;
+      }
+      renderQueueHead();
+      showToast(`Ордер №${id} изменён администратором`);
+      haptic(&#x27;success&#x27;);
+    }
+
+    const cancelOrder = event.target.closest(&#x27;[data-cancel-order]&#x27;);
+    if (cancelOrder) {
+      const id = cancelOrder.dataset.cancelOrder;
+      root.querySelector(`.seka-admin-order-row[data-order-id=&quot;${id}&quot;]`)?.remove();
+      const queueIndex = orderQueue.findIndex(order =&gt; order.id === Number(id));
+      if (queueIndex &gt;= 0) orderQueue.splice(queueIndex, 1);
+      renderQueueHead();
+      showToast(`Ордер №${id} отменён администратором`);
+      haptic(&#x27;success&#x27;);
+    }
+
+    const action = event.target.closest(&#x27;[data-action]&#x27;);
+    if (action) {
+      const labels = {
+        &#x27;inspect&#x27;: &#x27;Игра открыта в режиме наблюдения&#x27;, &#x27;pause&#x27;: &#x27;Требуется подтверждение администратора&#x27;,
+        &#x27;join-friend&#x27;: &#x27;Подключаемся к столу друга&#x27;, &#x27;invite&#x27;: &#x27;Приглашение отправлено&#x27;, &#x27;share&#x27;: &#x27;Открыто меню Telegram&#x27;,
+        &#x27;history&#x27;: &#x27;История уже показана ниже&#x27;, &#x27;find-player&#x27;: &#x27;Поиск игрока открыт&#x27;, &#x27;chips-add&#x27;: &#x27;Открыта корректировка баланса&#x27;,
+        &#x27;chips-remove&#x27;: &#x27;Открыта корректировка баланса&#x27;, &#x27;block-player&#x27;: &#x27;Открыта карточка блокировки&#x27;, &#x27;remove-player&#x27;: &#x27;Выберите активный стол игрока&#x27;,
+        &#x27;create-table&#x27;: &#x27;Конструктор стола открыт&#x27;, &#x27;edit-limits&#x27;: &#x27;Настройки лимитов открыты&#x27;, &#x27;game-search&#x27;: &#x27;Поиск по ID игры открыт&#x27;,
+        &#x27;export&#x27;: &#x27;Экспорт подготовлен&#x27;, &#x27;replay&#x27;: &#x27;Повтор игры открыт&#x27;, &#x27;p2p-monitor&#x27;: &#x27;Мониторинг P2P открыт&#x27;,
+        &#x27;p2p-settings&#x27;: &#x27;Настройки P2P открыты&#x27;, &#x27;audit&#x27;: &#x27;Журнал операций открыт&#x27;, &#x27;disputes&#x27;: &#x27;Очередь споров открыта&#x27;,
+        &#x27;complaints&#x27;: &#x27;Очередь жалоб открыта&#x27;, &#x27;suggestions&#x27;: &#x27;Предложения открыты&#x27;, &#x27;game-rules&#x27;: &#x27;Редактор правил открыт&#x27;,
+        &#x27;roles&#x27;: &#x27;Управление доступами открыто&#x27;, &#x27;templates&#x27;: &#x27;Шаблоны сообщений открыты&#x27;, &#x27;menu&#x27;: &#x27;Меню стола открыто&#x27;
+      };
+      showToast(labels[action.dataset.action] || &#x27;Действие выполнено&#x27;);
+    }
+  });
+
+  root.querySelector(&#x27;[data-send-chat]&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+    const input = root.querySelector(&#x27;.seka-chat-compose input&#x27;);
+    const value = input.value.trim();
+    if (!value) return;
+    const line = document.createElement(&#x27;div&#x27;);
+    line.className = &#x27;seka-chat-line&#x27;;
+    line.innerHTML = &#x27;&lt;b&gt;Вы:&lt;/b&gt; &#x27;;
+    line.append(document.createTextNode(value));
+    root.querySelector(&#x27;.seka-chat-log&#x27;).append(line);
+    input.value = &#x27;&#x27;;
+    haptic(&#x27;success&#x27;);
+  });
+
+  root.querySelector(&#x27;[data-create-order]&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+    const amount = Number(root.querySelector(&#x27;#seka-order-amount&#x27;).value) || 0;
+    if (amount &lt; 5000 || amount % 5000 !== 0) {
+      showToast(&#x27;Количество должно быть кратно 5 000 фишек&#x27;);
+      haptic();
+      return;
+    }
+    const number = root.querySelector(&#x27;#seka-payment-number&#x27;).value.replace(/\D/g, &#x27;&#x27;);
+    const lastFour = number.slice(-4) || &#x27;—&#x27;;
+    const ids = [...root.querySelectorAll(&#x27;[data-order-id]&#x27;)].map(node =&gt; Number(node.dataset.orderId) || 0);
+    const id = Math.max(1051, ...ids) + 1;
+    orderQueue.push({ id, total: amount, remaining: amount });
+
+    const adminRow = document.createElement(&#x27;div&#x27;);
+    adminRow.className = &#x27;seka-admin-order-row&#x27;;
+    adminRow.dataset.orderId = String(id);
+    adminRow.innerHTML = `&lt;div&gt;&lt;strong&gt;Ордер №${id} · ${amount.toLocaleString(&#x27;ru-RU&#x27;)} фишек&lt;/strong&gt;&lt;small&gt;Осталось ${amount.toLocaleString(&#x27;ru-RU&#x27;)} · номер **** ${lastFour}&lt;/small&gt;&lt;/div&gt;&lt;span class=&quot;seka-order-status&quot;&gt;Активен&lt;/span&gt;&lt;div class=&quot;seka-admin-order-actions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-edit-order=&quot;${id}&quot;&gt;Изменить&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action seka-danger&quot; data-cancel-order=&quot;${id}&quot;&gt;Отменить&lt;/button&gt;&lt;/div&gt;`;
+    root.querySelector(&#x27;[data-admin-order-list]&#x27;).append(adminRow);
+
+    closeSheets();
+    showToast(`Ордер №${id} добавлен в очередь по ${Math.floor(amount / 5000)} лотам`);
+    haptic(&#x27;success&#x27;);
+  });
+
+  const betRange = root.querySelector(&#x27;.seka-bet-range&#x27;);
+  betRange.addEventListener(&#x27;input&#x27;, () =&gt; {
+    root.querySelector(&#x27;[data-bet-value]&#x27;).textContent = Number(betRange.value).toLocaleString(&#x27;ru-RU&#x27;);
+  });
+
+  root.querySelector(&#x27;[data-confirm-bet]&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+    const amount = Number(betRange.value);
+    const pot = root.querySelector(&#x27;[data-pot]&#x27;);
+    const currentPot = Number(pot.textContent.replace(/\D/g, &#x27;&#x27;)) || 0;
+    pot.textContent = (currentPot + amount).toLocaleString(&#x27;ru-RU&#x27;);
+    closeSheets();
+    showToast(`Ставка повышена до ${amount.toLocaleString(&#x27;ru-RU&#x27;)} фишек`);
+    haptic(&#x27;success&#x27;);
+  });
+
+  if (telegramApp) {
+    root.classList.add(&#x27;seka-telegram-host&#x27;);
+    try {
+      telegramApp.ready();
+      telegramApp.expand();
+      telegramApp.setHeaderColor?.(&#x27;#04130f&#x27;);
+      telegramApp.setBackgroundColor?.(&#x27;#04130f&#x27;);
+      telegramApp.setBottomBarColor?.(&#x27;#04130f&#x27;);
+      telegramApp.BackButton?.onClick(navigateBack);
+      telegramApp.onEvent?.(&#x27;viewportChanged&#x27;, syncTelegramViewport);
+      telegramApp.onEvent?.(&#x27;safeAreaChanged&#x27;, syncTelegramViewport);
+      telegramApp.onEvent?.(&#x27;contentSafeAreaChanged&#x27;, syncTelegramViewport);
+    } catch (_) {}
+    syncTelegramViewport();
+    syncNativeBackButton();
+  }
+
+  setTimeout(() =&gt; root.querySelector(&#x27;.seka-player[data-seat=&quot;1&quot;] .seka-speech&#x27;)?.classList.add(&#x27;seka-say&#x27;), 1000);
+  setTimeout(() =&gt; root.querySelector(&#x27;.seka-player[data-seat=&quot;1&quot;] .seka-speech&#x27;)?.classList.remove(&#x27;seka-say&#x27;), 3300);
+})();
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>
