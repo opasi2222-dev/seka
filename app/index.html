@@ -1,910 +1,19 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>Seka Mini App</title>
-<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
-</head>
-<body>
-<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Seka Mini App" srcdoc="&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;Seka Mini App&lt;/title&gt;
-&lt;style&gt;:root {
-  color-scheme: light dark;
-  background-color: var(
-    --background,
-    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
-  ) !important;
-
-  /* Agent-facing contract; keep in sync with SKILL.md. */
-  --background: var(
-    --color-background-primary,
-    light-dark(rgb(255 255 255), rgb(24 24 24))
-  );
-  --foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
-  --card-foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --popover: var(
-    --color-background-secondary,
-    light-dark(rgb(255 255 255), rgb(45 45 45))
-  );
-  --popover-foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --primary: var(
-    --color-text-info,
-    light-dark(rgb(51 156 255), rgb(131 195 255))
-  );
-  --primary-foreground: var(
-    --color-text-inverse,
-    light-dark(rgb(255 255 255), rgb(13 13 13))
-  );
-  --secondary: var(
-    --color-background-secondary,
-    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
-  );
-  --secondary-foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
-  --muted-foreground: var(
-    --color-text-secondary,
-    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
-  );
-  --accent: var(
-    --color-background-info,
-    light-dark(rgb(229 242 255), rgb(13 39 63))
-  );
-  --accent-foreground: var(
-    --color-text-info,
-    light-dark(rgb(51 156 255), rgb(131 195 255))
-  );
-  --destructive: var(
-    --color-text-warning,
-    light-dark(rgb(226 85 7), rgb(255 133 73))
-  );
-  --border: var(
-    --color-border-secondary,
-    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
-  );
-  --input: var(
-    --color-border-primary,
-    light-dark(
-      rgb(26 28 31 / 11.8%),
-      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
-    )
-  );
-  --ring: var(
-    --color-ring-primary,
-    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
-  );
-  --font-size-base: var(--font-text-md-size, 14px);
-  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
-  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
-  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
-  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
-  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
-  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
-  --viz-series-1: var(--primary);
-  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
-  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
-  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
-  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
-  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
-
-  /* Internal implementation variables; not part of the agent contract. */
-  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
-  --font-mono:
-    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
-    monospace;
-  --font-size-normal: max(11px, var(--font-size-base));
-  --font-size-tooltip: calc(var(--font-size-base) - 1px);
-  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
-  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
-  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
-  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
-  --font-weight-normal: 430;
-  --font-weight-medium: 500;
-  --line-height-normal: calc(var(--font-size-normal) * 1.5);
-  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
-  --line-height-small: calc(var(--font-size-small) + 4px);
-  --radius: var(--border-radius-lg, 12.5px);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-2xl: calc(var(--radius) * 1.6);
-  --radius-full: 9999px;
-  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
-  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
-
-  /* Legacy aliases; not part of the current agent contract. */
-  --viz-bg: transparent;
-  --viz-panel: var(--card);
-  --viz-border: var(--border);
-  --viz-text: var(--foreground);
-  --viz-muted: var(--muted-foreground);
-  --viz-accent: var(--primary);
-  --viz-accent-text: var(--primary-foreground);
-  --viz-accent-bg: var(--accent);
-  --viz-font-size: var(--font-size-base);
-  --viz-warning: var(--destructive);
-}
-
-:root[data-theme=&quot;light&quot;] {
-  color-scheme: light;
-}
-
-:root[data-theme=&quot;dark&quot;] {
-  color-scheme: dark;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html &gt; body {
-  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
-  --color-background-primary: var(
-    --background,
-    light-dark(rgb(255 255 255), rgb(24 24 24))
-  );
-  --color-text-primary: var(
-    --foreground,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --color-border-secondary: var(
-    --border,
-    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
-  );
-
-  margin: 0;
-  padding: 5px;
-  color: var(--foreground);
-  background: transparent !important;
-  font-family: var(--font-sans);
-  font-size: var(--font-size-normal);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-normal);
-}
-
-a {
-  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
-  cursor: pointer;
-  font-weight: var(--font-weight-medium, 500);
-  text-decoration: none;
-  text-underline-offset: 2px;
-}
-
-a:is(:hover, :focus-visible) {
-  text-decoration-line: underline;
-  text-decoration-style: dashed;
-  text-decoration-thickness: 0.5px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-block: 0;
-}
-
-h1 {
-  font-size: var(--font-size-h1);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.25;
-}
-
-h2 {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.25;
-}
-
-h3,
-h4,
-h5,
-h6 {
-  font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.3;
-}
-
-b,
-strong,
-th {
-  font-weight: var(--font-weight-medium);
-}
-
-code:not(pre code) {
-  display: inline;
-  padding: 1px 6px;
-  border-radius: var(--radius-sm);
-  corner-shape: superellipse(1.5);
-  background: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 0.92em;
-  overflow-wrap: anywhere;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  word-break: break-word;
-}
-
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-  scrollbar-width: thin;
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  color: var(--foreground);
-  font: inherit;
-  text-align: start;
-}
-
-.table :is(th, td) {
-  padding-block: 10px;
-  padding-inline: 0 24px;
-  overflow-wrap: anywhere;
-  border-bottom: 1px solid var(--border);
-  text-align: start;
-  vertical-align: top;
-}
-
-.table-responsive &gt; .table :is(th, td) {
-  overflow-wrap: break-word;
-}
-
-.table :is(th, td):last-child {
-  padding-inline-end: 0;
-}
-
-.table :is(caption, thead th) {
-  font-weight: 600;
-}
-
-.table thead th {
-  padding-block: 8px;
-  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
-}
-
-.table tbody tr:last-child :is(th, td) {
-  border-bottom: 0;
-}
-
-.table.table-sm :is(th, td) {
-  padding-block: 6px;
-}
-
-.table.table-sm :is(th, td):not(:last-child) {
-  padding-inline-end: 16px;
-}
-
-.table :is(.text-end, [align=&quot;right&quot;]) {
-  text-align: end;
-  font-variant-numeric: tabular-nums;
-}
-
-.table :is(.text-center, [align=&quot;center&quot;]) {
-  text-align: center;
-}
-
-.table .text-nowrap {
-  white-space: nowrap;
-}
-
-#widget {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  padding: 0;
-  background: transparent !important;
-}
-
-.card {
-  min-width: 0;
-  padding: 12px;
-  overflow: hidden;
-  overflow-wrap: break-word;
-  border-radius: var(--radius-2xl);
-  corner-shape: superellipse(1.5);
-  color: var(--card-foreground);
-  background: var(--card);
-}
-
-#widget &gt; :not(.card, .progress) {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.tooltip {
-  position: fixed;
-  z-index: 50;
-  top: 0;
-  left: 0;
-  width: max-content;
-  max-width: min(
-    20rem,
-    var(--tooltip-available-width, calc(100vw - 10px)),
-    calc(100vw - 10px)
-  );
-  max-height: min(
-    var(--tooltip-available-height, calc(100vh - 10px)),
-    calc(100vh - 10px)
-  );
-  padding: 4px 8px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
-  color: var(--popover-foreground);
-  background: var(--popover);
-  box-shadow: none;
-  font-size: var(--font-size-tooltip);
-  line-height: var(--line-height-tooltip);
-  overflow-wrap: break-word;
-  white-space: normal;
-  pointer-events: none;
-  user-select: none;
-}
-
-.viz-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
-  gap: 10px;
-}
-
-.viz-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.viz-stat-value {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.25;
-}
-
-.viz-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-
-.progress {
-  display: flex;
-  height: 6px;
-  overflow: hidden;
-  border: 0;
-  border-radius: var(--radius-full);
-  background: var(--muted);
-}
-
-.progress-bar {
-  height: 100%;
-  flex-shrink: 0;
-  border: 0;
-  background: var(--viz-series-1);
-}
-
-.viz-badge {
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
-  color: var(--accent-foreground);
-  background: var(--accent);
-  font-weight: var(--font-weight-medium);
-}
-
-small,
-.text-small,
-.viz-badge {
-  font-size: var(--font-size-small);
-  line-height: var(--line-height-small);
-}
-
-.text-muted {
-  color: var(--muted-foreground);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.viz-controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-
-.viz-controls &gt; .form-label {
-  display: grid;
-  min-width: min(100%, 260px);
-  flex: 1 1 280px;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: 2px 12px;
-  margin-bottom: 0;
-}
-
-.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
-  grid-column: 1 / -1;
-}
-
-.btn,
-.form-check-input,
-.form-control,
-.form-range,
-.form-select {
-  font: inherit;
-}
-
-.btn {
-  appearance: button;
-  display: inline-flex;
-  inline-size: fit-content;
-  max-inline-size: 100%;
-  min-height: 28px;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin: 0;
-  padding: 0 8px;
-  -webkit-app-region: no-drag;
-  border: 1px solid var(--input);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
-  color: var(--secondary-foreground);
-  background: var(--secondary);
-  cursor: var(--cursor-interaction, pointer);
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  user-select: none;
-  -webkit-font-smoothing: antialiased;
-}
-
-.btn:is(.btn-block, .viz-tile) {
-  inline-size: 100%;
-}
-
-.btn.viz-tile {
-  min-width: 0;
-  overflow-wrap: anywhere;
-  white-space: normal;
-}
-
-a.btn {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.btn:not(:disabled):hover {
-  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
-}
-
-.btn-primary {
-  border-color: transparent;
-  color: var(--primary-foreground);
-  background: var(--foreground);
-  background-clip: padding-box;
-}
-
-.btn-primary .text-muted {
-  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
-}
-
-.btn-primary:not(:disabled):hover {
-  background: color-mix(in srgb, var(--foreground) 80%, transparent);
-  background-clip: padding-box;
-}
-
-.btn-ghost {
-  border-color: transparent;
-  color: var(--muted-foreground);
-  background: transparent;
-}
-
-.btn-ghost:not(:disabled):hover {
-  color: var(--foreground);
-  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
-}
-
-.btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
-[data-lucide] {
-  stroke-width: 1.6;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--foreground);
-}
-
-.form-control {
-  display: block;
-  width: 100%;
-  min-height: 28px;
-  padding: 0 8px;
-  outline: none;
-  border: 1px solid var(--input);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
-  color: var(--foreground);
-  background: var(--secondary);
-}
-
-.form-control::placeholder {
-  color: var(--muted-foreground);
-}
-
-.form-control[type=&quot;file&quot;] {
-  padding: 0;
-  overflow: hidden;
-  cursor: var(--cursor-interaction, pointer);
-}
-
-.form-control[type=&quot;file&quot;]::file-selector-button {
-  min-height: 26px;
-  margin-right: 8px;
-  padding: 0 8px;
-  border: 0;
-  border-right: 1px solid var(--input);
-  color: var(--secondary-foreground);
-  background: var(--secondary);
-  cursor: inherit;
-  font: inherit;
-}
-
-.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
-  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
-}
-
-.form-control-color[type=&quot;color&quot;] {
-  width: 40px;
-  height: 28px;
-  padding: 3px;
-  cursor: var(--cursor-interaction, pointer);
-}
-
-.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
-  padding: 0;
-}
-
-.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
-  border: 0;
-  border-radius: calc(var(--radius-lg) - 4px);
-  corner-shape: superellipse(1.5);
-}
-
-textarea.form-control {
-  height: auto;
-  min-height: 72px;
-  padding: 8px 10px;
-  resize: vertical;
-}
-
-.form-control:focus-visible {
-  border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
-}
-
-.form-control:disabled,
-.form-select:disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
-.form-select {
-  appearance: none;
-  display: block;
-  width: 100%;
-  min-height: 28px;
-  margin: 0;
-  padding: 0 32px 0 8px;
-  outline: none;
-  border: 1px solid var(--input);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
-  color: var(--foreground);
-  background-color: var(--secondary);
-  background-image:
-    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
-    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
-  background-position:
-    calc(100% - 14px) 50%,
-    calc(100% - 10px) 50%;
-  background-repeat: no-repeat;
-  background-size: 4px 4px;
-  cursor: var(--cursor-interaction, default);
-}
-
-.form-select:not(:disabled):hover {
-  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
-}
-
-.form-select:focus-visible {
-  border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
-}
-
-.form-check {
-  display: flex;
-  min-height: 20px;
-  align-items: center;
-  gap: 6px;
-}
-
-.form-check-input {
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  flex: 0 0 auto;
-  margin: 0;
-  border: 1px solid var(--input);
-  color: var(--primary-foreground);
-  background-color: transparent;
-  cursor: var(--cursor-interaction, default);
-  transition:
-    background-color 150ms,
-    border-color 150ms,
-    box-shadow 150ms;
-}
-
-.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
-  border-color: var(--input);
-  border-radius: var(--radius-sm);
-  corner-shape: superellipse(1.5);
-  background-color: var(--secondary);
-  box-shadow: var(--shadow-sm);
-}
-
-.form-check:not(.form-switch)
-  .form-check-input:not(:disabled):not(:checked):hover {
-  background-color: var(--card);
-}
-
-.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
-  border-color: var(--primary);
-  background-color: var(--primary);
-}
-
-.form-check:not(.form-switch)
-  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: var(--primary-foreground);
-  content: &quot;&quot;;
-  mask: var(--checkmark-image) center / 12px 12px no-repeat;
-}
-
-.form-check-input[type=&quot;radio&quot;] {
-  width: 14px;
-  height: 14px;
-  border-radius: var(--radius-full);
-}
-
-.form-check-input[type=&quot;radio&quot;]:checked {
-  border: 2px solid var(--primary);
-  background:
-    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
-    var(--primary);
-}
-
-.form-check:not(.form-switch) .form-check-input:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
-}
-
-.form-check:not(.form-switch) .form-check-input:disabled {
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
-  cursor: not-allowed;
-}
-
-.form-switch .form-check-input:disabled,
-.form-switch .form-check-input:disabled + .form-check-label {
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.form-check-label {
-  color: var(--foreground);
-  cursor: var(--cursor-interaction, default);
-}
-
-.form-switch .form-check-input {
-  position: relative;
-  width: 32px;
-  height: 20px;
-  border: 0;
-  border-radius: var(--radius-full);
-  background: var(--muted);
-  box-shadow: none;
-  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.form-switch .form-check-input::before {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 16px;
-  height: 16px;
-  box-sizing: border-box;
-  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
-  border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
-  box-shadow: var(--shadow-sm);
-  content: &quot;&quot;;
-  transform: translate(2px, -50%);
-  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.form-switch .form-check-input:checked {
-  background: var(--primary);
-}
-
-.form-switch .form-check-input:checked::before {
-  transform: translate(14px, -50%);
-}
-
-.form-switch .form-check-input:focus-visible {
-  box-shadow: 0 0 0 2px var(--ring);
-}
-
-.form-range {
-  appearance: none;
-  display: block;
-  width: 100%;
-  height: 28px;
-  flex: 1;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  border: 0;
-  accent-color: var(--primary);
-  background: linear-gradient(
-      color-mix(in srgb, var(--foreground) 7%, transparent),
-      color-mix(in srgb, var(--foreground) 7%, transparent)
-    )
-    center / 100% 2px no-repeat;
-}
-
-.form-range::-webkit-slider-runnable-track {
-  height: 28px;
-  background: transparent;
-}
-
-.form-range::-webkit-slider-thumb {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  margin-top: 4px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
-}
-
-.form-range:focus-visible::-webkit-slider-thumb {
-  border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
-}
-
-.form-range::-moz-range-track {
-  height: 28px;
-  background: transparent;
-}
-
-.form-range::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
-}
-
-.form-range:focus-visible::-moz-range-thumb {
-  border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
-}
-
-.form-range:disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
-.btn:not(.btn-primary, .viz-tile):is(
-  [aria-pressed=&quot;true&quot;],
-  [aria-selected=&quot;true&quot;],
-  .is-selected
-) {
-  border-color: var(--primary);
-  color: var(--primary-foreground);
-  background: var(--primary);
-}
-
-.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
-  border-color: var(--primary);
-  box-shadow: inset 0 0 0 1px var(--primary);
-}
-
-.btn:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
-}
-
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-#widget &gt; svg {
-  width: 100%;
-}
-
-/* Model-authored chart rules can otherwise stretch icons after these styles load. */
-svg.lucide {
-  display: block;
-  width: 16px !important;
-  height: 16px !important;
-  flex: none;
-  margin: 0 !important;
-  stroke-width: 1.6;
-}
-
-.text-warning,
-.text-destructive {
-  color: var(--destructive);
-}
-
-html&gt;body{padding:0}&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;style&gt;
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#04130f">
+    <meta name="description" content="Seka — адаптивный прототип карточной игры для Telegram Mini App">
+    <title>Seka Mini App</title>
+    <style>
+      html, body { width: 100%; min-height: 100%; margin: 0; overflow: hidden; background: #04130f; }
+      body { display: grid; place-items: center; }
+    </style>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
+  <body>
+<style>
   #seka-mini-app {
     --seka-ink: #f5f1e6;
     --seka-muted: #91a79f;
@@ -934,7 +43,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       var(--seka-bg);
     border: 1px solid rgba(255, 255, 255, .08);
     border-radius: 26px;
-    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;
+    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     box-shadow: 0 30px 80px rgba(0, 0, 0, .28);
     position: relative;
     isolation: isolate;
@@ -955,7 +64,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     z-index: -1;
     opacity: .035;
     pointer-events: none;
-    background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox=&#x27;0 0 180 180&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%3E%3Cfilter id=&#x27;n&#x27;%3E%3CfeTurbulence type=&#x27;fractalNoise&#x27; baseFrequency=&#x27;.9&#x27; numOctaves=&#x27;3&#x27; stitchTiles=&#x27;stitch&#x27;/%3E%3C/filter%3E%3Crect width=&#x27;100%25&#x27; height=&#x27;100%25&#x27; filter=&#x27;url(%23n)&#x27; opacity=&#x27;.8&#x27;/%3E%3C/svg%3E&quot;);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
   }
 
   #seka-mini-app .seka-product-shell {
@@ -1062,7 +171,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     transition: color .18s ease, background .18s ease, transform .18s ease;
   }
 
-  #seka-mini-app .seka-role-toggle button[aria-pressed=&quot;true&quot;] {
+  #seka-mini-app .seka-role-toggle button[aria-pressed="true"] {
     color: var(--seka-ink);
     background: var(--seka-surface-2);
     box-shadow: 0 1px 0 rgba(255,255,255,.06) inset;
@@ -1127,7 +236,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   }
 
   #seka-mini-app .seka-hero::after {
-    content: &quot;♠&quot;;
+    content: "♠";
     position: absolute;
     right: 16px;
     top: -34px;
@@ -1200,9 +309,9 @@ html&gt;body{padding:0}&lt;/style&gt;
     transition: color .16s ease, background .16s ease, border-color .16s ease;
   }
 
-  #seka-mini-app .seka-mode-choice[aria-pressed=&quot;true&quot;],
-  #seka-mini-app .seka-filter-choice[aria-pressed=&quot;true&quot;],
-  #seka-mini-app .seka-admin-tab[aria-pressed=&quot;true&quot;] {
+  #seka-mini-app .seka-mode-choice[aria-pressed="true"],
+  #seka-mini-app .seka-filter-choice[aria-pressed="true"],
+  #seka-mini-app .seka-admin-tab[aria-pressed="true"] {
     color: var(--seka-ink);
     border-color: rgba(66,229,139,.3);
     background: rgba(66,229,139,.11);
@@ -1251,7 +360,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 
   #seka-mini-app .seka-game-head button { position: absolute; top: calc(9px + var(--seka-safe-top)); border: 1px solid var(--seka-line); width: 38px; height: 38px; border-radius: 12px; color: var(--seka-ink); background: rgba(9,31,24,.8); cursor: pointer; }
   #seka-mini-app .seka-game-head button:first-child { left: calc(14px + var(--seka-safe-left)); }
-  #seka-mini-app .seka-game-head button:last-child { right: calc(14px + var(--seka-safe-right)); }
+  #seka-mini-app .seka-game-head button[data-action="menu"] { right: calc(14px + var(--seka-safe-right)); }
   #seka-mini-app.seka-telegram-host .seka-fallback-back { display: none; }
   #seka-mini-app .seka-game-title { text-align: center; }
   #seka-mini-app .seka-game-title strong { display: block; font-size: 13px; }
@@ -1275,17 +384,116 @@ html&gt;body{padding:0}&lt;/style&gt;
     box-shadow: 0 0 0 2px #6a4830, 0 0 0 10px rgba(0,0,0,.14), 0 30px 50px rgba(0,0,0,.38), inset 0 0 55px rgba(0,0,0,.32);
   }
 
-  #seka-mini-app .seka-felt::before { content: &quot;SEKA  •  ЧЕСТНАЯ ИГРА&quot;; position: absolute; left: 50%; top: 58%; transform: translate(-50%,-50%); color: rgba(255,255,255,.08); font-size: clamp(11px, 2.4vw, 17px); font-weight: 900; letter-spacing: .18em; white-space: nowrap; }
-  #seka-mini-app .seka-pot { position: absolute; left: 50%; top: 36%; transform: translate(-50%,-50%); text-align: center; z-index: 5; }
-  #seka-mini-app .seka-pot small { display: block; color: #b6c9c2; font-size: 10px; text-transform: uppercase; letter-spacing: .11em; }
-  #seka-mini-app .seka-pot strong { display: block; margin-top: 4px; color: var(--seka-gold); font-size: 17px; font-variant-numeric: tabular-nums; }
+  #seka-mini-app .seka-felt-brand {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    z-index: 1;
+    transform: translate(-50%,-50%);
+    color: rgba(255,255,255,.075);
+    font-size: clamp(10px, 2.2vw, 16px);
+    font-weight: 900;
+    letter-spacing: .18em;
+    white-space: nowrap;
+    pointer-events: none;
+  }
 
-  #seka-mini-app .seka-chip-stack { height: 22px; margin: 5px auto 0; display: flex; justify-content: center; align-items: end; gap: 1px; }
-  #seka-mini-app .seka-chip-stack i { width: 16px; height: 7px; display: block; border-radius: 50%; background: #ecb83d; border: 2px dashed #65460b; box-shadow: 0 -5px 0 #efc457, 0 -10px 0 #e7ad2b; }
-  #seka-mini-app .seka-chip-stack i:nth-child(2) { background: #ff6b73; border-color: #631c21; box-shadow: 0 -5px 0 #ff8188; }
-  #seka-mini-app .seka-chip-stack i:nth-child(3) { background: #f4efe3; border-color: #5d5d5d; box-shadow: 0 -5px 0 #fff; }
+  #seka-mini-app .seka-pot {
+    position: absolute;
+    left: 50%;
+    top: 33%;
+    z-index: 5;
+    min-width: 118px;
+    display: grid;
+    grid-template-rows: 12px 24px 30px;
+    place-items: center;
+    row-gap: 4px;
+    transform: translate(-50%,-50%);
+    text-align: center;
+  }
 
-  #seka-mini-app .seka-deck { position: absolute; left: 50%; top: 52%; transform: translate(-50%,-50%) rotate(-5deg); width: 42px; height: 58px; border-radius: 7px; border: 2px solid #d5eadf; background: repeating-linear-gradient(45deg, #123b2e 0 4px, #1e5c45 4px 8px); box-shadow: 4px 4px 0 #eee8db; }
+  #seka-mini-app .seka-pot small { display: block; color: #b6c9c2; font-size: 10px; line-height: 12px; text-transform: uppercase; letter-spacing: .11em; }
+  #seka-mini-app .seka-pot strong { display: block; margin: 0; color: var(--seka-gold); font-size: 17px; line-height: 24px; font-variant-numeric: tabular-nums; transform-origin: center; }
+
+  #seka-mini-app .seka-chip-stack {
+    height: 30px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3px;
+    perspective: 120px;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,.28));
+  }
+
+  #seka-mini-app .seka-chip-stack i {
+    --seka-chip: #e6a922;
+    --seka-chip-edge: #7d5109;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex: 0 0 auto;
+    border: 1px solid rgba(255,255,255,.48);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 50% 50%, #f9e7ad 0 18%, transparent 19% 27%, rgba(255,255,255,.52) 28% 31%, transparent 32%),
+      repeating-conic-gradient(from 5deg, #f7edcf 0 11deg, var(--seka-chip) 11deg 45deg);
+    box-shadow:
+      0 2px 0 var(--seka-chip-edge),
+      0 4px 0 color-mix(in srgb, var(--seka-chip-edge) 90%, #000),
+      0 6px 0 var(--seka-chip-edge),
+      0 8px 0 color-mix(in srgb, var(--seka-chip-edge) 82%, #000),
+      0 11px 8px rgba(0,0,0,.4),
+      inset 0 0 0 1px rgba(18,18,18,.3),
+      inset 0 0 0 4px rgba(255,255,255,.12),
+      inset 1px 1px 3px rgba(255,255,255,.38);
+    transform: rotateX(53deg) rotateZ(-12deg);
+  }
+
+  #seka-mini-app .seka-chip-stack i::after {
+    content: "S";
+    position: absolute;
+    inset: 30%;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: rgba(42,30,8,.76);
+    font: 900 4px/1 Arial, sans-serif;
+    transform: rotateZ(12deg);
+  }
+
+  #seka-mini-app .seka-chip-stack i:nth-child(2) {
+    --seka-chip: #d94f59;
+    --seka-chip-edge: #6f1d26;
+    margin-left: 0;
+    transform: translateY(3px) rotateX(53deg) rotateZ(9deg);
+    box-shadow:
+      0 2px 0 var(--seka-chip-edge),
+      0 4px 0 color-mix(in srgb, var(--seka-chip-edge) 90%, #000),
+      0 6px 0 var(--seka-chip-edge),
+      0 9px 7px rgba(0,0,0,.38),
+      inset 0 0 0 1px rgba(18,18,18,.3),
+      inset 0 0 0 4px rgba(255,255,255,.12),
+      inset 1px 1px 3px rgba(255,255,255,.38);
+  }
+
+  #seka-mini-app .seka-chip-stack i:nth-child(2)::after { color: rgba(75,13,19,.8); transform: rotateZ(-9deg); }
+  #seka-mini-app .seka-chip-stack i:nth-child(3) {
+    --seka-chip: #edf0e9;
+    --seka-chip-edge: #656c68;
+    margin-left: 0;
+    transform: translateY(6px) rotateX(53deg) rotateZ(-5deg);
+    box-shadow:
+      0 2px 0 var(--seka-chip-edge),
+      0 4px 0 color-mix(in srgb, var(--seka-chip-edge) 88%, #000),
+      0 7px 6px rgba(0,0,0,.34),
+      inset 0 0 0 1px rgba(18,18,18,.3),
+      inset 0 0 0 4px rgba(255,255,255,.12),
+      inset 1px 1px 3px rgba(255,255,255,.38);
+  }
+
+  #seka-mini-app .seka-deck { position: absolute; left: 50%; top: 55%; z-index: 2; transform: translate(-50%,-50%) rotate(-5deg); width: 42px; height: 58px; border-radius: 7px; border: 2px solid #d5eadf; background: repeating-linear-gradient(45deg, #123b2e 0 4px, #1e5c45 4px 8px); box-shadow: 4px 4px 0 #eee8db; }
 
   #seka-mini-app .seka-player {
     position: absolute;
@@ -1295,14 +503,14 @@ html&gt;body{padding:0}&lt;/style&gt;
     transform: translate(-50%,-50%) translateZ(0);
   }
 
-  #seka-mini-app .seka-player[data-seat=&quot;1&quot;] { left: 50%; top: 13%; }
-  #seka-mini-app .seka-player[data-seat=&quot;2&quot;] { left: 78%; top: 20%; }
-  #seka-mini-app .seka-player[data-seat=&quot;3&quot;] { left: 88%; top: 42%; }
-  #seka-mini-app .seka-player[data-seat=&quot;4&quot;] { left: 77%; top: 61%; }
-  #seka-mini-app .seka-player[data-seat=&quot;5&quot;] { left: 50%; top: 64%; }
-  #seka-mini-app .seka-player[data-seat=&quot;6&quot;] { left: 23%; top: 61%; }
-  #seka-mini-app .seka-player[data-seat=&quot;7&quot;] { left: 12%; top: 42%; }
-  #seka-mini-app .seka-player[data-seat=&quot;8&quot;] { left: 22%; top: 20%; }
+  #seka-mini-app .seka-player[data-seat="1"] { left: 50%; top: 13%; }
+  #seka-mini-app .seka-player[data-seat="2"] { left: 78%; top: 20%; }
+  #seka-mini-app .seka-player[data-seat="3"] { left: 88%; top: 42%; }
+  #seka-mini-app .seka-player[data-seat="4"] { left: 77%; top: 61%; }
+  #seka-mini-app .seka-player[data-seat="5"] { left: 50%; top: 64%; }
+  #seka-mini-app .seka-player[data-seat="6"] { left: 23%; top: 61%; }
+  #seka-mini-app .seka-player[data-seat="7"] { left: 12%; top: 42%; }
+  #seka-mini-app .seka-player[data-seat="8"] { left: 22%; top: 20%; }
 
   #seka-mini-app .seka-avatar {
     width: 43px;
@@ -1321,7 +529,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   }
 
   #seka-mini-app .seka-player.seka-turn .seka-avatar { border-color: var(--seka-green); box-shadow: 0 0 0 4px rgba(66,229,139,.12), 0 7px 17px rgba(0,0,0,.34); }
-  #seka-mini-app .seka-player.seka-turn .seka-avatar::after { content: &quot;&quot;; position: absolute; inset: -6px; border: 2px solid var(--seka-green); border-radius: 19px; border-left-color: transparent; animation: seka-timer-ring 4s linear infinite; }
+  #seka-mini-app .seka-player.seka-turn .seka-avatar::after { content: ""; position: absolute; inset: -6px; border: 2px solid var(--seka-green); border-radius: 19px; border-left-color: transparent; animation: seka-timer-ring 4s linear infinite; }
   #seka-mini-app .seka-player-name { max-width: 84px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; }
   #seka-mini-app .seka-player-stack { margin-top: 3px; color: var(--seka-gold); font-size: 10px; font-weight: 750; }
   #seka-mini-app .seka-dark-badge { width: max-content; margin: 4px auto 0; padding: 3px 6px; border: 1px solid rgba(104,183,255,.32); border-radius: 6px; color: #9ed0ff; background: rgba(104,183,255,.1); font-size: 7px; font-weight: 900; letter-spacing: .08em; }
@@ -1339,9 +547,9 @@ html&gt;body{padding:0}&lt;/style&gt;
     display: flex;
     align-items: end;
     justify-content: center;
-    width: 224px;
+    width: 178px;
     height: 102px;
-    gap: 8px;
+    gap: 0;
     pointer-events: none;
   }
 
@@ -1362,10 +570,12 @@ html&gt;body{padding:0}&lt;/style&gt;
     opacity: 0;
   }
 
+  #seka-mini-app .seka-playing-card + .seka-playing-card { margin-left: -18px; }
+
   #seka-mini-app .seka-playing-card span { display: block; font-size: 21px; line-height: .8; }
-  #seka-mini-app .seka-playing-card:nth-child(1) { transform: translateY(40px) rotate(-4deg); animation: seka-deal-left .46s .08s cubic-bezier(.18,.8,.26,1) forwards; }
-  #seka-mini-app .seka-playing-card:nth-child(2) { z-index: 2; transform: translateY(40px); animation: seka-deal-mid .46s .16s cubic-bezier(.18,.8,.26,1) forwards; }
-  #seka-mini-app .seka-playing-card:nth-child(3) { transform: translateY(40px) rotate(4deg); animation: seka-deal-right .46s .24s cubic-bezier(.18,.8,.26,1) forwards; }
+  #seka-mini-app .seka-playing-card:nth-child(1) { z-index: 1; transform: translate(18px,52px) rotate(-2deg); animation: seka-deal-left .48s .08s cubic-bezier(.18,.8,.26,1) forwards; }
+  #seka-mini-app .seka-playing-card:nth-child(2) { z-index: 2; transform: translateY(52px); animation: seka-deal-mid .48s .16s cubic-bezier(.18,.8,.26,1) forwards; }
+  #seka-mini-app .seka-playing-card:nth-child(3) { z-index: 3; transform: translate(-18px,52px) rotate(2deg); animation: seka-deal-right .48s .24s cubic-bezier(.18,.8,.26,1) forwards; }
   #seka-mini-app .seka-playing-card.seka-red-suit { color: #d83a45; }
   #seka-mini-app .seka-observer-mode .seka-hand { display: none; }
 
@@ -1379,9 +589,24 @@ html&gt;body{padding:0}&lt;/style&gt;
     background: linear-gradient(180deg, transparent, rgba(1,9,7,.95) 25%);
   }
 
-  #seka-mini-app .seka-combination-line { max-width: 680px; margin: 0 auto 7px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-  #seka-mini-app .seka-combination-line strong { color: var(--seka-green); font-size: 11px; }
-  #seka-mini-app .seka-combination-line span { color: var(--seka-muted); font-size: 9px; }
+  #seka-mini-app .seka-combination-line {
+    max-width: 680px;
+    min-height: 39px;
+    margin: 0 auto 8px;
+    padding: 7px 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid rgba(66,229,139,.22);
+    border-radius: 12px;
+    background: rgba(5,24,18,.94);
+    box-shadow: 0 8px 24px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.035);
+    backdrop-filter: blur(12px);
+  }
+
+  #seka-mini-app .seka-combination-line strong { color: #77f0aa; font-size: 13px; line-height: 1.15; white-space: nowrap; }
+  #seka-mini-app .seka-combination-line span { color: #d5e2dd; font-size: 10px; line-height: 1.2; text-align: right; }
   #seka-mini-app .seka-turn-info { max-width: 680px; margin: 0 auto 8px; display: flex; justify-content: space-between; gap: 10px; color: var(--seka-muted); font-size: 10px; }
   #seka-mini-app .seka-turn-info strong { color: var(--seka-ink); }
   #seka-mini-app .seka-action-grid { max-width: 680px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
@@ -1578,7 +803,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   #seka-mini-app .seka-nav-choice { min-height: 55px; border: 0; border-radius: 13px; display: grid; place-items: center; align-content: center; gap: 4px; color: var(--seka-muted); background: transparent; cursor: pointer; transition: color .18s ease, background .18s ease, transform .18s ease; }
   #seka-mini-app .seka-nav-choice b { font-size: 18px; line-height: 1; font-weight: 500; }
   #seka-mini-app .seka-nav-choice span { font-size: 9px; }
-  #seka-mini-app .seka-nav-choice[aria-current=&quot;page&quot;] { color: var(--seka-green); background: rgba(66,229,139,.075); }
+  #seka-mini-app .seka-nav-choice[aria-current="page"] { color: var(--seka-green); background: rgba(66,229,139,.075); }
   #seka-mini-app .seka-nav-choice:active { transform: scale(.95); }
 
   #seka-mini-app .seka-toast { position: absolute; left: 50%; bottom: 86px; z-index: 90; max-width: calc(100% - 28px); padding: 10px 13px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; opacity: 0; color: #e8f4ef; background: rgba(8,31,24,.94); box-shadow: 0 12px 34px rgba(0,0,0,.3); transform: translate(-50%,10px); pointer-events: none; font-size: 10px; white-space: nowrap; transition: opacity .2s ease, transform .2s ease; }
@@ -1586,9 +811,9 @@ html&gt;body{padding:0}&lt;/style&gt;
 
   @keyframes seka-float-mark { 0%,100% { transform: rotate(11deg) translate3d(0,0,0); } 50% { transform: rotate(8deg) translate3d(0,8px,0); } }
   @keyframes seka-timer-ring { to { transform: rotate(360deg); } }
-  @keyframes seka-deal-left { to { opacity: 1; transform: translateY(0) rotate(-4deg); } }
-  @keyframes seka-deal-mid { to { opacity: 1; transform: translateY(-8px) rotate(0); } }
-  @keyframes seka-deal-right { to { opacity: 1; transform: translateY(0) rotate(4deg); } }
+  @keyframes seka-deal-left { to { opacity: 1; transform: translateY(10px) rotate(-13deg); } }
+  @keyframes seka-deal-mid { to { opacity: 1; transform: translateY(-5px) rotate(0); } }
+  @keyframes seka-deal-right { to { opacity: 1; transform: translateY(10px) rotate(13deg); } }
   @keyframes seka-live-pulse { 0% { box-shadow: 0 0 0 0 rgba(66,229,139,.25); } 70%,100% { box-shadow: 0 0 0 8px rgba(66,229,139,0); } }
   @keyframes seka-panel-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -1597,8 +822,8 @@ html&gt;body{padding:0}&lt;/style&gt;
     #seka-mini-app .seka-lobby-screen .seka-table-list { grid-template-columns: 1fr 1fr; }
     #seka-mini-app .seka-lobby-screen .seka-lobby-row:first-child { grid-column: span 2; }
     #seka-mini-app .seka-felt { height: 58%; width: min(78%,680px); }
-    #seka-mini-app .seka-player[data-seat=&quot;3&quot;] { left: 83%; }
-    #seka-mini-app .seka-player[data-seat=&quot;7&quot;] { left: 17%; }
+    #seka-mini-app .seka-player[data-seat="3"] { left: 83%; }
+    #seka-mini-app .seka-player[data-seat="7"] { left: 17%; }
   }
 
   @media (max-width: 520px) {
@@ -1610,21 +835,23 @@ html&gt;body{padding:0}&lt;/style&gt;
     #seka-mini-app .seka-hero-copy { max-width: 76%; }
     #seka-mini-app .seka-felt { top: 43%; height: 48%; width: 82%; border-width: 7px; }
     #seka-mini-app .seka-player { width: 68px; }
-    #seka-mini-app .seka-player[data-seat=&quot;1&quot;] { top: 13%; }
-    #seka-mini-app .seka-player[data-seat=&quot;2&quot;] { left: 77%; top: 20%; }
-    #seka-mini-app .seka-player[data-seat=&quot;3&quot;] { left: 87%; top: 39%; }
-    #seka-mini-app .seka-player[data-seat=&quot;4&quot;] { left: 76%; top: 56%; }
-    #seka-mini-app .seka-player[data-seat=&quot;5&quot;] { top: 59%; }
-    #seka-mini-app .seka-player[data-seat=&quot;6&quot;] { left: 24%; top: 56%; }
-    #seka-mini-app .seka-player[data-seat=&quot;7&quot;] { left: 13%; top: 39%; }
-    #seka-mini-app .seka-player[data-seat=&quot;8&quot;] { left: 23%; top: 20%; }
+    #seka-mini-app .seka-player[data-seat="1"] { top: 13%; }
+    #seka-mini-app .seka-player[data-seat="2"] { left: 77%; top: 20%; }
+    #seka-mini-app .seka-player[data-seat="3"] { left: 87%; top: 39%; }
+    #seka-mini-app .seka-player[data-seat="4"] { left: 76%; top: 56%; }
+    #seka-mini-app .seka-player[data-seat="5"] { top: 59%; }
+    #seka-mini-app .seka-player[data-seat="6"] { left: 24%; top: 56%; }
+    #seka-mini-app .seka-player[data-seat="7"] { left: 13%; top: 39%; }
+    #seka-mini-app .seka-player[data-seat="8"] { left: 23%; top: 20%; }
     #seka-mini-app .seka-avatar { width: 38px; height: 38px; border-radius: 13px; }
-    #seka-mini-app .seka-player[data-seat=&quot;5&quot;] { top: 59%; }
+    #seka-mini-app .seka-player[data-seat="5"] { top: 59%; }
     #seka-mini-app .seka-hand { bottom: calc(170px + var(--seka-safe-bottom)); transform: translateX(-50%) scale(.84); transform-origin: bottom center; }
     #seka-mini-app .seka-chat-fab { bottom: calc(170px + var(--seka-safe-bottom)); }
     #seka-mini-app .seka-action-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
     #seka-mini-app .seka-table-action { min-height: 38px; font-size: 10px; }
-    #seka-mini-app .seka-combination-line { margin-bottom: 5px; }
+    #seka-mini-app .seka-combination-line { margin-bottom: 6px; padding: 7px 9px; }
+    #seka-mini-app .seka-combination-line strong { font-size: 12px; }
+    #seka-mini-app .seka-combination-line span { max-width: 58%; font-size: 9px; }
     #seka-mini-app .seka-turn-info { margin-bottom: 6px; }
     #seka-mini-app .seka-order-row { grid-template-columns: minmax(0,1fr) auto; }
     #seka-mini-app .seka-buy-order { grid-column: span 2; width: 100%; }
@@ -1634,6 +861,18 @@ html&gt;body{padding:0}&lt;/style&gt;
     #seka-mini-app .seka-admin-columns { grid-template-columns: 1fr; }
     #seka-mini-app .seka-admin-metric { min-height: 76px; }
     #seka-mini-app .seka-admin-metric strong { font-size: 19px; }
+  }
+
+  @media (max-width: 360px) {
+    #seka-mini-app .seka-player[data-seat="4"] { left: 86%; }
+    #seka-mini-app .seka-player[data-seat="6"] { left: 14%; }
+  }
+
+  @media (orientation: portrait) and (max-height: 640px) {
+    #seka-mini-app .seka-player[data-seat="5"] { display: none; }
+    #seka-mini-app .seka-hand { bottom: calc(176px + var(--seka-safe-bottom)); }
+    #seka-mini-app .seka-felt-brand { display: none; }
+    #seka-mini-app .seka-deck { top: 61%; width: 36px; height: 50px; border-width: 1.5px; box-shadow: 3px 3px 0 #eee8db; }
   }
 
   @media (max-width: 380px) {
@@ -1651,14 +890,16 @@ html&gt;body{padding:0}&lt;/style&gt;
     #seka-mini-app .seka-bottom-nav { min-height: 56px; }
     #seka-mini-app .seka-nav-choice { min-height: 43px; }
     #seka-mini-app .seka-felt { top: 42%; width: min(72%, 650px); height: 60%; }
-    #seka-mini-app .seka-player[data-seat=&quot;1&quot;] { left: 50%; top: 15%; }
-    #seka-mini-app .seka-player[data-seat=&quot;2&quot;] { left: 70%; top: 21%; }
-    #seka-mini-app .seka-player[data-seat=&quot;3&quot;] { left: 78%; top: 42%; }
-    #seka-mini-app .seka-player[data-seat=&quot;4&quot;] { left: 69%; top: 59%; }
-    #seka-mini-app .seka-player[data-seat=&quot;5&quot;] { display: none; }
-    #seka-mini-app .seka-player[data-seat=&quot;6&quot;] { left: 31%; top: 59%; }
-    #seka-mini-app .seka-player[data-seat=&quot;7&quot;] { left: 22%; top: 42%; }
-    #seka-mini-app .seka-player[data-seat=&quot;8&quot;] { left: 30%; top: 21%; }
+    #seka-mini-app .seka-felt-brand { display: none; }
+    #seka-mini-app .seka-deck { top: 62%; width: 32px; height: 44px; border-width: 1.5px; box-shadow: 3px 3px 0 #eee8db; }
+    #seka-mini-app .seka-player[data-seat="1"] { left: 50%; top: 15%; }
+    #seka-mini-app .seka-player[data-seat="2"] { left: 70%; top: 21%; }
+    #seka-mini-app .seka-player[data-seat="3"] { left: 78%; top: 42%; }
+    #seka-mini-app .seka-player[data-seat="4"] { left: 69%; top: 59%; }
+    #seka-mini-app .seka-player[data-seat="5"] { display: none; }
+    #seka-mini-app .seka-player[data-seat="6"] { left: 31%; top: 59%; }
+    #seka-mini-app .seka-player[data-seat="7"] { left: 22%; top: 42%; }
+    #seka-mini-app .seka-player[data-seat="8"] { left: 30%; top: 21%; }
     #seka-mini-app .seka-hand { left: 50%; bottom: calc(88px + var(--seka-safe-bottom)); transform: translateX(-50%) scale(.58); }
     #seka-mini-app .seka-turn-panel { left: 0; right: 0; bottom: 0; width: auto; padding: 7px calc(12px + var(--seka-safe-right)) calc(8px + var(--seka-safe-bottom)) calc(12px + var(--seka-safe-left)); background: linear-gradient(180deg, transparent, rgba(1,9,7,.96) 24%); }
     #seka-mini-app .seka-turn-info { display: none; }
@@ -1673,329 +914,330 @@ html&gt;body{padding:0}&lt;/style&gt;
     #seka-mini-app *::before,
     #seka-mini-app *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
   }
-&lt;/style&gt;
+</style>
 
-&lt;div id=&quot;seka-mini-app&quot;&gt;
-  &lt;div class=&quot;seka-grain&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;seka-product-shell&quot;&gt;
-    &lt;header class=&quot;seka-topbar&quot;&gt;
-      &lt;div class=&quot;seka-brand&quot; aria-label=&quot;SEKA&quot;&gt;
-        &lt;div class=&quot;seka-brand-mark&quot; aria-hidden=&quot;true&quot;&gt;♠&lt;/div&gt;
-        &lt;div class=&quot;seka-brand-copy&quot;&gt;
-          &lt;strong&gt;SEKA&lt;/strong&gt;
-          &lt;small&gt;Честная игра. Живой стол.&lt;/small&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;seka-header-actions&quot;&gt;
-        &lt;div class=&quot;seka-role-toggle&quot; aria-label=&quot;Режим прототипа&quot;&gt;
-          &lt;button type=&quot;button&quot; data-role=&quot;player&quot; aria-pressed=&quot;true&quot;&gt;Игрок&lt;/button&gt;
-          &lt;button type=&quot;button&quot; data-role=&quot;admin&quot; aria-pressed=&quot;false&quot;&gt;Админ&lt;/button&gt;
-        &lt;/div&gt;
-        &lt;button type=&quot;button&quot; class=&quot;seka-balance-chip&quot; data-go=&quot;wallet&quot; aria-label=&quot;Открыть кошелёк, баланс 24 850 фишек&quot;&gt;
-          &lt;span class=&quot;seka-coin-dot&quot;&gt;S&lt;/span&gt;&lt;strong data-wallet-balance&gt;24 850&lt;/strong&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/header&gt;
+<div id="seka-mini-app">
+  <div class="seka-grain" aria-hidden="true"></div>
+  <div class="seka-product-shell">
+    <header class="seka-topbar">
+      <div class="seka-brand" aria-label="SEKA">
+        <div class="seka-brand-mark" aria-hidden="true">♠</div>
+        <div class="seka-brand-copy">
+          <strong>SEKA</strong>
+          <small>Честная игра. Живой стол.</small>
+        </div>
+      </div>
+      <div class="seka-header-actions">
+        <div class="seka-role-toggle" aria-label="Режим прототипа">
+          <button type="button" data-role="player" aria-pressed="true">Игрок</button>
+          <button type="button" data-role="admin" aria-pressed="false">Админ</button>
+        </div>
+        <button type="button" class="seka-balance-chip" data-go="wallet" aria-label="Открыть кошелёк, баланс 24 850 фишек">
+          <span class="seka-coin-dot">S</span><strong data-wallet-balance>24 850</strong>
+        </button>
+      </div>
+    </header>
 
-    &lt;main class=&quot;seka-content&quot;&gt;
-      &lt;section class=&quot;seka-screen seka-lobby-screen seka-visible&quot; data-screen=&quot;lobby&quot; aria-label=&quot;Лобби&quot;&gt;
-        &lt;div class=&quot;seka-hero&quot;&gt;
-          &lt;div class=&quot;seka-hero-copy&quot;&gt;
-            &lt;p class=&quot;seka-kicker&quot;&gt;Быстрый старт&lt;/p&gt;
-            &lt;h2&gt;Стол уже ждёт&lt;/h2&gt;
-            &lt;p&gt;Подберём игру со ставкой 200 и свободным местом.&lt;/p&gt;
-            &lt;button type=&quot;button&quot; class=&quot;seka-primary-action&quot; data-enter=&quot;play&quot;&gt;Играть сейчас&lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
+    <main class="seka-content">
+      <section class="seka-screen seka-lobby-screen seka-visible" data-screen="lobby" aria-label="Лобби">
+        <div class="seka-hero">
+          <div class="seka-hero-copy">
+            <p class="seka-kicker">Быстрый старт</p>
+            <h2>Стол уже ждёт</h2>
+            <p>Подберём игру со ставкой 200 и свободным местом.</p>
+            <button type="button" class="seka-primary-action" data-enter="play">Играть сейчас</button>
+          </div>
+        </div>
 
-        &lt;div class=&quot;seka-section-head&quot;&gt;&lt;h3&gt;Режим игры&lt;/h3&gt;&lt;span&gt;286 игроков онлайн&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;seka-mode-strip&quot; aria-label=&quot;Режимы&quot;&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-mode-choice&quot; aria-pressed=&quot;true&quot;&gt;Все столы&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-mode-choice&quot; aria-pressed=&quot;false&quot;&gt;Быстрая игра&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-mode-choice&quot; aria-pressed=&quot;false&quot;&gt;С друзьями&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-mode-choice&quot; aria-pressed=&quot;false&quot;&gt;Турниры&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-mode-choice&quot; aria-pressed=&quot;false&quot;&gt;Приватные&lt;/button&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;seka-filter-strip&quot; aria-label=&quot;Фильтры столов&quot;&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-filter-choice&quot; aria-pressed=&quot;true&quot;&gt;Есть места&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-filter-choice&quot; aria-pressed=&quot;false&quot;&gt;Ставка: любая&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-filter-choice&quot; aria-pressed=&quot;false&quot;&gt;2–8 игроков&lt;/button&gt;
-        &lt;/div&gt;
+        <div class="seka-section-head"><h3>Режим игры</h3><span>286 игроков онлайн</span></div>
+        <div class="seka-mode-strip" aria-label="Режимы">
+          <button type="button" class="seka-mode-choice" aria-pressed="true">Все столы</button>
+          <button type="button" class="seka-mode-choice" aria-pressed="false">Быстрая игра</button>
+          <button type="button" class="seka-mode-choice" aria-pressed="false">С друзьями</button>
+          <button type="button" class="seka-mode-choice" aria-pressed="false">Турниры</button>
+          <button type="button" class="seka-mode-choice" aria-pressed="false">Приватные</button>
+        </div>
+        <div class="seka-filter-strip" aria-label="Фильтры столов">
+          <button type="button" class="seka-filter-choice" aria-pressed="true">Есть места</button>
+          <button type="button" class="seka-filter-choice" aria-pressed="false">Ставка: любая</button>
+          <button type="button" class="seka-filter-choice" aria-pressed="false">2–8 игроков</button>
+        </div>
 
-        &lt;div class=&quot;seka-section-head&quot;&gt;&lt;h3&gt;Выберите стол&lt;/h3&gt;&lt;span&gt;Обновлено сейчас&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;seka-table-list&quot;&gt;
-          &lt;article class=&quot;seka-lobby-row&quot;&gt;
-            &lt;div&gt;
-              &lt;div class=&quot;seka-table-name&quot;&gt;
-                &lt;div class=&quot;seka-table-emblem&quot;&gt;♣&lt;/div&gt;
-                &lt;div&gt;&lt;strong&gt;Ташкент · 12&lt;/strong&gt;&lt;small&gt;&lt;span class=&quot;seka-open-dot&quot;&gt;&lt;/span&gt;5 из 8 игроков&lt;/small&gt;&lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;seka-table-data&quot;&gt;&lt;span&gt;Вход &lt;b&gt;1 000&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Ставка &lt;b&gt;200&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Банк 4 800&lt;/span&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;seka-row-actions&quot;&gt;
-              &lt;button type=&quot;button&quot; class=&quot;seka-row-action&quot; data-enter=&quot;play&quot;&gt;Войти&lt;/button&gt;
-              &lt;button type=&quot;button&quot; class=&quot;seka-row-action seka-watch&quot; data-enter=&quot;watch&quot;&gt;Наблюдать&lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/article&gt;
-          &lt;article class=&quot;seka-lobby-row&quot;&gt;
-            &lt;div&gt;
-              &lt;div class=&quot;seka-table-name&quot;&gt;
-                &lt;div class=&quot;seka-table-emblem&quot;&gt;♦&lt;/div&gt;
-                &lt;div&gt;&lt;strong&gt;Самарканд · 04&lt;/strong&gt;&lt;small&gt;&lt;span class=&quot;seka-open-dot&quot;&gt;&lt;/span&gt;3 из 6 игроков&lt;/small&gt;&lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;seka-table-data&quot;&gt;&lt;span&gt;Вход &lt;b&gt;500&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Ставка &lt;b&gt;100&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;seka-row-actions&quot;&gt;
-              &lt;button type=&quot;button&quot; class=&quot;seka-row-action&quot; data-enter=&quot;play&quot;&gt;Войти&lt;/button&gt;
-              &lt;button type=&quot;button&quot; class=&quot;seka-row-action seka-watch&quot; data-enter=&quot;watch&quot;&gt;Смотреть&lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/article&gt;
-          &lt;article class=&quot;seka-lobby-row&quot;&gt;
-            &lt;div&gt;
-              &lt;div class=&quot;seka-table-name&quot;&gt;
-                &lt;div class=&quot;seka-table-emblem&quot;&gt;★&lt;/div&gt;
-                &lt;div&gt;&lt;strong&gt;High Rollers&lt;/strong&gt;&lt;small&gt;&lt;span class=&quot;seka-open-dot&quot;&gt;&lt;/span&gt;6 из 8 игроков&lt;/small&gt;&lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;seka-table-data&quot;&gt;&lt;span&gt;Вход &lt;b&gt;10 000&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Ставка &lt;b&gt;1 000&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;seka-row-actions&quot;&gt;
-              &lt;button type=&quot;button&quot; class=&quot;seka-row-action&quot; data-enter=&quot;play&quot;&gt;Войти&lt;/button&gt;
-              &lt;button type=&quot;button&quot; class=&quot;seka-row-action seka-watch&quot; data-enter=&quot;watch&quot;&gt;Смотреть&lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/article&gt;
-        &lt;/div&gt;
-      &lt;/section&gt;
+        <div class="seka-section-head"><h3>Выберите стол</h3><span>Обновлено сейчас</span></div>
+        <div class="seka-table-list">
+          <article class="seka-lobby-row">
+            <div>
+              <div class="seka-table-name">
+                <div class="seka-table-emblem">♣</div>
+                <div><strong>Ташкент · 12</strong><small><span class="seka-open-dot"></span>5 из 8 игроков</small></div>
+              </div>
+              <div class="seka-table-data"><span>Вход <b>1 000</b></span><span>Ставка <b>200</b></span><span>Банк 4 800</span></div>
+            </div>
+            <div class="seka-row-actions">
+              <button type="button" class="seka-row-action" data-enter="play">Войти</button>
+              <button type="button" class="seka-row-action seka-watch" data-enter="watch">Наблюдать</button>
+            </div>
+          </article>
+          <article class="seka-lobby-row">
+            <div>
+              <div class="seka-table-name">
+                <div class="seka-table-emblem">♦</div>
+                <div><strong>Самарканд · 04</strong><small><span class="seka-open-dot"></span>3 из 6 игроков</small></div>
+              </div>
+              <div class="seka-table-data"><span>Вход <b>500</b></span><span>Ставка <b>100</b></span></div>
+            </div>
+            <div class="seka-row-actions">
+              <button type="button" class="seka-row-action" data-enter="play">Войти</button>
+              <button type="button" class="seka-row-action seka-watch" data-enter="watch">Смотреть</button>
+            </div>
+          </article>
+          <article class="seka-lobby-row">
+            <div>
+              <div class="seka-table-name">
+                <div class="seka-table-emblem">★</div>
+                <div><strong>High Rollers</strong><small><span class="seka-open-dot"></span>6 из 8 игроков</small></div>
+              </div>
+              <div class="seka-table-data"><span>Вход <b>10 000</b></span><span>Ставка <b>1 000</b></span></div>
+            </div>
+            <div class="seka-row-actions">
+              <button type="button" class="seka-row-action" data-enter="play">Войти</button>
+              <button type="button" class="seka-row-action seka-watch" data-enter="watch">Смотреть</button>
+            </div>
+          </article>
+        </div>
+      </section>
 
-      &lt;section class=&quot;seka-screen seka-game-screen&quot; data-screen=&quot;table&quot; aria-label=&quot;Игровой стол&quot;&gt;
-        &lt;div class=&quot;seka-table-stage&quot;&gt;
-          &lt;div class=&quot;seka-game-head&quot;&gt;
-            &lt;button type=&quot;button&quot; class=&quot;seka-fallback-back&quot; data-back aria-label=&quot;Вернуться назад&quot;&gt;‹&lt;/button&gt;
-            &lt;div class=&quot;seka-game-title&quot;&gt;&lt;strong&gt;Ташкент · 12&lt;/strong&gt;&lt;small&gt;Торги · круг 2 · потолок 2 000&lt;/small&gt;&lt;/div&gt;
-            &lt;button type=&quot;button&quot; data-action=&quot;menu&quot; aria-label=&quot;Меню стола&quot;&gt;•••&lt;/button&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;seka-observer-banner&quot;&gt;Режим наблюдателя · 12 зрителей&lt;/div&gt;
-          &lt;div class=&quot;seka-felt&quot;&gt;
-            &lt;div class=&quot;seka-pot&quot;&gt;&lt;small&gt;Банк&lt;/small&gt;&lt;strong data-pot&gt;1 600&lt;/strong&gt;&lt;div class=&quot;seka-chip-stack&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-            &lt;div class=&quot;seka-deck&quot; aria-label=&quot;Колода из 36 карт&quot;&gt;&lt;/div&gt;
-          &lt;/div&gt;
+      <section class="seka-screen seka-game-screen" data-screen="table" aria-label="Игровой стол">
+        <div class="seka-table-stage">
+          <div class="seka-game-head">
+            <button type="button" class="seka-fallback-back" data-back aria-label="Вернуться назад">‹</button>
+            <div class="seka-game-title"><strong>Ташкент · 12</strong><small>Торги · круг 2 · потолок 2 000</small></div>
+            <button type="button" data-action="menu" aria-label="Меню стола">•••</button>
+          </div>
+          <div class="seka-observer-banner">Режим наблюдателя · 12 зрителей</div>
+          <div class="seka-felt">
+            <div class="seka-pot"><small>Банк</small><strong data-pot>1 600</strong><div class="seka-chip-stack" aria-label="Три стопки фишек в банке"><i></i><i></i><i></i></div></div>
+            <div class="seka-deck" aria-label="Колода из 36 карт"></div>
+            <div class="seka-felt-brand" aria-hidden="true">SEKA  •  ЧЕСТНАЯ ИГРА</div>
+          </div>
 
-          &lt;div class=&quot;seka-player&quot; data-seat=&quot;1&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Хорошей игры!&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;AK&lt;div class=&quot;seka-dealer&quot;&gt;D&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Akmal&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;8 400&lt;/div&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-player&quot; data-seat=&quot;2&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Смело 🔥&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;DV&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Davron&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;3 250&lt;/div&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-player seka-turn&quot; data-seat=&quot;3&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Ваш ход&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;AM&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Amir&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;6 100&lt;/div&gt;&lt;div class=&quot;seka-dark-badge&quot;&gt;ТЁМНАЯ&lt;/div&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-player&quot; data-seat=&quot;4&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Удачи!&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;RU&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Ruslan&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;2 900&lt;/div&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-player&quot; data-seat=&quot;5&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Отличный ход&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;TG&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Вы&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;12 850&lt;/div&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-player&quot; data-seat=&quot;6&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Ещё круг?&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;DI&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Diyor&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;4 720&lt;/div&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-player&quot; data-seat=&quot;7&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;👏👏👏&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;SA&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Sabina&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;7 600&lt;/div&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-player&quot; data-seat=&quot;8&quot;&gt;&lt;div class=&quot;seka-speech&quot;&gt;Играем&lt;/div&gt;&lt;div class=&quot;seka-avatar&quot;&gt;MI&lt;/div&gt;&lt;div class=&quot;seka-player-name&quot;&gt;Misha&lt;/div&gt;&lt;div class=&quot;seka-player-stack&quot;&gt;5 180&lt;/div&gt;&lt;/div&gt;
+          <div class="seka-player" data-seat="1"><div class="seka-speech">Хорошей игры!</div><div class="seka-avatar">AK<div class="seka-dealer">D</div></div><div class="seka-player-name">Akmal</div><div class="seka-player-stack">8 400</div></div>
+          <div class="seka-player" data-seat="2"><div class="seka-speech">Смело 🔥</div><div class="seka-avatar">DV</div><div class="seka-player-name">Davron</div><div class="seka-player-stack">3 250</div></div>
+          <div class="seka-player seka-turn" data-seat="3"><div class="seka-speech">Ваш ход</div><div class="seka-avatar">AM</div><div class="seka-player-name">Amir</div><div class="seka-player-stack">6 100</div><div class="seka-dark-badge">ТЁМНАЯ</div></div>
+          <div class="seka-player" data-seat="4"><div class="seka-speech">Удачи!</div><div class="seka-avatar">RU</div><div class="seka-player-name">Ruslan</div><div class="seka-player-stack">2 900</div></div>
+          <div class="seka-player" data-seat="5"><div class="seka-speech">Отличный ход</div><div class="seka-avatar">TG</div><div class="seka-player-name">Вы</div><div class="seka-player-stack">12 850</div></div>
+          <div class="seka-player" data-seat="6"><div class="seka-speech">Ещё круг?</div><div class="seka-avatar">DI</div><div class="seka-player-name">Diyor</div><div class="seka-player-stack">4 720</div></div>
+          <div class="seka-player" data-seat="7"><div class="seka-speech">👏👏👏</div><div class="seka-avatar">SA</div><div class="seka-player-name">Sabina</div><div class="seka-player-stack">7 600</div></div>
+          <div class="seka-player" data-seat="8"><div class="seka-speech">Играем</div><div class="seka-avatar">MI</div><div class="seka-player-name">Misha</div><div class="seka-player-stack">5 180</div></div>
 
-          &lt;div class=&quot;seka-hand&quot; aria-label=&quot;Ваши карты: туз пик, десять пик, дама пик&quot;&gt;
-            &lt;div class=&quot;seka-playing-card&quot;&gt;A&lt;span&gt;♠&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;seka-playing-card&quot;&gt;10&lt;span&gt;♠&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;seka-playing-card&quot;&gt;Q&lt;span&gt;♠&lt;/span&gt;&lt;/div&gt;
-          &lt;/div&gt;
+          <div class="seka-hand" aria-label="Ваши карты: туз пик, десять пик, дама пик">
+            <div class="seka-playing-card">A<span>♠</span></div>
+            <div class="seka-playing-card">10<span>♠</span></div>
+            <div class="seka-playing-card">Q<span>♠</span></div>
+          </div>
 
-          &lt;button type=&quot;button&quot; class=&quot;seka-chat-fab&quot; data-open-chat aria-label=&quot;Открыть чат&quot;&gt;💬&lt;i aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+          <button type="button" class="seka-chat-fab" data-open-chat aria-label="Открыть чат">💬<i aria-hidden="true"></i></button>
 
-          &lt;div class=&quot;seka-turn-panel&quot;&gt;
-            &lt;div class=&quot;seka-combination-line&quot;&gt;&lt;strong&gt;31 очко · пики&lt;/strong&gt;&lt;span&gt;Туз 11 + 10 + дама 10&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;seka-turn-info&quot;&gt;&lt;span&gt;Ваш ход · &lt;strong&gt;14 сек&lt;/strong&gt;&lt;/span&gt;&lt;span&gt;Темнящий поставил 200 · вам &lt;strong&gt;400&lt;/strong&gt;&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;seka-action-grid&quot;&gt;
-              &lt;button type=&quot;button&quot; class=&quot;seka-table-action&quot; data-game-action=&quot;Упасть&quot;&gt;Упасть&lt;/button&gt;
-              &lt;button type=&quot;button&quot; class=&quot;seka-table-action seka-call&quot; data-game-action=&quot;Поддержать&quot;&gt;Поддержать · 400&lt;/button&gt;
-              &lt;button type=&quot;button&quot; class=&quot;seka-table-action seka-raise&quot; data-game-action=&quot;Повысить&quot;&gt;Повысить&lt;/button&gt;
-              &lt;button type=&quot;button&quot; class=&quot;seka-table-action seka-reveal&quot; data-game-action=&quot;Вскрыться&quot;&gt;Вскрыться · 400&lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/section&gt;
+          <div class="seka-turn-panel">
+            <div class="seka-combination-line"><strong>31 очко · пики</strong><span>Туз 11 + 10 + дама 10</span></div>
+            <div class="seka-turn-info"><span>Ваш ход · <strong>14 сек</strong></span><span>Темнящий поставил 200 · вам <strong>400</strong></span></div>
+            <div class="seka-action-grid">
+              <button type="button" class="seka-table-action" data-game-action="Упасть">Упасть</button>
+              <button type="button" class="seka-table-action seka-call" data-game-action="Поддержать">Поддержать · 400</button>
+              <button type="button" class="seka-table-action seka-raise" data-game-action="Повысить">Повысить</button>
+              <button type="button" class="seka-table-action seka-reveal" data-game-action="Вскрыться">Вскрыться · 400</button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      &lt;section class=&quot;seka-screen&quot; data-screen=&quot;wallet&quot; aria-label=&quot;Кошелёк&quot;&gt;
-        &lt;p class=&quot;seka-kicker&quot;&gt;Кошелёк&lt;/p&gt;
-        &lt;h1 class=&quot;seka-page-title&quot;&gt;Ваши фишки&lt;/h1&gt;
-        &lt;p class=&quot;seka-page-subtitle&quot;&gt;Единый игровой баланс. Покупка и продажа фишек проходят через очередь P2P-ордеров.&lt;/p&gt;
-        &lt;div class=&quot;seka-wallet-total&quot;&gt;&lt;small&gt;Доступно для игры&lt;/small&gt;&lt;strong&gt;&lt;span data-wallet-balance&gt;24 850&lt;/span&gt; &lt;em&gt;фишек&lt;/em&gt;&lt;/strong&gt;&lt;/div&gt;
-        &lt;div class=&quot;seka-wallet-actions&quot;&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-wallet-command&quot; data-p2p=&quot;buy&quot;&gt;&lt;b&gt;↓&lt;/b&gt;&lt;span&gt;Купить&lt;/span&gt;&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-wallet-command&quot; data-p2p=&quot;sell&quot;&gt;&lt;b&gt;↑&lt;/b&gt;&lt;span&gt;Продать&lt;/span&gt;&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-wallet-command&quot; data-deals&gt;&lt;b&gt;↻&lt;/b&gt;&lt;span&gt;Сделки&lt;/span&gt;&lt;/button&gt;
-        &lt;/div&gt;
-      &lt;/section&gt;
+      <section class="seka-screen" data-screen="wallet" aria-label="Кошелёк">
+        <p class="seka-kicker">Кошелёк</p>
+        <h1 class="seka-page-title">Ваши фишки</h1>
+        <p class="seka-page-subtitle">Единый игровой баланс. Покупка и продажа фишек проходят через очередь P2P-ордеров.</p>
+        <div class="seka-wallet-total"><small>Доступно для игры</small><strong><span data-wallet-balance>24 850</span> <em>фишек</em></strong></div>
+        <div class="seka-wallet-actions">
+          <button type="button" class="seka-wallet-command" data-p2p="buy"><b>↓</b><span>Купить</span></button>
+          <button type="button" class="seka-wallet-command" data-p2p="sell"><b>↑</b><span>Продать</span></button>
+          <button type="button" class="seka-wallet-command" data-deals><b>↻</b><span>Сделки</span></button>
+        </div>
+      </section>
 
-      &lt;section class=&quot;seka-screen&quot; data-screen=&quot;profile&quot; aria-label=&quot;Профиль&quot;&gt;
-        &lt;p class=&quot;seka-kicker&quot;&gt;Telegram-профиль&lt;/p&gt;
-        &lt;h1 class=&quot;seka-page-title&quot;&gt;Ваш игровой путь&lt;/h1&gt;
-        &lt;div class=&quot;seka-profile-hero&quot;&gt;
-          &lt;div class=&quot;seka-profile-avatar&quot;&gt;DU&lt;/div&gt;
-          &lt;div&gt;&lt;h2&gt;Данил Усманов&lt;/h2&gt;&lt;p&gt;@dan_us · ID 104829&lt;/p&gt;&lt;span class=&quot;seka-profile-level&quot;&gt;Уровень 18 · Мастер&lt;/span&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;seka-profile-stats&quot;&gt;
-          &lt;div class=&quot;seka-profile-stat&quot;&gt;&lt;strong&gt;248&lt;/strong&gt;&lt;small&gt;Сыграно партий&lt;/small&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-profile-stat&quot;&gt;&lt;strong&gt;46%&lt;/strong&gt;&lt;small&gt;Побед&lt;/small&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-profile-stat&quot;&gt;&lt;strong&gt;+18K&lt;/strong&gt;&lt;small&gt;Баланс за сезон&lt;/small&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;seka-section-head&quot;&gt;&lt;h3&gt;Друзья&lt;/h3&gt;&lt;span&gt;12 друзей&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;seka-friend-list&quot;&gt;
-          &lt;div class=&quot;seka-friend-row&quot;&gt;&lt;div class=&quot;seka-friend-avatar&quot;&gt;AK&lt;/div&gt;&lt;div class=&quot;seka-friend-info&quot;&gt;&lt;strong&gt;Акмаль&lt;/strong&gt;&lt;small&gt;&lt;span class=&quot;seka-open-dot&quot;&gt;&lt;/span&gt;За столом · 5/8&lt;/small&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; class=&quot;seka-friend-invite&quot; data-action=&quot;join-friend&quot;&gt;Присоединиться&lt;/button&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-friend-row&quot;&gt;&lt;div class=&quot;seka-friend-avatar&quot;&gt;SA&lt;/div&gt;&lt;div class=&quot;seka-friend-info&quot;&gt;&lt;strong&gt;Сабина&lt;/strong&gt;&lt;small&gt;Была в сети 12 минут назад&lt;/small&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; class=&quot;seka-friend-invite&quot; data-action=&quot;invite&quot;&gt;Позвать&lt;/button&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-friend-row&quot;&gt;&lt;div class=&quot;seka-friend-avatar&quot;&gt;DI&lt;/div&gt;&lt;div class=&quot;seka-friend-info&quot;&gt;&lt;strong&gt;Диёр&lt;/strong&gt;&lt;small&gt;В лобби&lt;/small&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; class=&quot;seka-friend-invite&quot; data-action=&quot;invite&quot;&gt;Позвать&lt;/button&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;button type=&quot;button&quot; class=&quot;seka-primary-action&quot; style=&quot;width:100%;margin-top:14px&quot; data-action=&quot;share&quot;&gt;Пригласить друга из Telegram&lt;/button&gt;
-      &lt;/section&gt;
+      <section class="seka-screen" data-screen="profile" aria-label="Профиль">
+        <p class="seka-kicker">Telegram-профиль</p>
+        <h1 class="seka-page-title">Ваш игровой путь</h1>
+        <div class="seka-profile-hero">
+          <div class="seka-profile-avatar">DU</div>
+          <div><h2>Данил Усманов</h2><p>@dan_us · ID 104829</p><span class="seka-profile-level">Уровень 18 · Мастер</span></div>
+        </div>
+        <div class="seka-profile-stats">
+          <div class="seka-profile-stat"><strong>248</strong><small>Сыграно партий</small></div>
+          <div class="seka-profile-stat"><strong>46%</strong><small>Побед</small></div>
+          <div class="seka-profile-stat"><strong>+18K</strong><small>Баланс за сезон</small></div>
+        </div>
+        <div class="seka-section-head"><h3>Друзья</h3><span>12 друзей</span></div>
+        <div class="seka-friend-list">
+          <div class="seka-friend-row"><div class="seka-friend-avatar">AK</div><div class="seka-friend-info"><strong>Акмаль</strong><small><span class="seka-open-dot"></span>За столом · 5/8</small></div><button type="button" class="seka-friend-invite" data-action="join-friend">Присоединиться</button></div>
+          <div class="seka-friend-row"><div class="seka-friend-avatar">SA</div><div class="seka-friend-info"><strong>Сабина</strong><small>Была в сети 12 минут назад</small></div><button type="button" class="seka-friend-invite" data-action="invite">Позвать</button></div>
+          <div class="seka-friend-row"><div class="seka-friend-avatar">DI</div><div class="seka-friend-info"><strong>Диёр</strong><small>В лобби</small></div><button type="button" class="seka-friend-invite" data-action="invite">Позвать</button></div>
+        </div>
+        <button type="button" class="seka-primary-action" style="width:100%;margin-top:14px" data-action="share">Пригласить друга из Telegram</button>
+      </section>
 
-      &lt;section class=&quot;seka-screen seka-admin-screen&quot; data-screen=&quot;admin&quot; aria-label=&quot;Админ-панель&quot;&gt;
-        &lt;div class=&quot;seka-admin-head&quot;&gt;
-          &lt;div&gt;&lt;h1&gt;Центр управления&lt;/h1&gt;&lt;p&gt;Игры, игроки, экономика и обращения в реальном времени&lt;/p&gt;&lt;/div&gt;
-          &lt;div class=&quot;seka-live-status&quot;&gt;&lt;i&gt;&lt;/i&gt;Система работает&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;seka-admin-tabs&quot; aria-label=&quot;Разделы админ-панели&quot;&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;overview&quot; aria-pressed=&quot;true&quot;&gt;Обзор&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;players&quot; aria-pressed=&quot;false&quot;&gt;Игроки&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;tables&quot; aria-pressed=&quot;false&quot;&gt;Столы&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;games&quot; aria-pressed=&quot;false&quot;&gt;Все игры&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;economy&quot; aria-pressed=&quot;false&quot;&gt;Экономика&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;support&quot; aria-pressed=&quot;false&quot;&gt;Споры и жалобы&lt;/button&gt;
-          &lt;button type=&quot;button&quot; class=&quot;seka-admin-tab&quot; data-admin=&quot;settings&quot; aria-pressed=&quot;false&quot;&gt;Настройки&lt;/button&gt;
-        &lt;/div&gt;
+      <section class="seka-screen seka-admin-screen" data-screen="admin" aria-label="Админ-панель">
+        <div class="seka-admin-head">
+          <div><h1>Центр управления</h1><p>Игры, игроки, экономика и обращения в реальном времени</p></div>
+          <div class="seka-live-status"><i></i>Система работает</div>
+        </div>
+        <div class="seka-admin-tabs" aria-label="Разделы админ-панели">
+          <button type="button" class="seka-admin-tab" data-admin="overview" aria-pressed="true">Обзор</button>
+          <button type="button" class="seka-admin-tab" data-admin="players" aria-pressed="false">Игроки</button>
+          <button type="button" class="seka-admin-tab" data-admin="tables" aria-pressed="false">Столы</button>
+          <button type="button" class="seka-admin-tab" data-admin="games" aria-pressed="false">Все игры</button>
+          <button type="button" class="seka-admin-tab" data-admin="economy" aria-pressed="false">Экономика</button>
+          <button type="button" class="seka-admin-tab" data-admin="support" aria-pressed="false">Споры и жалобы</button>
+          <button type="button" class="seka-admin-tab" data-admin="settings" aria-pressed="false">Настройки</button>
+        </div>
 
-        &lt;div class=&quot;seka-admin-panel seka-admin-panel-visible&quot; data-admin-panel=&quot;overview&quot;&gt;
-          &lt;div class=&quot;seka-admin-metrics&quot;&gt;
-            &lt;div class=&quot;seka-admin-metric&quot;&gt;&lt;small&gt;Игроки онлайн&lt;/small&gt;&lt;strong&gt;286&lt;/strong&gt;&lt;em&gt;+12% за час&lt;/em&gt;&lt;/div&gt;
-            &lt;div class=&quot;seka-admin-metric&quot;&gt;&lt;small&gt;Активные столы&lt;/small&gt;&lt;strong&gt;48&lt;/strong&gt;&lt;em&gt;8 почти заполнены&lt;/em&gt;&lt;/div&gt;
-            &lt;div class=&quot;seka-admin-metric&quot;&gt;&lt;small&gt;Фишек в игре&lt;/small&gt;&lt;strong&gt;1.8M&lt;/strong&gt;&lt;em&gt;оборот сегодня&lt;/em&gt;&lt;/div&gt;
-            &lt;div class=&quot;seka-admin-metric&quot;&gt;&lt;small&gt;Открытые жалобы&lt;/small&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;em style=&quot;color:#f2c45d&quot;&gt;2 требуют внимания&lt;/em&gt;&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;seka-admin-columns&quot;&gt;
-            &lt;div class=&quot;seka-admin-module&quot;&gt;
-              &lt;div class=&quot;seka-admin-module-head&quot;&gt;&lt;strong&gt;Активные игры&lt;/strong&gt;&lt;span&gt;Обновление в реальном времени&lt;/span&gt;&lt;/div&gt;
-              &lt;table class=&quot;seka-admin-table&quot;&gt;
-                &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Стол&lt;/th&gt;&lt;th&gt;Игроки&lt;/th&gt;&lt;th&gt;Ставка&lt;/th&gt;&lt;th&gt;Банк&lt;/th&gt;&lt;th&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
-                &lt;tbody&gt;
-                  &lt;tr&gt;&lt;td&gt;Ташкент · 12&lt;/td&gt;&lt;td&gt;5 / 8&lt;/td&gt;&lt;td&gt;200&lt;/td&gt;&lt;td&gt;4 800&lt;/td&gt;&lt;td&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-action=&quot;inspect&quot;&gt;Открыть&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
-                  &lt;tr&gt;&lt;td&gt;High Rollers&lt;/td&gt;&lt;td&gt;6 / 8&lt;/td&gt;&lt;td&gt;1 000&lt;/td&gt;&lt;td&gt;28 000&lt;/td&gt;&lt;td&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-action=&quot;inspect&quot;&gt;Открыть&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
-                  &lt;tr&gt;&lt;td&gt;Самарканд · 04&lt;/td&gt;&lt;td&gt;3 / 6&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;1 200&lt;/td&gt;&lt;td&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action seka-danger&quot; data-action=&quot;pause&quot;&gt;Пауза&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
-                &lt;/tbody&gt;
-              &lt;/table&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;seka-admin-module&quot;&gt;
-              &lt;div class=&quot;seka-admin-module-head&quot;&gt;&lt;strong&gt;Требует внимания&lt;/strong&gt;&lt;span&gt;7 всего&lt;/span&gt;&lt;/div&gt;
-              &lt;div class=&quot;seka-alert-list&quot;&gt;
-                &lt;div class=&quot;seka-alert-row&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;div&gt;&lt;strong&gt;Спор по игре #18382&lt;/strong&gt;&lt;small&gt;Два игрока оспаривают результат&lt;/small&gt;&lt;/div&gt;&lt;span&gt;4 мин&lt;/span&gt;&lt;/div&gt;
-                &lt;div class=&quot;seka-alert-row&quot;&gt;&lt;i style=&quot;background:#ff6b73&quot;&gt;&lt;/i&gt;&lt;div&gt;&lt;strong&gt;Подозрительная активность&lt;/strong&gt;&lt;small&gt;Игрок @nightfox · 4 связанных аккаунта&lt;/small&gt;&lt;/div&gt;&lt;span&gt;11 мин&lt;/span&gt;&lt;/div&gt;
-                &lt;div class=&quot;seka-alert-row&quot;&gt;&lt;i style=&quot;background:#68b7ff&quot;&gt;&lt;/i&gt;&lt;div&gt;&lt;strong&gt;Предложение&lt;/strong&gt;&lt;small&gt;Запрос приватных турниров&lt;/small&gt;&lt;/div&gt;&lt;span&gt;28 мин&lt;/span&gt;&lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
+        <div class="seka-admin-panel seka-admin-panel-visible" data-admin-panel="overview">
+          <div class="seka-admin-metrics">
+            <div class="seka-admin-metric"><small>Игроки онлайн</small><strong>286</strong><em>+12% за час</em></div>
+            <div class="seka-admin-metric"><small>Активные столы</small><strong>48</strong><em>8 почти заполнены</em></div>
+            <div class="seka-admin-metric"><small>Фишек в игре</small><strong>1.8M</strong><em>оборот сегодня</em></div>
+            <div class="seka-admin-metric"><small>Открытые жалобы</small><strong>7</strong><em style="color:#f2c45d">2 требуют внимания</em></div>
+          </div>
+          <div class="seka-admin-columns">
+            <div class="seka-admin-module">
+              <div class="seka-admin-module-head"><strong>Активные игры</strong><span>Обновление в реальном времени</span></div>
+              <table class="seka-admin-table">
+                <thead><tr><th>Стол</th><th>Игроки</th><th>Ставка</th><th>Банк</th><th></th></tr></thead>
+                <tbody>
+                  <tr><td>Ташкент · 12</td><td>5 / 8</td><td>200</td><td>4 800</td><td><button type="button" class="seka-admin-action" data-action="inspect">Открыть</button></td></tr>
+                  <tr><td>High Rollers</td><td>6 / 8</td><td>1 000</td><td>28 000</td><td><button type="button" class="seka-admin-action" data-action="inspect">Открыть</button></td></tr>
+                  <tr><td>Самарканд · 04</td><td>3 / 6</td><td>100</td><td>1 200</td><td><button type="button" class="seka-admin-action seka-danger" data-action="pause">Пауза</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="seka-admin-module">
+              <div class="seka-admin-module-head"><strong>Требует внимания</strong><span>7 всего</span></div>
+              <div class="seka-alert-list">
+                <div class="seka-alert-row"><i></i><div><strong>Спор по игре #18382</strong><small>Два игрока оспаривают результат</small></div><span>4 мин</span></div>
+                <div class="seka-alert-row"><i style="background:#ff6b73"></i><div><strong>Подозрительная активность</strong><small>Игрок @nightfox · 4 связанных аккаунта</small></div><span>11 мин</span></div>
+                <div class="seka-alert-row"><i style="background:#68b7ff"></i><div><strong>Предложение</strong><small>Запрос приватных турниров</small></div><span>28 мин</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;players&quot;&gt;
-          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;&lt;h3&gt;Управление игроками&lt;/h3&gt;&lt;p&gt;Поиск по Telegram ID, никнейму и игровой активности. Баланс, блокировка и удаление со стола фиксируются в журнале аудита.&lt;/p&gt;&lt;div class=&quot;seka-admin-tools&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;find-player&quot;&gt;Найти игрока&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;chips-add&quot;&gt;Добавить фишки&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;chips-remove&quot;&gt;Забрать фишки&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;block-player&quot;&gt;Заблокировать&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;remove-player&quot;&gt;Удалить со стола&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;tables&quot;&gt;
-          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;&lt;h3&gt;Столы и лимиты&lt;/h3&gt;&lt;p&gt;Создание и остановка столов, настройки количества мест, входа, ставок, таймеров и режима наблюдения.&lt;/p&gt;&lt;div class=&quot;seka-admin-tools&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;create-table&quot;&gt;Создать стол&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;edit-limits&quot;&gt;Настроить лимиты&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;pause&quot;&gt;Остановить стол&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;games&quot;&gt;
-          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;&lt;h3&gt;Все игры и история действий&lt;/h3&gt;&lt;p&gt;Полный журнал раундов: участники, раздачи, ставки, победитель, системные события, чат и запись решения спорной ситуации.&lt;/p&gt;&lt;div class=&quot;seka-admin-tools&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;game-search&quot;&gt;Найти игру по ID&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;export&quot;&gt;Экспорт истории&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;replay&quot;&gt;Открыть повтор&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;economy&quot;&gt;
-          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;
-            &lt;h3&gt;P2P-ордера на продажу&lt;/h3&gt;
-            &lt;p&gt;Игрок публикует количество и номер для выплаты. Система выдаёт ордера покупателям строго по очереди лотами по 5 000 фишек. Редактировать и отменять их может только администратор.&lt;/p&gt;
-            &lt;div class=&quot;seka-admin-order-list&quot; data-admin-order-list&gt;
-              &lt;div class=&quot;seka-admin-order-row&quot; data-order-id=&quot;1051&quot;&gt;&lt;div&gt;&lt;strong&gt;Ордер №1051 · 10 000 фишек&lt;/strong&gt;&lt;small&gt;Осталось 10 000 · номер **** 8602&lt;/small&gt;&lt;/div&gt;&lt;span class=&quot;seka-order-status&quot;&gt;Активен&lt;/span&gt;&lt;div class=&quot;seka-admin-order-actions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-edit-order=&quot;1051&quot;&gt;Изменить&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action seka-danger&quot; data-cancel-order=&quot;1051&quot;&gt;Отменить&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;seka-admin-order-row&quot; data-order-id=&quot;1050&quot;&gt;&lt;div&gt;&lt;strong&gt;Ордер №1050 · 15 000 фишек&lt;/strong&gt;&lt;small&gt;Осталось 15 000 · номер **** 1148&lt;/small&gt;&lt;/div&gt;&lt;span class=&quot;seka-order-status&quot;&gt;Активен&lt;/span&gt;&lt;div class=&quot;seka-admin-order-actions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-edit-order=&quot;1050&quot;&gt;Изменить&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action seka-danger&quot; data-cancel-order=&quot;1050&quot;&gt;Отменить&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;seka-admin-order-row&quot; data-order-id=&quot;1049&quot;&gt;&lt;div&gt;&lt;strong&gt;Ордер №1049 · 5 000 фишек&lt;/strong&gt;&lt;small&gt;Осталось 5 000 · номер **** 9320&lt;/small&gt;&lt;/div&gt;&lt;span class=&quot;seka-order-status&quot;&gt;Активен&lt;/span&gt;&lt;div class=&quot;seka-admin-order-actions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-edit-order=&quot;1049&quot;&gt;Изменить&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action seka-danger&quot; data-cancel-order=&quot;1049&quot;&gt;Отменить&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;seka-admin-tools&quot; style=&quot;margin-top:12px&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;audit&quot;&gt;Аудит операций&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;p2p-settings&quot;&gt;Настройки P2P&lt;/button&gt;&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;support&quot;&gt;
-          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;&lt;h3&gt;Споры, жалобы и предложения&lt;/h3&gt;&lt;p&gt;Единая очередь обращений со связью с игрой, игроком, историей чата и решением администратора.&lt;/p&gt;&lt;div class=&quot;seka-admin-tools&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;disputes&quot;&gt;Открытые споры · 3&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;complaints&quot;&gt;Жалобы · 4&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;suggestions&quot;&gt;Предложения · 18&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;seka-admin-panel&quot; data-admin-panel=&quot;settings&quot;&gt;
-          &lt;div class=&quot;seka-admin-placeholder&quot;&gt;&lt;h3&gt;Системные настройки&lt;/h3&gt;&lt;p&gt;Правила игры, таймеры, комиссии фишек, шаблонные сообщения, права администраторов и параметры технического обслуживания.&lt;/p&gt;&lt;div class=&quot;seka-admin-tools&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;game-rules&quot;&gt;Правила игры&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;roles&quot;&gt;Роли и доступы&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-tool&quot; data-action=&quot;templates&quot;&gt;Шаблоны чата&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/section&gt;
-    &lt;/main&gt;
+        <div class="seka-admin-panel" data-admin-panel="players">
+          <div class="seka-admin-placeholder"><h3>Управление игроками</h3><p>Поиск по Telegram ID, никнейму и игровой активности. Баланс, блокировка и удаление со стола фиксируются в журнале аудита.</p><div class="seka-admin-tools"><button type="button" class="seka-admin-tool" data-action="find-player">Найти игрока</button><button type="button" class="seka-admin-tool" data-action="chips-add">Добавить фишки</button><button type="button" class="seka-admin-tool" data-action="chips-remove">Забрать фишки</button><button type="button" class="seka-admin-tool" data-action="block-player">Заблокировать</button><button type="button" class="seka-admin-tool" data-action="remove-player">Удалить со стола</button></div></div>
+        </div>
+        <div class="seka-admin-panel" data-admin-panel="tables">
+          <div class="seka-admin-placeholder"><h3>Столы и лимиты</h3><p>Создание и остановка столов, настройки количества мест, входа, ставок, таймеров и режима наблюдения.</p><div class="seka-admin-tools"><button type="button" class="seka-admin-tool" data-action="create-table">Создать стол</button><button type="button" class="seka-admin-tool" data-action="edit-limits">Настроить лимиты</button><button type="button" class="seka-admin-tool" data-action="pause">Остановить стол</button></div></div>
+        </div>
+        <div class="seka-admin-panel" data-admin-panel="games">
+          <div class="seka-admin-placeholder"><h3>Все игры и история действий</h3><p>Полный журнал раундов: участники, раздачи, ставки, победитель, системные события, чат и запись решения спорной ситуации.</p><div class="seka-admin-tools"><button type="button" class="seka-admin-tool" data-action="game-search">Найти игру по ID</button><button type="button" class="seka-admin-tool" data-action="export">Экспорт истории</button><button type="button" class="seka-admin-tool" data-action="replay">Открыть повтор</button></div></div>
+        </div>
+        <div class="seka-admin-panel" data-admin-panel="economy">
+          <div class="seka-admin-placeholder">
+            <h3>P2P-ордера на продажу</h3>
+            <p>Игрок публикует количество и номер для выплаты. Система выдаёт ордера покупателям строго по очереди лотами по 5 000 фишек. Редактировать и отменять их может только администратор.</p>
+            <div class="seka-admin-order-list" data-admin-order-list>
+              <div class="seka-admin-order-row" data-order-id="1051"><div><strong>Ордер №1051 · 10 000 фишек</strong><small>Осталось 10 000 · номер **** 8602</small></div><span class="seka-order-status">Активен</span><div class="seka-admin-order-actions"><button type="button" class="seka-admin-action" data-edit-order="1051">Изменить</button><button type="button" class="seka-admin-action seka-danger" data-cancel-order="1051">Отменить</button></div></div>
+              <div class="seka-admin-order-row" data-order-id="1050"><div><strong>Ордер №1050 · 15 000 фишек</strong><small>Осталось 15 000 · номер **** 1148</small></div><span class="seka-order-status">Активен</span><div class="seka-admin-order-actions"><button type="button" class="seka-admin-action" data-edit-order="1050">Изменить</button><button type="button" class="seka-admin-action seka-danger" data-cancel-order="1050">Отменить</button></div></div>
+              <div class="seka-admin-order-row" data-order-id="1049"><div><strong>Ордер №1049 · 5 000 фишек</strong><small>Осталось 5 000 · номер **** 9320</small></div><span class="seka-order-status">Активен</span><div class="seka-admin-order-actions"><button type="button" class="seka-admin-action" data-edit-order="1049">Изменить</button><button type="button" class="seka-admin-action seka-danger" data-cancel-order="1049">Отменить</button></div></div>
+            </div>
+            <div class="seka-admin-tools" style="margin-top:12px"><button type="button" class="seka-admin-tool" data-action="audit">Аудит операций</button><button type="button" class="seka-admin-tool" data-action="p2p-settings">Настройки P2P</button></div>
+          </div>
+        </div>
+        <div class="seka-admin-panel" data-admin-panel="support">
+          <div class="seka-admin-placeholder"><h3>Споры, жалобы и предложения</h3><p>Единая очередь обращений со связью с игрой, игроком, историей чата и решением администратора.</p><div class="seka-admin-tools"><button type="button" class="seka-admin-tool" data-action="disputes">Открытые споры · 3</button><button type="button" class="seka-admin-tool" data-action="complaints">Жалобы · 4</button><button type="button" class="seka-admin-tool" data-action="suggestions">Предложения · 18</button></div></div>
+        </div>
+        <div class="seka-admin-panel" data-admin-panel="settings">
+          <div class="seka-admin-placeholder"><h3>Системные настройки</h3><p>Правила игры, таймеры, комиссии фишек, шаблонные сообщения, права администраторов и параметры технического обслуживания.</p><div class="seka-admin-tools"><button type="button" class="seka-admin-tool" data-action="game-rules">Правила игры</button><button type="button" class="seka-admin-tool" data-action="roles">Роли и доступы</button><button type="button" class="seka-admin-tool" data-action="templates">Шаблоны чата</button></div></div>
+        </div>
+      </section>
+    </main>
 
-    &lt;nav class=&quot;seka-bottom-nav&quot; aria-label=&quot;Основная навигация&quot;&gt;
-      &lt;button type=&quot;button&quot; class=&quot;seka-nav-choice&quot; data-go=&quot;lobby&quot; aria-current=&quot;page&quot;&gt;&lt;b&gt;⌂&lt;/b&gt;&lt;span&gt;Главная&lt;/span&gt;&lt;/button&gt;
-      &lt;button type=&quot;button&quot; class=&quot;seka-nav-choice&quot; data-go=&quot;table&quot; aria-current=&quot;false&quot;&gt;&lt;b&gt;♠&lt;/b&gt;&lt;span&gt;Стол&lt;/span&gt;&lt;/button&gt;
-      &lt;button type=&quot;button&quot; class=&quot;seka-nav-choice&quot; data-go=&quot;wallet&quot; aria-current=&quot;false&quot;&gt;&lt;b&gt;◫&lt;/b&gt;&lt;span&gt;Кошелёк&lt;/span&gt;&lt;/button&gt;
-      &lt;button type=&quot;button&quot; class=&quot;seka-nav-choice&quot; data-go=&quot;profile&quot; aria-current=&quot;false&quot;&gt;&lt;b&gt;○&lt;/b&gt;&lt;span&gt;Профиль&lt;/span&gt;&lt;/button&gt;
-    &lt;/nav&gt;
-  &lt;/div&gt;
+    <nav class="seka-bottom-nav" aria-label="Основная навигация">
+      <button type="button" class="seka-nav-choice" data-go="lobby" aria-current="page"><b>⌂</b><span>Главная</span></button>
+      <button type="button" class="seka-nav-choice" data-go="table" aria-current="false"><b>♠</b><span>Стол</span></button>
+      <button type="button" class="seka-nav-choice" data-go="wallet" aria-current="false"><b>◫</b><span>Кошелёк</span></button>
+      <button type="button" class="seka-nav-choice" data-go="profile" aria-current="false"><b>○</b><span>Профиль</span></button>
+    </nav>
+  </div>
 
-  &lt;aside class=&quot;seka-chat-sheet&quot; aria-label=&quot;Чат за столом&quot; aria-hidden=&quot;true&quot;&gt;
-    &lt;div class=&quot;seka-sheet-handle&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;seka-sheet-head&quot;&gt;&lt;h3&gt;Чат стола&lt;/h3&gt;&lt;button type=&quot;button&quot; class=&quot;seka-sheet-close&quot; data-close-sheet aria-label=&quot;Закрыть чат&quot;&gt;×&lt;/button&gt;&lt;/div&gt;
-    &lt;div class=&quot;seka-quick-messages&quot; aria-label=&quot;Шаблонные сообщения&quot;&gt;
-      &lt;button type=&quot;button&quot; class=&quot;seka-quick-message&quot;&gt;Удачи!&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-quick-message&quot;&gt;Хорошая игра&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-quick-message&quot;&gt;Смело 🔥&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-quick-message&quot;&gt;👏👏👏&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;seka-chat-log&quot; aria-live=&quot;polite&quot;&gt;
-      &lt;div class=&quot;seka-chat-line&quot;&gt;&lt;b&gt;Akmal:&lt;/b&gt; Всем хорошей игры!&lt;/div&gt;
-      &lt;div class=&quot;seka-chat-line&quot;&gt;&lt;b&gt;Sabina:&lt;/b&gt; Кто после этой партии в турнир?&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;seka-chat-compose&quot;&gt;&lt;input type=&quot;text&quot; aria-label=&quot;Сообщение&quot; placeholder=&quot;Написать сообщение…&quot;&gt;&lt;button type=&quot;button&quot; data-send-chat aria-label=&quot;Отправить&quot;&gt;➜&lt;/button&gt;&lt;/div&gt;
-  &lt;/aside&gt;
+  <aside class="seka-chat-sheet" aria-label="Чат за столом" aria-hidden="true">
+    <div class="seka-sheet-handle"></div>
+    <div class="seka-sheet-head"><h3>Чат стола</h3><button type="button" class="seka-sheet-close" data-close-sheet aria-label="Закрыть чат">×</button></div>
+    <div class="seka-quick-messages" aria-label="Шаблонные сообщения">
+      <button type="button" class="seka-quick-message">Удачи!</button><button type="button" class="seka-quick-message">Хорошая игра</button><button type="button" class="seka-quick-message">Смело 🔥</button><button type="button" class="seka-quick-message">👏👏👏</button>
+    </div>
+    <div class="seka-chat-log" aria-live="polite">
+      <div class="seka-chat-line"><b>Akmal:</b> Всем хорошей игры!</div>
+      <div class="seka-chat-line"><b>Sabina:</b> Кто после этой партии в турнир?</div>
+    </div>
+    <div class="seka-chat-compose"><input type="text" aria-label="Сообщение" placeholder="Написать сообщение…"><button type="button" data-send-chat aria-label="Отправить">➜</button></div>
+  </aside>
 
-  &lt;aside class=&quot;seka-transfer-sheet&quot; aria-label=&quot;P2P-маркет&quot; aria-hidden=&quot;true&quot;&gt;
-    &lt;div class=&quot;seka-sheet-handle&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;seka-sheet-head&quot;&gt;&lt;h3 data-p2p-title&gt;Купить фишки&lt;/h3&gt;&lt;button type=&quot;button&quot; class=&quot;seka-sheet-close&quot; data-close-sheet aria-label=&quot;Закрыть&quot;&gt;×&lt;/button&gt;&lt;/div&gt;
-    &lt;div class=&quot;seka-p2p-view seka-p2p-visible&quot; data-p2p-view=&quot;buy&quot;&gt;
-      &lt;p class=&quot;seka-p2p-note&quot;&gt;Выбор продавца и ордера не требуется. Система автоматически выдаёт первый доступный ордер очереди.&lt;/p&gt;
-      &lt;div class=&quot;seka-queue-lot&quot; data-current-order&gt;
-        &lt;div class=&quot;seka-queue-head&quot;&gt;&lt;strong&gt;Ордер №&lt;span data-queue-id&gt;1051&lt;/span&gt;&lt;/strong&gt;&lt;span&gt;Первый в очереди&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;seka-lot-amount&quot;&gt;5 000 &lt;span&gt;фишек&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;seka-lot-remaining&quot;&gt;В ордере осталось: &lt;strong data-queue-remaining&gt;10 000&lt;/strong&gt; фишек&lt;/div&gt;
-        &lt;button type=&quot;button&quot; class=&quot;seka-lot-buy&quot; data-buy-lot&gt;Купить 5 000 фишек&lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;seka-p2p-view&quot; data-p2p-view=&quot;sell&quot;&gt;
-      &lt;div class=&quot;seka-transfer-form&quot;&gt;
-        &lt;div class=&quot;seka-transfer-field&quot;&gt;&lt;label for=&quot;seka-order-amount&quot;&gt;Количество фишек&lt;/label&gt;&lt;input id=&quot;seka-order-amount&quot; type=&quot;number&quot; value=&quot;10000&quot; min=&quot;5000&quot; step=&quot;5000&quot; aria-label=&quot;Количество фишек&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;seka-transfer-field&quot;&gt;&lt;label for=&quot;seka-payment-number&quot;&gt;Номер для выплаты&lt;/label&gt;&lt;input id=&quot;seka-payment-number&quot; type=&quot;text&quot; value=&quot;8600 1234 5678 8602&quot; aria-label=&quot;Номер для выплаты&quot;&gt;&lt;/div&gt;
-        &lt;button type=&quot;button&quot; class=&quot;seka-transfer-submit&quot; data-create-order&gt;Выставить ордер на продажу&lt;/button&gt;
-      &lt;/div&gt;
-      &lt;small class=&quot;seka-sell-lock&quot;&gt;Количество должно быть кратно 5 000 фишек. После публикации изменить или отменить ордер может только администратор.&lt;/small&gt;
-    &lt;/div&gt;
-  &lt;/aside&gt;
+  <aside class="seka-transfer-sheet" aria-label="P2P-маркет" aria-hidden="true">
+    <div class="seka-sheet-handle"></div>
+    <div class="seka-sheet-head"><h3 data-p2p-title>Купить фишки</h3><button type="button" class="seka-sheet-close" data-close-sheet aria-label="Закрыть">×</button></div>
+    <div class="seka-p2p-view seka-p2p-visible" data-p2p-view="buy">
+      <p class="seka-p2p-note">Выбор продавца и ордера не требуется. Система автоматически выдаёт первый доступный ордер очереди.</p>
+      <div class="seka-queue-lot" data-current-order>
+        <div class="seka-queue-head"><strong>Ордер №<span data-queue-id>1051</span></strong><span>Первый в очереди</span></div>
+        <div class="seka-lot-amount">5 000 <span>фишек</span></div>
+        <div class="seka-lot-remaining">В ордере осталось: <strong data-queue-remaining>10 000</strong> фишек</div>
+        <button type="button" class="seka-lot-buy" data-buy-lot>Купить 5 000 фишек</button>
+      </div>
+    </div>
+    <div class="seka-p2p-view" data-p2p-view="sell">
+      <div class="seka-transfer-form">
+        <div class="seka-transfer-field"><label for="seka-order-amount">Количество фишек</label><input id="seka-order-amount" type="number" value="10000" min="5000" step="5000" aria-label="Количество фишек"></div>
+        <div class="seka-transfer-field"><label for="seka-payment-number">Номер для выплаты</label><input id="seka-payment-number" type="text" value="8600 1234 5678 8602" aria-label="Номер для выплаты"></div>
+        <button type="button" class="seka-transfer-submit" data-create-order>Выставить ордер на продажу</button>
+      </div>
+      <small class="seka-sell-lock">Количество должно быть кратно 5 000 фишек. После публикации изменить или отменить ордер может только администратор.</small>
+    </div>
+  </aside>
 
-  &lt;aside class=&quot;seka-bet-sheet&quot; aria-label=&quot;Повышение ставки&quot; aria-hidden=&quot;true&quot;&gt;
-    &lt;div class=&quot;seka-sheet-handle&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;seka-sheet-head&quot;&gt;&lt;h3&gt;Повысить ставку&lt;/h3&gt;&lt;button type=&quot;button&quot; class=&quot;seka-sheet-close&quot; data-close-sheet aria-label=&quot;Закрыть&quot;&gt;×&lt;/button&gt;&lt;/div&gt;
-    &lt;div class=&quot;seka-bet-value&quot;&gt;&lt;small&gt;Ставка в банк&lt;/small&gt;&lt;strong&gt;&lt;span data-bet-value&gt;600&lt;/span&gt; фишек&lt;/strong&gt;&lt;/div&gt;
-    &lt;input class=&quot;seka-bet-range&quot; type=&quot;range&quot; min=&quot;500&quot; max=&quot;2000&quot; value=&quot;600&quot; step=&quot;100&quot; aria-label=&quot;Размер ставки&quot;&gt;
-    &lt;div class=&quot;seka-bet-limits&quot;&gt;&lt;span&gt;Минимум 500&lt;/span&gt;&lt;span&gt;Потолок 2 000&lt;/span&gt;&lt;/div&gt;
-    &lt;button type=&quot;button&quot; class=&quot;seka-bet-confirm&quot; data-confirm-bet&gt;Повысить ставку&lt;/button&gt;
-  &lt;/aside&gt;
+  <aside class="seka-bet-sheet" aria-label="Повышение ставки" aria-hidden="true">
+    <div class="seka-sheet-handle"></div>
+    <div class="seka-sheet-head"><h3>Повысить ставку</h3><button type="button" class="seka-sheet-close" data-close-sheet aria-label="Закрыть">×</button></div>
+    <div class="seka-bet-value"><small>Ставка в банк</small><strong><span data-bet-value>600</span> фишек</strong></div>
+    <input class="seka-bet-range" type="range" min="500" max="2000" value="600" step="100" aria-label="Размер ставки">
+    <div class="seka-bet-limits"><span>Минимум 500</span><span>Потолок 2 000</span></div>
+    <button type="button" class="seka-bet-confirm" data-confirm-bet>Повысить ставку</button>
+  </aside>
 
-  &lt;aside class=&quot;seka-deals-sheet&quot; aria-label=&quot;Сделки&quot; aria-hidden=&quot;true&quot;&gt;
-    &lt;div class=&quot;seka-sheet-handle&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;seka-sheet-head&quot;&gt;&lt;h3&gt;Сделки&lt;/h3&gt;&lt;button type=&quot;button&quot; class=&quot;seka-sheet-close&quot; data-close-sheet aria-label=&quot;Закрыть&quot;&gt;×&lt;/button&gt;&lt;/div&gt;
-    &lt;div class=&quot;seka-history-list&quot; data-deals-list&gt;
-      &lt;div class=&quot;seka-history-row&quot;&gt;&lt;div class=&quot;seka-history-icon&quot;&gt;♠&lt;/div&gt;&lt;div&gt;&lt;strong&gt;Победа · Ташкент 12&lt;/strong&gt;&lt;small&gt;Сегодня, 18:42 · игра #18391&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;seka-history-amount seka-positive&quot;&gt;+1 600&lt;/div&gt;&lt;/div&gt;
-      &lt;div class=&quot;seka-history-row&quot;&gt;&lt;div class=&quot;seka-history-icon&quot;&gt;↓&lt;/div&gt;&lt;div&gt;&lt;strong&gt;Покупка · ордер №1044&lt;/strong&gt;&lt;small&gt;Сегодня, 16:05 · завершено&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;seka-history-amount seka-positive&quot;&gt;+5 000&lt;/div&gt;&lt;/div&gt;
-      &lt;div class=&quot;seka-history-row&quot;&gt;&lt;div class=&quot;seka-history-icon&quot;&gt;↑&lt;/div&gt;&lt;div&gt;&lt;strong&gt;Продажа · ордер №1038&lt;/strong&gt;&lt;small&gt;Вчера, 21:18 · завершено&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;seka-history-amount&quot;&gt;−5 000&lt;/div&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/aside&gt;
+  <aside class="seka-deals-sheet" aria-label="Сделки" aria-hidden="true">
+    <div class="seka-sheet-handle"></div>
+    <div class="seka-sheet-head"><h3>Сделки</h3><button type="button" class="seka-sheet-close" data-close-sheet aria-label="Закрыть">×</button></div>
+    <div class="seka-history-list" data-deals-list>
+      <div class="seka-history-row"><div class="seka-history-icon">♠</div><div><strong>Победа · Ташкент 12</strong><small>Сегодня, 18:42 · игра #18391</small></div><div class="seka-history-amount seka-positive">+1 600</div></div>
+      <div class="seka-history-row"><div class="seka-history-icon">↓</div><div><strong>Покупка · ордер №1044</strong><small>Сегодня, 16:05 · завершено</small></div><div class="seka-history-amount seka-positive">+5 000</div></div>
+      <div class="seka-history-row"><div class="seka-history-icon">↑</div><div><strong>Продажа · ордер №1038</strong><small>Вчера, 21:18 · завершено</small></div><div class="seka-history-amount">−5 000</div></div>
+    </div>
+  </aside>
 
-  &lt;div class=&quot;seka-toast&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;Готово&lt;/div&gt;
-&lt;/div&gt;
+  <div class="seka-toast" role="status" aria-live="polite">Готово</div>
+</div>
 
-&lt;script&gt;
-(() =&gt; {
-  const root = document.getElementById(&#x27;seka-mini-app&#x27;);
-  if (!root || root.dataset.ready === &#x27;true&#x27;) return;
-  root.dataset.ready = &#x27;true&#x27;;
+<script>
+(() => {
+  const root = document.getElementById('seka-mini-app');
+  if (!root || root.dataset.ready === 'true') return;
+  root.dataset.ready = 'true';
 
-  const screens = [...root.querySelectorAll(&#x27;[data-screen]&#x27;)];
-  const nav = root.querySelector(&#x27;.seka-bottom-nav&#x27;);
-  const tableScreen = root.querySelector(&#x27;[data-screen=&quot;table&quot;]&#x27;);
-  const chatSheet = root.querySelector(&#x27;.seka-chat-sheet&#x27;);
-  const transferSheet = root.querySelector(&#x27;.seka-transfer-sheet&#x27;);
-  const betSheet = root.querySelector(&#x27;.seka-bet-sheet&#x27;);
-  const dealsSheet = root.querySelector(&#x27;.seka-deals-sheet&#x27;);
-  const toast = root.querySelector(&#x27;.seka-toast&#x27;);
+  const screens = [...root.querySelectorAll('[data-screen]')];
+  const nav = root.querySelector('.seka-bottom-nav');
+  const tableScreen = root.querySelector('[data-screen="table"]');
+  const chatSheet = root.querySelector('.seka-chat-sheet');
+  const transferSheet = root.querySelector('.seka-transfer-sheet');
+  const betSheet = root.querySelector('.seka-bet-sheet');
+  const dealsSheet = root.querySelector('.seka-deals-sheet');
+  const toast = root.querySelector('.seka-toast');
   const telegramApp = window.Telegram?.WebApp || null;
   const routeHistory = [];
   const orderQueue = [
@@ -2003,244 +1245,244 @@ html&gt;body{padding:0}&lt;/style&gt;
     { id: 1050, total: 15000, remaining: 15000 },
     { id: 1049, total: 5000, remaining: 5000 }
   ];
-  let activeScreen = &#x27;lobby&#x27;;
+  let activeScreen = 'lobby';
   let activeObserver = false;
   let toastTimer;
 
-  const haptic = (kind = &#x27;selection&#x27;) =&gt; {
+  const haptic = (kind = 'selection') => {
     try {
       const feedback = telegramApp?.HapticFeedback;
       if (!feedback) return;
-      if (kind === &#x27;success&#x27;) feedback.notificationOccurred(&#x27;success&#x27;);
+      if (kind === 'success') feedback.notificationOccurred('success');
       else feedback.selectionChanged();
     } catch (_) {}
   };
 
-  const showToast = message =&gt; {
+  const showToast = message => {
     clearTimeout(toastTimer);
     toast.textContent = message;
-    toast.classList.add(&#x27;seka-toast-show&#x27;);
-    toastTimer = setTimeout(() =&gt; toast.classList.remove(&#x27;seka-toast-show&#x27;), 1700);
+    toast.classList.add('seka-toast-show');
+    toastTimer = setTimeout(() => toast.classList.remove('seka-toast-show'), 1700);
   };
 
-  const closeSheets = () =&gt; {
-    [chatSheet, transferSheet, betSheet, dealsSheet].forEach(sheet =&gt; {
-      sheet.classList.remove(&#x27;seka-sheet-open&#x27;);
-      sheet.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+  const closeSheets = () => {
+    [chatSheet, transferSheet, betSheet, dealsSheet].forEach(sheet => {
+      sheet.classList.remove('seka-sheet-open');
+      sheet.setAttribute('aria-hidden', 'true');
     });
   };
 
-  const renderQueueHead = () =&gt; {
-    while (orderQueue.length &amp;&amp; orderQueue[0].remaining &lt;= 0) orderQueue.shift();
+  const renderQueueHead = () => {
+    while (orderQueue.length && orderQueue[0].remaining <= 0) orderQueue.shift();
     const current = orderQueue[0];
-    const panel = root.querySelector(&#x27;[data-current-order]&#x27;);
-    const buyButton = panel.querySelector(&#x27;[data-buy-lot]&#x27;);
+    const panel = root.querySelector('[data-current-order]');
+    const buyButton = panel.querySelector('[data-buy-lot]');
     if (!current) {
-      panel.querySelector(&#x27;[data-queue-id]&#x27;).textContent = &#x27;—&#x27;;
-      panel.querySelector(&#x27;[data-queue-remaining]&#x27;).textContent = &#x27;0&#x27;;
-      buyButton.textContent = &#x27;Нет доступных ордеров&#x27;;
+      panel.querySelector('[data-queue-id]').textContent = '—';
+      panel.querySelector('[data-queue-remaining]').textContent = '0';
+      buyButton.textContent = 'Нет доступных ордеров';
       buyButton.disabled = true;
       return;
     }
     panel.dataset.orderId = String(current.id);
-    panel.querySelector(&#x27;[data-queue-id]&#x27;).textContent = String(current.id);
-    panel.querySelector(&#x27;[data-queue-remaining]&#x27;).textContent = current.remaining.toLocaleString(&#x27;ru-RU&#x27;);
-    buyButton.textContent = &#x27;Купить 5 000 фишек&#x27;;
+    panel.querySelector('[data-queue-id]').textContent = String(current.id);
+    panel.querySelector('[data-queue-remaining]').textContent = current.remaining.toLocaleString('ru-RU');
+    buyButton.textContent = 'Купить 5 000 фишек';
     buyButton.disabled = false;
 
-    const adminRow = root.querySelector(`.seka-admin-order-row[data-order-id=&quot;${current.id}&quot;]`);
-    const adminDetails = adminRow?.querySelector(&#x27;small&#x27;);
+    const adminRow = root.querySelector(`.seka-admin-order-row[data-order-id="${current.id}"]`);
+    const adminDetails = adminRow?.querySelector('small');
     if (adminDetails) {
-      const numberText = adminDetails.textContent.includes(&#x27;номер&#x27;) ? adminDetails.textContent.split(&#x27;номер&#x27;)[1] : &#x27;&#x27;;
-      adminDetails.textContent = `Осталось ${current.remaining.toLocaleString(&#x27;ru-RU&#x27;)} · номер${numberText}`;
+      const numberText = adminDetails.textContent.includes('номер') ? adminDetails.textContent.split('номер')[1] : '';
+      adminDetails.textContent = `Осталось ${current.remaining.toLocaleString('ru-RU')} · номер${numberText}`;
     }
   };
 
-  const syncNativeBackButton = () =&gt; {
+  const syncNativeBackButton = () => {
     if (!telegramApp?.BackButton) return;
-    if (activeScreen === &#x27;lobby&#x27;) telegramApp.BackButton.hide();
+    if (activeScreen === 'lobby') telegramApp.BackButton.hide();
     else telegramApp.BackButton.show();
   };
 
-  const syncTelegramViewport = () =&gt; {
+  const syncTelegramViewport = () => {
     if (!telegramApp) return;
     const height = telegramApp.viewportHeight || telegramApp.viewportStableHeight || window.innerHeight;
-    if (height &gt; 0) root.style.setProperty(&#x27;--seka-app-height&#x27;, `${Math.round(height)}px`);
+    if (height > 0) root.style.setProperty('--seka-app-height', `${Math.round(height)}px`);
     const inset = telegramApp.contentSafeAreaInset || telegramApp.safeAreaInset;
     if (inset) {
-      root.style.setProperty(&#x27;--seka-safe-top&#x27;, `${inset.top || 0}px`);
-      root.style.setProperty(&#x27;--seka-safe-right&#x27;, `${inset.right || 0}px`);
-      root.style.setProperty(&#x27;--seka-safe-bottom&#x27;, `${inset.bottom || 0}px`);
-      root.style.setProperty(&#x27;--seka-safe-left&#x27;, `${inset.left || 0}px`);
+      root.style.setProperty('--seka-safe-top', `${inset.top || 0}px`);
+      root.style.setProperty('--seka-safe-right', `${inset.right || 0}px`);
+      root.style.setProperty('--seka-safe-bottom', `${inset.bottom || 0}px`);
+      root.style.setProperty('--seka-safe-left', `${inset.left || 0}px`);
     }
   };
 
-  const navigate = (name, observer = false, options = {}) =&gt; {
-    if (!screens.some(screen =&gt; screen.dataset.screen === name)) return;
-    if (name !== activeScreen &amp;&amp; options.record !== false) {
+  const navigate = (name, observer = false, options = {}) => {
+    if (!screens.some(screen => screen.dataset.screen === name)) return;
+    if (name !== activeScreen && options.record !== false) {
       routeHistory.push({ screen: activeScreen, observer: activeObserver });
     }
     closeSheets();
-    screens.forEach(screen =&gt; {
+    screens.forEach(screen => {
       const isCurrent = screen.dataset.screen === name;
-      screen.classList.toggle(&#x27;seka-visible&#x27;, isCurrent);
-      screen.classList.toggle(&#x27;seka-leaving&#x27;, !isCurrent &amp;&amp; screen.dataset.screen === activeScreen);
+      screen.classList.toggle('seka-visible', isCurrent);
+      screen.classList.toggle('seka-leaving', !isCurrent && screen.dataset.screen === activeScreen);
       if (isCurrent) screen.scrollTop = 0;
     });
-    root.querySelectorAll(&#x27;[data-go]&#x27;).forEach(button =&gt; {
-      if (button.classList.contains(&#x27;seka-nav-choice&#x27;)) button.setAttribute(&#x27;aria-current&#x27;, button.dataset.go === name ? &#x27;page&#x27; : &#x27;false&#x27;);
+    root.querySelectorAll('[data-go]').forEach(button => {
+      if (button.classList.contains('seka-nav-choice')) button.setAttribute('aria-current', button.dataset.go === name ? 'page' : 'false');
     });
-    nav.classList.toggle(&#x27;seka-nav-hidden&#x27;, name === &#x27;admin&#x27;);
-    root.querySelector(&#x27;.seka-balance-chip&#x27;).style.visibility = name === &#x27;admin&#x27; ? &#x27;hidden&#x27; : &#x27;visible&#x27;;
-    tableScreen.classList.toggle(&#x27;seka-observer-mode&#x27;, name === &#x27;table&#x27; &amp;&amp; observer);
-    root.classList.toggle(&#x27;seka-immersive-table&#x27;, name === &#x27;table&#x27;);
+    nav.classList.toggle('seka-nav-hidden', name === 'admin');
+    root.querySelector('.seka-balance-chip').style.visibility = name === 'admin' ? 'hidden' : 'visible';
+    tableScreen.classList.toggle('seka-observer-mode', name === 'table' && observer);
+    root.classList.toggle('seka-immersive-table', name === 'table');
     activeScreen = name;
-    activeObserver = name === &#x27;table&#x27; &amp;&amp; observer;
+    activeObserver = name === 'table' && observer;
     syncNativeBackButton();
     try {
-      if (telegramApp?.disableVerticalSwipes &amp;&amp; name === &#x27;table&#x27;) telegramApp.disableVerticalSwipes();
-      if (telegramApp?.enableVerticalSwipes &amp;&amp; name !== &#x27;table&#x27;) telegramApp.enableVerticalSwipes();
+      if (telegramApp?.disableVerticalSwipes && name === 'table') telegramApp.disableVerticalSwipes();
+      if (telegramApp?.enableVerticalSwipes && name !== 'table') telegramApp.enableVerticalSwipes();
     } catch (_) {}
     haptic();
   };
 
-  const navigateBack = () =&gt; {
+  const navigateBack = () => {
     closeSheets();
     const previous = routeHistory.pop();
     if (previous) navigate(previous.screen, previous.observer, { record: false });
-    else if (activeScreen !== &#x27;lobby&#x27;) navigate(&#x27;lobby&#x27;, false, { record: false });
+    else if (activeScreen !== 'lobby') navigate('lobby', false, { record: false });
   };
 
-  root.addEventListener(&#x27;click&#x27;, event =&gt; {
-    const go = event.target.closest(&#x27;[data-go]&#x27;);
+  root.addEventListener('click', event => {
+    const go = event.target.closest('[data-go]');
     if (go) navigate(go.dataset.go);
 
-    if (event.target.closest(&#x27;[data-back]&#x27;)) navigateBack();
+    if (event.target.closest('[data-back]')) navigateBack();
 
-    const enter = event.target.closest(&#x27;[data-enter]&#x27;);
-    if (enter) navigate(&#x27;table&#x27;, enter.dataset.enter === &#x27;watch&#x27;);
+    const enter = event.target.closest('[data-enter]');
+    if (enter) navigate('table', enter.dataset.enter === 'watch');
 
-    const role = event.target.closest(&#x27;[data-role]&#x27;);
+    const role = event.target.closest('[data-role]');
     if (role) {
-      root.querySelectorAll(&#x27;[data-role]&#x27;).forEach(button =&gt; button.setAttribute(&#x27;aria-pressed&#x27;, button === role ? &#x27;true&#x27; : &#x27;false&#x27;));
-      navigate(role.dataset.role === &#x27;admin&#x27; ? &#x27;admin&#x27; : &#x27;lobby&#x27;);
+      root.querySelectorAll('[data-role]').forEach(button => button.setAttribute('aria-pressed', button === role ? 'true' : 'false'));
+      navigate(role.dataset.role === 'admin' ? 'admin' : 'lobby');
     }
 
-    const modeChoice = event.target.closest(&#x27;.seka-mode-choice&#x27;);
+    const modeChoice = event.target.closest('.seka-mode-choice');
     if (modeChoice) {
-      root.querySelectorAll(&#x27;.seka-mode-choice&#x27;).forEach(button =&gt; button.setAttribute(&#x27;aria-pressed&#x27;, button === modeChoice ? &#x27;true&#x27; : &#x27;false&#x27;));
+      root.querySelectorAll('.seka-mode-choice').forEach(button => button.setAttribute('aria-pressed', button === modeChoice ? 'true' : 'false'));
       showToast(`Режим: ${modeChoice.textContent.trim()}`);
     }
 
-    const filterChoice = event.target.closest(&#x27;.seka-filter-choice&#x27;);
+    const filterChoice = event.target.closest('.seka-filter-choice');
     if (filterChoice) {
-      filterChoice.setAttribute(&#x27;aria-pressed&#x27;, filterChoice.getAttribute(&#x27;aria-pressed&#x27;) === &#x27;true&#x27; ? &#x27;false&#x27; : &#x27;true&#x27;);
-      showToast(&#x27;Фильтр обновлён&#x27;);
+      filterChoice.setAttribute('aria-pressed', filterChoice.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+      showToast('Фильтр обновлён');
     }
 
-    const adminTab = event.target.closest(&#x27;[data-admin]&#x27;);
+    const adminTab = event.target.closest('[data-admin]');
     if (adminTab) {
-      root.querySelectorAll(&#x27;[data-admin]&#x27;).forEach(button =&gt; button.setAttribute(&#x27;aria-pressed&#x27;, button === adminTab ? &#x27;true&#x27; : &#x27;false&#x27;));
-      root.querySelectorAll(&#x27;[data-admin-panel]&#x27;).forEach(panel =&gt; panel.classList.toggle(&#x27;seka-admin-panel-visible&#x27;, panel.dataset.adminPanel === adminTab.dataset.admin));
+      root.querySelectorAll('[data-admin]').forEach(button => button.setAttribute('aria-pressed', button === adminTab ? 'true' : 'false'));
+      root.querySelectorAll('[data-admin-panel]').forEach(panel => panel.classList.toggle('seka-admin-panel-visible', panel.dataset.adminPanel === adminTab.dataset.admin));
       haptic();
     }
 
-    if (event.target.closest(&#x27;[data-open-chat]&#x27;)) {
-      chatSheet.classList.add(&#x27;seka-sheet-open&#x27;);
-      chatSheet.setAttribute(&#x27;aria-hidden&#x27;, &#x27;false&#x27;);
+    if (event.target.closest('[data-open-chat]')) {
+      chatSheet.classList.add('seka-sheet-open');
+      chatSheet.setAttribute('aria-hidden', 'false');
       haptic();
     }
 
-    if (event.target.closest(&#x27;[data-close-sheet]&#x27;)) closeSheets();
+    if (event.target.closest('[data-close-sheet]')) closeSheets();
 
-    const quick = event.target.closest(&#x27;.seka-quick-message&#x27;);
+    const quick = event.target.closest('.seka-quick-message');
     if (quick) {
-      const speech = root.querySelector(&#x27;.seka-player[data-seat=&quot;5&quot;] .seka-speech&#x27;);
+      const speech = root.querySelector('.seka-player[data-seat="5"] .seka-speech');
       speech.textContent = quick.textContent.trim();
-      speech.classList.add(&#x27;seka-say&#x27;);
+      speech.classList.add('seka-say');
       closeSheets();
-      setTimeout(() =&gt; speech.classList.remove(&#x27;seka-say&#x27;), 2200);
-      haptic(&#x27;success&#x27;);
+      setTimeout(() => speech.classList.remove('seka-say'), 2200);
+      haptic('success');
     }
 
-    const gameAction = event.target.closest(&#x27;[data-game-action]&#x27;);
+    const gameAction = event.target.closest('[data-game-action]');
     if (gameAction) {
-      if (gameAction.dataset.gameAction === &#x27;Повысить&#x27;) {
-        betSheet.classList.add(&#x27;seka-sheet-open&#x27;);
-        betSheet.setAttribute(&#x27;aria-hidden&#x27;, &#x27;false&#x27;);
+      if (gameAction.dataset.gameAction === 'Повысить') {
+        betSheet.classList.add('seka-sheet-open');
+        betSheet.setAttribute('aria-hidden', 'false');
         haptic();
         return;
       }
-      const pot = root.querySelector(&#x27;[data-pot]&#x27;);
-      const values = { &#x27;Упасть&#x27;: 1600, &#x27;Поддержать&#x27;: 2000, &#x27;Вскрыться&#x27;: 2000 };
-      pot.textContent = values[gameAction.dataset.gameAction].toLocaleString(&#x27;ru-RU&#x27;);
-      pot.animate([{ transform: &#x27;translate(-50%,-50%) scale(1)&#x27; }, { transform: &#x27;translate(-50%,-50%) scale(1.12)&#x27; }, { transform: &#x27;translate(-50%,-50%) scale(1)&#x27; }], { duration: 320, easing: &#x27;ease-out&#x27; });
-      if (gameAction.dataset.gameAction === &#x27;Вскрыться&#x27;) {
-        const opponent = root.querySelector(&#x27;.seka-player[data-seat=&quot;4&quot;]&#x27;);
-        opponent.classList.add(&#x27;seka-eliminated&#x27;);
-        const speech = opponent.querySelector(&#x27;.seka-speech&#x27;);
-        speech.textContent = &#x27;Комбинация слабее · выбыл&#x27;;
-        speech.classList.add(&#x27;seka-say&#x27;);
-        setTimeout(() =&gt; speech.classList.remove(&#x27;seka-say&#x27;), 2400);
-        showToast(&#x27;Сравнение выполнено без показа карт соперника&#x27;);
-      } else if (gameAction.dataset.gameAction === &#x27;Упасть&#x27;) {
-        showToast(&#x27;Карты сброшены · место за столом сохранено&#x27;);
-      } else showToast(&#x27;Ставка поддержана · 400 фишек в банк&#x27;);
-      haptic(&#x27;success&#x27;);
+      const pot = root.querySelector('[data-pot]');
+      const values = { 'Упасть': 1600, 'Поддержать': 2000, 'Вскрыться': 2000 };
+      pot.textContent = values[gameAction.dataset.gameAction].toLocaleString('ru-RU');
+      pot.animate([{ filter: 'brightness(1)', textShadow: '0 0 0 rgba(242,196,93,0)' }, { filter: 'brightness(1.35)', textShadow: '0 0 12px rgba(242,196,93,.65)' }, { filter: 'brightness(1)', textShadow: '0 0 0 rgba(242,196,93,0)' }], { duration: 320, easing: 'ease-out' });
+      if (gameAction.dataset.gameAction === 'Вскрыться') {
+        const opponent = root.querySelector('.seka-player[data-seat="4"]');
+        opponent.classList.add('seka-eliminated');
+        const speech = opponent.querySelector('.seka-speech');
+        speech.textContent = 'Комбинация слабее · выбыл';
+        speech.classList.add('seka-say');
+        setTimeout(() => speech.classList.remove('seka-say'), 2400);
+        showToast('Сравнение выполнено без показа карт соперника');
+      } else if (gameAction.dataset.gameAction === 'Упасть') {
+        showToast('Карты сброшены · место за столом сохранено');
+      } else showToast('Ставка поддержана · 400 фишек в банк');
+      haptic('success');
     }
 
-    const p2p = event.target.closest(&#x27;[data-p2p]&#x27;);
+    const p2p = event.target.closest('[data-p2p]');
     if (p2p) {
       const mode = p2p.dataset.p2p;
-      if (mode === &#x27;buy&#x27;) renderQueueHead();
-      root.querySelector(&#x27;[data-p2p-title]&#x27;).textContent = mode === &#x27;buy&#x27; ? &#x27;Купить фишки&#x27; : &#x27;Продать фишки&#x27;;
-      root.querySelectorAll(&#x27;[data-p2p-view]&#x27;).forEach(view =&gt; view.classList.toggle(&#x27;seka-p2p-visible&#x27;, view.dataset.p2pView === mode));
-      transferSheet.classList.add(&#x27;seka-sheet-open&#x27;);
-      transferSheet.setAttribute(&#x27;aria-hidden&#x27;, &#x27;false&#x27;);
+      if (mode === 'buy') renderQueueHead();
+      root.querySelector('[data-p2p-title]').textContent = mode === 'buy' ? 'Купить фишки' : 'Продать фишки';
+      root.querySelectorAll('[data-p2p-view]').forEach(view => view.classList.toggle('seka-p2p-visible', view.dataset.p2pView === mode));
+      transferSheet.classList.add('seka-sheet-open');
+      transferSheet.setAttribute('aria-hidden', 'false');
       haptic();
     }
 
-    if (event.target.closest(&#x27;[data-deals]&#x27;)) {
-      dealsSheet.classList.add(&#x27;seka-sheet-open&#x27;);
-      dealsSheet.setAttribute(&#x27;aria-hidden&#x27;, &#x27;false&#x27;);
+    if (event.target.closest('[data-deals]')) {
+      dealsSheet.classList.add('seka-sheet-open');
+      dealsSheet.setAttribute('aria-hidden', 'false');
       haptic();
     }
 
-    if (event.target.closest(&#x27;[data-buy-lot]&#x27;)) {
+    if (event.target.closest('[data-buy-lot]')) {
       const current = orderQueue[0];
       if (!current) return;
       current.remaining -= 5000;
-      const balances = [...root.querySelectorAll(&#x27;[data-wallet-balance]&#x27;)];
-      const currentBalance = Number(balances[0].textContent.replace(/\D/g, &#x27;&#x27;)) || 0;
-      balances.forEach(node =&gt; node.textContent = (currentBalance + 5000).toLocaleString(&#x27;ru-RU&#x27;));
+      const balances = [...root.querySelectorAll('[data-wallet-balance]')];
+      const currentBalance = Number(balances[0].textContent.replace(/\D/g, '')) || 0;
+      balances.forEach(node => node.textContent = (currentBalance + 5000).toLocaleString('ru-RU'));
 
-      const dealRow = document.createElement(&#x27;div&#x27;);
-      dealRow.className = &#x27;seka-history-row&#x27;;
-      dealRow.innerHTML = `&lt;div class=&quot;seka-history-icon&quot;&gt;↓&lt;/div&gt;&lt;div&gt;&lt;strong&gt;Покупка · ордер №${current.id}&lt;/strong&gt;&lt;small&gt;Только что · завершено&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;seka-history-amount seka-positive&quot;&gt;+5 000&lt;/div&gt;`;
-      root.querySelector(&#x27;[data-deals-list]&#x27;).prepend(dealRow);
+      const dealRow = document.createElement('div');
+      dealRow.className = 'seka-history-row';
+      dealRow.innerHTML = `<div class="seka-history-icon">↓</div><div><strong>Покупка · ордер №${current.id}</strong><small>Только что · завершено</small></div><div class="seka-history-amount seka-positive">+5 000</div>`;
+      root.querySelector('[data-deals-list]').prepend(dealRow);
 
-      if (current.remaining &lt;= 0) {
-        const completedRow = root.querySelector(`.seka-admin-order-row[data-order-id=&quot;${current.id}&quot;]`);
+      if (current.remaining <= 0) {
+        const completedRow = root.querySelector(`.seka-admin-order-row[data-order-id="${current.id}"]`);
         if (completedRow) {
-          completedRow.querySelector(&#x27;.seka-order-status&#x27;).textContent = &#x27;Исполнен&#x27;;
-          completedRow.querySelector(&#x27;.seka-order-status&#x27;).style.color = &#x27;var(--seka-muted)&#x27;;
-          completedRow.querySelector(&#x27;.seka-admin-order-actions&#x27;).innerHTML = &#x27;&#x27;;
-          const details = completedRow.querySelector(&#x27;small&#x27;);
-          const numberText = details.textContent.includes(&#x27;номер&#x27;) ? details.textContent.split(&#x27;номер&#x27;)[1] : &#x27;&#x27;;
+          completedRow.querySelector('.seka-order-status').textContent = 'Исполнен';
+          completedRow.querySelector('.seka-order-status').style.color = 'var(--seka-muted)';
+          completedRow.querySelector('.seka-admin-order-actions').innerHTML = '';
+          const details = completedRow.querySelector('small');
+          const numberText = details.textContent.includes('номер') ? details.textContent.split('номер')[1] : '';
           details.textContent = `Осталось 0 · номер${numberText}`;
         }
       }
 
       showToast(`Куплено 5 000 фишек из ордера №${current.id}`);
       renderQueueHead();
-      haptic(&#x27;success&#x27;);
+      haptic('success');
     }
 
-    const editOrder = event.target.closest(&#x27;[data-edit-order]&#x27;);
+    const editOrder = event.target.closest('[data-edit-order]');
     if (editOrder) {
       const id = editOrder.dataset.editOrder;
-      const adminRow = root.querySelector(`.seka-admin-order-row[data-order-id=&quot;${id}&quot;]`);
-      const queueItem = orderQueue.find(order =&gt; order.id === Number(id));
+      const adminRow = root.querySelector(`.seka-admin-order-row[data-order-id="${id}"]`);
+      const queueItem = orderQueue.find(order => order.id === Number(id));
       const currentAmount = queueItem?.total || 0;
       const nextAmount = currentAmount + 5000;
       if (queueItem) {
@@ -2248,360 +1490,119 @@ html&gt;body{padding:0}&lt;/style&gt;
         queueItem.remaining += 5000;
       }
       if (adminRow) {
-        const title = adminRow.querySelector(&#x27;strong&#x27;);
-        title.textContent = `Ордер №${id} · ${nextAmount.toLocaleString(&#x27;ru-RU&#x27;)} фишек`;
-        const details = adminRow.querySelector(&#x27;small&#x27;);
-        const numberText = details.textContent.includes(&#x27;номер&#x27;) ? details.textContent.split(&#x27;номер&#x27;)[1] : &#x27;&#x27;;
-        details.textContent = `Осталось ${(queueItem?.remaining || nextAmount).toLocaleString(&#x27;ru-RU&#x27;)} · номер${numberText}`;
+        const title = adminRow.querySelector('strong');
+        title.textContent = `Ордер №${id} · ${nextAmount.toLocaleString('ru-RU')} фишек`;
+        const details = adminRow.querySelector('small');
+        const numberText = details.textContent.includes('номер') ? details.textContent.split('номер')[1] : '';
+        details.textContent = `Осталось ${(queueItem?.remaining || nextAmount).toLocaleString('ru-RU')} · номер${numberText}`;
       }
       renderQueueHead();
       showToast(`Ордер №${id} изменён администратором`);
-      haptic(&#x27;success&#x27;);
+      haptic('success');
     }
 
-    const cancelOrder = event.target.closest(&#x27;[data-cancel-order]&#x27;);
+    const cancelOrder = event.target.closest('[data-cancel-order]');
     if (cancelOrder) {
       const id = cancelOrder.dataset.cancelOrder;
-      root.querySelector(`.seka-admin-order-row[data-order-id=&quot;${id}&quot;]`)?.remove();
-      const queueIndex = orderQueue.findIndex(order =&gt; order.id === Number(id));
-      if (queueIndex &gt;= 0) orderQueue.splice(queueIndex, 1);
+      root.querySelector(`.seka-admin-order-row[data-order-id="${id}"]`)?.remove();
+      const queueIndex = orderQueue.findIndex(order => order.id === Number(id));
+      if (queueIndex >= 0) orderQueue.splice(queueIndex, 1);
       renderQueueHead();
       showToast(`Ордер №${id} отменён администратором`);
-      haptic(&#x27;success&#x27;);
+      haptic('success');
     }
 
-    const action = event.target.closest(&#x27;[data-action]&#x27;);
+    const action = event.target.closest('[data-action]');
     if (action) {
       const labels = {
-        &#x27;inspect&#x27;: &#x27;Игра открыта в режиме наблюдения&#x27;, &#x27;pause&#x27;: &#x27;Требуется подтверждение администратора&#x27;,
-        &#x27;join-friend&#x27;: &#x27;Подключаемся к столу друга&#x27;, &#x27;invite&#x27;: &#x27;Приглашение отправлено&#x27;, &#x27;share&#x27;: &#x27;Открыто меню Telegram&#x27;,
-        &#x27;history&#x27;: &#x27;История уже показана ниже&#x27;, &#x27;find-player&#x27;: &#x27;Поиск игрока открыт&#x27;, &#x27;chips-add&#x27;: &#x27;Открыта корректировка баланса&#x27;,
-        &#x27;chips-remove&#x27;: &#x27;Открыта корректировка баланса&#x27;, &#x27;block-player&#x27;: &#x27;Открыта карточка блокировки&#x27;, &#x27;remove-player&#x27;: &#x27;Выберите активный стол игрока&#x27;,
-        &#x27;create-table&#x27;: &#x27;Конструктор стола открыт&#x27;, &#x27;edit-limits&#x27;: &#x27;Настройки лимитов открыты&#x27;, &#x27;game-search&#x27;: &#x27;Поиск по ID игры открыт&#x27;,
-        &#x27;export&#x27;: &#x27;Экспорт подготовлен&#x27;, &#x27;replay&#x27;: &#x27;Повтор игры открыт&#x27;, &#x27;p2p-monitor&#x27;: &#x27;Мониторинг P2P открыт&#x27;,
-        &#x27;p2p-settings&#x27;: &#x27;Настройки P2P открыты&#x27;, &#x27;audit&#x27;: &#x27;Журнал операций открыт&#x27;, &#x27;disputes&#x27;: &#x27;Очередь споров открыта&#x27;,
-        &#x27;complaints&#x27;: &#x27;Очередь жалоб открыта&#x27;, &#x27;suggestions&#x27;: &#x27;Предложения открыты&#x27;, &#x27;game-rules&#x27;: &#x27;Редактор правил открыт&#x27;,
-        &#x27;roles&#x27;: &#x27;Управление доступами открыто&#x27;, &#x27;templates&#x27;: &#x27;Шаблоны сообщений открыты&#x27;, &#x27;menu&#x27;: &#x27;Меню стола открыто&#x27;
+        'inspect': 'Игра открыта в режиме наблюдения', 'pause': 'Требуется подтверждение администратора',
+        'join-friend': 'Подключаемся к столу друга', 'invite': 'Приглашение отправлено', 'share': 'Открыто меню Telegram',
+        'history': 'История уже показана ниже', 'find-player': 'Поиск игрока открыт', 'chips-add': 'Открыта корректировка баланса',
+        'chips-remove': 'Открыта корректировка баланса', 'block-player': 'Открыта карточка блокировки', 'remove-player': 'Выберите активный стол игрока',
+        'create-table': 'Конструктор стола открыт', 'edit-limits': 'Настройки лимитов открыты', 'game-search': 'Поиск по ID игры открыт',
+        'export': 'Экспорт подготовлен', 'replay': 'Повтор игры открыт', 'p2p-monitor': 'Мониторинг P2P открыт',
+        'p2p-settings': 'Настройки P2P открыты', 'audit': 'Журнал операций открыт', 'disputes': 'Очередь споров открыта',
+        'complaints': 'Очередь жалоб открыта', 'suggestions': 'Предложения открыты', 'game-rules': 'Редактор правил открыт',
+        'roles': 'Управление доступами открыто', 'templates': 'Шаблоны сообщений открыты', 'menu': 'Меню стола открыто'
       };
-      showToast(labels[action.dataset.action] || &#x27;Действие выполнено&#x27;);
+      showToast(labels[action.dataset.action] || 'Действие выполнено');
     }
   });
 
-  root.querySelector(&#x27;[data-send-chat]&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
-    const input = root.querySelector(&#x27;.seka-chat-compose input&#x27;);
+  root.querySelector('[data-send-chat]').addEventListener('click', () => {
+    const input = root.querySelector('.seka-chat-compose input');
     const value = input.value.trim();
     if (!value) return;
-    const line = document.createElement(&#x27;div&#x27;);
-    line.className = &#x27;seka-chat-line&#x27;;
-    line.innerHTML = &#x27;&lt;b&gt;Вы:&lt;/b&gt; &#x27;;
+    const line = document.createElement('div');
+    line.className = 'seka-chat-line';
+    line.innerHTML = '<b>Вы:</b> ';
     line.append(document.createTextNode(value));
-    root.querySelector(&#x27;.seka-chat-log&#x27;).append(line);
-    input.value = &#x27;&#x27;;
-    haptic(&#x27;success&#x27;);
+    root.querySelector('.seka-chat-log').append(line);
+    input.value = '';
+    haptic('success');
   });
 
-  root.querySelector(&#x27;[data-create-order]&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
-    const amount = Number(root.querySelector(&#x27;#seka-order-amount&#x27;).value) || 0;
-    if (amount &lt; 5000 || amount % 5000 !== 0) {
-      showToast(&#x27;Количество должно быть кратно 5 000 фишек&#x27;);
+  root.querySelector('[data-create-order]').addEventListener('click', () => {
+    const amount = Number(root.querySelector('#seka-order-amount').value) || 0;
+    if (amount < 5000 || amount % 5000 !== 0) {
+      showToast('Количество должно быть кратно 5 000 фишек');
       haptic();
       return;
     }
-    const number = root.querySelector(&#x27;#seka-payment-number&#x27;).value.replace(/\D/g, &#x27;&#x27;);
-    const lastFour = number.slice(-4) || &#x27;—&#x27;;
-    const ids = [...root.querySelectorAll(&#x27;[data-order-id]&#x27;)].map(node =&gt; Number(node.dataset.orderId) || 0);
+    const number = root.querySelector('#seka-payment-number').value.replace(/\D/g, '');
+    const lastFour = number.slice(-4) || '—';
+    const ids = [...root.querySelectorAll('[data-order-id]')].map(node => Number(node.dataset.orderId) || 0);
     const id = Math.max(1051, ...ids) + 1;
     orderQueue.push({ id, total: amount, remaining: amount });
 
-    const adminRow = document.createElement(&#x27;div&#x27;);
-    adminRow.className = &#x27;seka-admin-order-row&#x27;;
+    const adminRow = document.createElement('div');
+    adminRow.className = 'seka-admin-order-row';
     adminRow.dataset.orderId = String(id);
-    adminRow.innerHTML = `&lt;div&gt;&lt;strong&gt;Ордер №${id} · ${amount.toLocaleString(&#x27;ru-RU&#x27;)} фишек&lt;/strong&gt;&lt;small&gt;Осталось ${amount.toLocaleString(&#x27;ru-RU&#x27;)} · номер **** ${lastFour}&lt;/small&gt;&lt;/div&gt;&lt;span class=&quot;seka-order-status&quot;&gt;Активен&lt;/span&gt;&lt;div class=&quot;seka-admin-order-actions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action&quot; data-edit-order=&quot;${id}&quot;&gt;Изменить&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;seka-admin-action seka-danger&quot; data-cancel-order=&quot;${id}&quot;&gt;Отменить&lt;/button&gt;&lt;/div&gt;`;
-    root.querySelector(&#x27;[data-admin-order-list]&#x27;).append(adminRow);
+    adminRow.innerHTML = `<div><strong>Ордер №${id} · ${amount.toLocaleString('ru-RU')} фишек</strong><small>Осталось ${amount.toLocaleString('ru-RU')} · номер **** ${lastFour}</small></div><span class="seka-order-status">Активен</span><div class="seka-admin-order-actions"><button type="button" class="seka-admin-action" data-edit-order="${id}">Изменить</button><button type="button" class="seka-admin-action seka-danger" data-cancel-order="${id}">Отменить</button></div>`;
+    root.querySelector('[data-admin-order-list]').append(adminRow);
 
     closeSheets();
     showToast(`Ордер №${id} добавлен в очередь по ${Math.floor(amount / 5000)} лотам`);
-    haptic(&#x27;success&#x27;);
+    haptic('success');
   });
 
-  const betRange = root.querySelector(&#x27;.seka-bet-range&#x27;);
-  betRange.addEventListener(&#x27;input&#x27;, () =&gt; {
-    root.querySelector(&#x27;[data-bet-value]&#x27;).textContent = Number(betRange.value).toLocaleString(&#x27;ru-RU&#x27;);
+  const betRange = root.querySelector('.seka-bet-range');
+  betRange.addEventListener('input', () => {
+    root.querySelector('[data-bet-value]').textContent = Number(betRange.value).toLocaleString('ru-RU');
   });
 
-  root.querySelector(&#x27;[data-confirm-bet]&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+  root.querySelector('[data-confirm-bet]').addEventListener('click', () => {
     const amount = Number(betRange.value);
-    const pot = root.querySelector(&#x27;[data-pot]&#x27;);
-    const currentPot = Number(pot.textContent.replace(/\D/g, &#x27;&#x27;)) || 0;
-    pot.textContent = (currentPot + amount).toLocaleString(&#x27;ru-RU&#x27;);
+    const pot = root.querySelector('[data-pot]');
+    const currentPot = Number(pot.textContent.replace(/\D/g, '')) || 0;
+    pot.textContent = (currentPot + amount).toLocaleString('ru-RU');
+    pot.animate([{ filter: 'brightness(1)', textShadow: '0 0 0 rgba(242,196,93,0)' }, { filter: 'brightness(1.35)', textShadow: '0 0 12px rgba(242,196,93,.65)' }, { filter: 'brightness(1)', textShadow: '0 0 0 rgba(242,196,93,0)' }], { duration: 320, easing: 'ease-out' });
     closeSheets();
-    showToast(`Ставка повышена до ${amount.toLocaleString(&#x27;ru-RU&#x27;)} фишек`);
-    haptic(&#x27;success&#x27;);
+    showToast(`Ставка повышена до ${amount.toLocaleString('ru-RU')} фишек`);
+    haptic('success');
   });
 
   if (telegramApp) {
-    root.classList.add(&#x27;seka-telegram-host&#x27;);
+    root.classList.add('seka-telegram-host');
     try {
       telegramApp.ready();
       telegramApp.expand();
-      telegramApp.setHeaderColor?.(&#x27;#04130f&#x27;);
-      telegramApp.setBackgroundColor?.(&#x27;#04130f&#x27;);
-      telegramApp.setBottomBarColor?.(&#x27;#04130f&#x27;);
+      telegramApp.setHeaderColor?.('#04130f');
+      telegramApp.setBackgroundColor?.('#04130f');
+      telegramApp.setBottomBarColor?.('#04130f');
       telegramApp.BackButton?.onClick(navigateBack);
-      telegramApp.onEvent?.(&#x27;viewportChanged&#x27;, syncTelegramViewport);
-      telegramApp.onEvent?.(&#x27;safeAreaChanged&#x27;, syncTelegramViewport);
-      telegramApp.onEvent?.(&#x27;contentSafeAreaChanged&#x27;, syncTelegramViewport);
+      telegramApp.onEvent?.('viewportChanged', syncTelegramViewport);
+      telegramApp.onEvent?.('safeAreaChanged', syncTelegramViewport);
+      telegramApp.onEvent?.('contentSafeAreaChanged', syncTelegramViewport);
     } catch (_) {}
     syncTelegramViewport();
     syncNativeBackButton();
   }
 
-  setTimeout(() =&gt; root.querySelector(&#x27;.seka-player[data-seat=&quot;1&quot;] .seka-speech&#x27;)?.classList.add(&#x27;seka-say&#x27;), 1000);
-  setTimeout(() =&gt; root.querySelector(&#x27;.seka-player[data-seat=&quot;1&quot;] .seka-speech&#x27;)?.classList.remove(&#x27;seka-say&#x27;), 3300);
+  setTimeout(() => root.querySelector('.seka-player[data-seat="1"] .seka-speech')?.classList.add('seka-say'), 1000);
+  setTimeout(() => root.querySelector('.seka-player[data-seat="1"] .seka-speech')?.classList.remove('seka-say'), 3300);
 })();
-&lt;/script&gt;
+</script>
 
-&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-(() =&gt; {
-  if (window.FloatingUIDOM == null) {
-    return;
-  }
-  const { autoUpdate, computePosition, flip, offset, shift, size } =
-    window.FloatingUIDOM;
-  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
-  const tooltipId = `codex-visualization-tooltip-${
-    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
-  }`;
-  const tooltipGap = 5;
-  const hoverDelay = 700;
-  const skipDelay = 300;
-  let activeTrigger = null;
-  let pendingTrigger = null;
-  let tooltip = null;
-  let openTimeout = null;
-  let autoUpdateCleanup = null;
-  let positionRequest = 0;
-  let skipDelayUntil = 0;
-
-  const getTrigger = (target) =&gt;
-    target?.nodeType === Node.ELEMENT_NODE
-      ? target.closest(&quot;[data-tooltip]&quot;)
-      : null;
-  const containsTarget = (trigger, target) =&gt;
-    target?.nodeType != null &amp;&amp; trigger.contains(target);
-  const getContent = (trigger) =&gt;
-    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
-  const getPlacement = (trigger) =&gt; {
-    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
-    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
-  };
-  const getTooltip = () =&gt; {
-    if (tooltip == null) {
-      tooltip = document.createElement(&quot;div&quot;);
-      tooltip.id = tooltipId;
-      tooltip.className = &quot;tooltip&quot;;
-      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
-    }
-    return tooltip;
-  };
-  const setDescribedBy = (trigger, described) =&gt; {
-    const ids = new Set(
-      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
-        .split(/\s+/)
-        .filter(Boolean),
-    );
-    if (described) {
-      ids.add(tooltipId);
-    } else {
-      ids.delete(tooltipId);
-    }
-    if (ids.size === 0) {
-      trigger.removeAttribute(&quot;aria-describedby&quot;);
-    } else {
-      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
-    }
-  };
-  const clearOpenTimeout = () =&gt; {
-    if (openTimeout != null) {
-      window.clearTimeout(openTimeout);
-      openTimeout = null;
-    }
-    pendingTrigger = null;
-  };
-  const closeTooltip = (activateSkipDelay = true) =&gt; {
-    clearOpenTimeout();
-    positionRequest += 1;
-    autoUpdateCleanup?.();
-    autoUpdateCleanup = null;
-    if (activeTrigger == null) {
-      return;
-    }
-    setDescribedBy(activeTrigger, false);
-    activeTrigger = null;
-    tooltip?.remove();
-    if (activateSkipDelay) {
-      skipDelayUntil = Date.now() + skipDelay;
-    }
-  };
-  const updatePosition = (trigger, floating) =&gt; {
-    const request = ++positionRequest;
-    void computePosition(trigger, floating, {
-      middleware: [
-        offset(tooltipGap),
-        flip({ padding: tooltipGap }),
-        shift({ padding: tooltipGap }),
-        size({
-          padding: tooltipGap,
-          apply({ availableHeight, availableWidth, elements }) {
-            elements.floating.style.setProperty(
-              &quot;--tooltip-available-width&quot;,
-              `${Math.max(0, availableWidth)}px`,
-            );
-            elements.floating.style.setProperty(
-              &quot;--tooltip-available-height&quot;,
-              `${Math.max(0, availableHeight)}px`,
-            );
-          },
-        }),
-      ],
-      placement: getPlacement(trigger),
-      strategy: &quot;fixed&quot;,
-    })
-      .then(({ x, y }) =&gt; {
-        if (activeTrigger !== trigger || request !== positionRequest) {
-          return;
-        }
-        const scale = window.devicePixelRatio || 1;
-        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
-        floating.style.visibility = &quot;visible&quot;;
-      })
-      .catch(() =&gt; {
-        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
-          closeTooltip(false);
-        }
-      });
-  };
-  const openTooltip = (trigger) =&gt; {
-    const content = getContent(trigger);
-    if (!trigger.isConnected || content.length === 0) {
-      return;
-    }
-    clearOpenTimeout();
-    if (activeTrigger === trigger) {
-      return;
-    }
-    closeTooltip();
-    const floating = getTooltip();
-    floating.textContent = content;
-    floating.style.visibility = &quot;hidden&quot;;
-    floating.style.transform = &quot;translate(0, 0)&quot;;
-    document.body.appendChild(floating);
-    activeTrigger = trigger;
-    setDescribedBy(trigger, true);
-    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
-      updatePosition(trigger, floating);
-    });
-  };
-  const requestOpen = (trigger, immediate = false) =&gt; {
-    if (
-      getContent(trigger).length === 0 ||
-      activeTrigger === trigger ||
-      pendingTrigger === trigger
-    ) {
-      return;
-    }
-    clearOpenTimeout();
-    pendingTrigger = trigger;
-    const delay =
-      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
-        ? 0
-        : hoverDelay;
-    if (delay === 0) {
-      openTooltip(trigger);
-      return;
-    }
-    openTimeout = window.setTimeout(() =&gt; {
-      openTimeout = null;
-      pendingTrigger = null;
-      openTooltip(trigger);
-    }, delay);
-  };
-  const handlePointerOpen = (event) =&gt; {
-    if (event.pointerType === &quot;touch&quot;) {
-      return;
-    }
-    const trigger = getTrigger(event.target);
-    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
-      return;
-    }
-    requestOpen(trigger);
-  };
-  const handleLeave = (event) =&gt; {
-    const trigger = getTrigger(event.target);
-    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
-      return;
-    }
-    if (activeTrigger === trigger || pendingTrigger === trigger) {
-      closeTooltip();
-    }
-  };
-  const handleFocusIn = (event) =&gt; {
-    const trigger = getTrigger(event.target);
-    if (trigger?.matches(&quot;:focus-visible&quot;)) {
-      requestOpen(trigger, true);
-    }
-  };
-  const handleKeyDown = (event) =&gt; {
-    if (event.key === &quot;Escape&quot;) {
-      closeTooltip();
-    }
-  };
-  const handleContextMenu = (event) =&gt; {
-    const trigger = getTrigger(event.target);
-    if (activeTrigger === trigger || pendingTrigger === trigger) {
-      closeTooltip();
-    }
-  };
-  const destroy = () =&gt; {
-    closeTooltip(false);
-    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
-    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
-    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
-    document.removeEventListener(&quot;focusout&quot;, handleLeave);
-    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
-    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
-    tooltip = null;
-  };
-
-  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
-  document.addEventListener(&quot;pointerout&quot;, handleLeave);
-  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
-  document.addEventListener(&quot;focusout&quot;, handleLeave);
-  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
-  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
-  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
-})();
-&lt;/script&gt;
-&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-(() =&gt; {
-  const initialize = () =&gt; {
-    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
-  };
-  if (globalThis.lucide != null) {
-    initialize();
-    return;
-  }
-  document
-    .getElementById(&quot;codex-visualization-lucide&quot;)
-    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
-})();
-&lt;/script&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-"></iframe>
-</body>
+  </body>
 </html>
