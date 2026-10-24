@@ -1,10 +1,62 @@
 <!doctype html>
-<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="traffic-api" content="https://game.sekagames.org"><title>Poker · O‘rganing va boshlang</title><link rel="stylesheet" href="./learn.css"><script type="module" src="./learn.js"></script></head>
-<body><main>
-<header><a class="brand" href="#">♠ <span>O‘ZBEK<br>POKER KLUBI</span></a><nav aria-label="Language"><button data-lang="uz-Latn" aria-pressed="true">UZ</button><button data-lang="ru" aria-pressed="false">RU</button></nav></header>
-<p id="local-notice" hidden></p><div class="eyebrow" id="eyebrow"></div>
-<section id="hero"><div class="cards" aria-hidden="true"><span>A<small>♠</small></span><span>A<small>♥</small></span></div><h1 id="title"></h1><p id="intro"></p><div class="reward"><span id="reward-label"></span><strong id="amount">—</strong><span id="chips-label"></span></div><button class="primary" id="begin" disabled></button><p class="minor" id="duration"></p><ol id="steps"></ol></section>
-<section id="lesson" hidden><div class="progress"><span id="progress-label"></span><span id="progress-bars" aria-hidden="true"></span></div><h1 id="lesson-title"></h1><p id="lesson-description"></p><div class="example" id="example" hidden></div><h2 id="question"></h2><div id="choices"></div><p id="feedback" role="status"></p></section>
-<section id="done" hidden><div class="complete" aria-hidden="true">✓</div><h1 id="done-title"></h1><p id="done-intro"></p><div class="reward"><span id="ready-label"></span><strong id="done-amount"></strong><span id="done-chips"></span></div><a class="primary" id="bot"></a><p class="minor" id="bot-route"></p></section>
-<p id="error" role="alert"></p><button id="retry" hidden></button><aside id="terms"></aside><footer>18+ · Texas Hold’em · Telegram</footer>
-</main></body></html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <meta name="traffic-api" content="https://game.sekagames.org">
+  <meta name="theme-color" content="#102520">
+  <title>Poker · O‘rganing va boshlang</title>
+  <link rel="stylesheet" href="./learn.css?v=20261024-design1">
+  <script type="module" src="./learn.js?v=20261024-design1"></script>
+</head>
+<body>
+<main class="app">
+  <header class="app-header">
+    <a class="brand" href="#" id="home"><span class="brand-suit" aria-hidden="true">♠</span><span>O‘ZBEK<br>POKER KLUBI</span></a>
+    <nav class="language" aria-label="Language"><button data-lang="uz-Latn" aria-pressed="true">UZ</button><button data-lang="ru" aria-pressed="false">RU</button></nav>
+  </header>
+  <p id="local-notice" hidden></p>
+  <div class="journey-header">
+    <p class="eyebrow" id="eyebrow"></p>
+    <div id="progress" class="progress" hidden>
+      <span id="progress-label"></span>
+      <div id="progress-meter" role="progressbar" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><span id="progress-bars" aria-hidden="true"></span></div>
+    </div>
+  </div>
+  <div class="screen-stage" id="screen-stage">
+    <section id="hero" class="screen hero" aria-labelledby="title">
+      <div class="hero-art" aria-hidden="true"><div class="table-ring"></div><div class="card-row hero-cards" id="hero-cards"></div><span class="art-caption">TEXAS HOLD’EM</span></div>
+      <h1 id="title" tabindex="-1"></h1>
+      <p class="lead" id="intro"></p>
+      <div class="reward"><span id="reward-label"></span><div><strong id="amount">—</strong></div></div>
+      <div class="navigation" id="navigation">
+        <div class="error-state"><p id="error" role="alert"></p><button id="retry" class="retry" hidden></button></div>
+        <div class="navigation-row"><button id="back" class="back" hidden><span aria-hidden="true">←</span><span id="back-label"></span></button><button class="primary" id="begin" disabled></button><span class="answer-action" id="answer-action" role="status" hidden></span><button class="primary" id="advance" hidden></button><a class="primary" id="bot" hidden></a></div>
+        <p class="nav-hint" id="nav-hint"></p>
+      </div>
+      <ol class="steps" id="steps"></ol>
+    </section>
+    <section id="lesson" class="screen lesson" aria-labelledby="lesson-title" hidden>
+      <div class="lesson-heading"><span class="chapter" id="chapter"></span><h1 id="lesson-title" tabindex="-1"></h1></div>
+      <div class="card-table">
+        <p class="table-caption" id="example-label"></p>
+        <div class="card-row" id="example" role="group" aria-labelledby="example-label"></div>
+        <div class="remaining"><span id="remaining-label"></span><div class="card-row small-cards" id="remaining-cards"></div></div>
+      </div>
+      <details class="hand-context" id="hand-context"><summary id="context-label"></summary><p id="lesson-description"></p></details>
+      <h2 id="question"></h2>
+      <div id="choices" class="choices" role="group" aria-labelledby="question"></div>
+      <div class="feedback" id="feedback" role="status" aria-live="polite" aria-atomic="true"><strong id="feedback-title"></strong><p id="feedback-text"></p></div>
+    </section>
+    <section id="done" class="screen done" aria-labelledby="done-title" hidden>
+      <div class="finish-art"><div class="table-ring"></div><div class="card-row finish-cards" id="done-cards" aria-hidden="true"></div><div class="complete" aria-hidden="true">✓</div></div>
+      <p class="chapter" id="done-kicker"></p><h1 id="done-title" tabindex="-1"></h1><p class="lead" id="done-intro"></p>
+      <div class="reward"><span id="ready-label"></span><div><strong id="done-amount"></strong> <span id="done-chips"></span></div></div>
+      <p class="bonus-note" id="bonus-note"></p><p class="minor" id="bot-route"></p>
+    </section>
+  </div>
+  <aside id="terms"></aside><footer>18+ · Texas Hold’em · Telegram</footer>
+</main>
+</body>
+</html>
