@@ -1,4 +1,5 @@
-// No advertising SDK or client-side reward authority. Only server-verified steps
+import {advertisingPixel} from './meta-pixel.js';
+// No client-side reward authority. Only server-verified steps
 // can be reviewed. Tapping an answer submits it once and advances on success.
 const $ = id => document.getElementById(id);
 const query = new URLSearchParams(location.search), campaign = query.get('campaign') ?? '';
@@ -44,7 +45,7 @@ function texts() {
   $('local-notice').hidden = !local;
   $('local-notice').textContent = t('Локальная проверка · рабочая игра и балансы не меняются.', 'Mahalliy sinov · asosiy o‘yin va balanslar o‘zgarmaydi.');
   $('eyebrow').textContent = t('Ваше знакомство с покером', 'Poker bilan tanishing');
-  $('title').textContent = info?.bonusAmount === 0
+  $('title').textContent = (lesson?.bonusAmount ?? info?.bonusAmount) === 0
     ? t('Ответь на 3 вопроса. Начни играть.', '3 ta savolga javob ber. O‘yinni boshla.')
     : t('Ответь на 3 вопроса и получи бонус', '3 ta savolga javob ber va bonus ol');
   $('intro').textContent = t('Играй прямо в Telegram — без скачивания.', 'Telegram’da o‘yna — yuklab olish shart emas.');
@@ -66,7 +67,14 @@ function texts() {
   $('bonus-note').textContent = t('Бонус ещё не начислен. Он появится после входа в игру, если ты новый игрок и выполнил условия.', 'Bonus hali berilmadi. Yangi o‘yinchi bo‘lsang va shartlarni bajarsang, o‘yinga kirganingdan so‘ng beriladi.');
   $('bot').textContent = t('Перейти в Telegram →', 'Telegram’ga o‘tish →');
   $('bot-route').textContent = '@FbAdm_bot → @Swara_online_bot';
-  $('terms').textContent = t('18+. Бонус — только новым игрокам: один раз после обучения, перехода через @FbAdm_bot и первого входа в игру. Вместо стартового бонуса, не дополнительно. Согласие на рекламный учёт спрашивается отдельно в боте и не влияет на бонус. Ссылка действует 24 часа.', '18+. Bonus faqat yangi o‘yinchiga: dars, @FbAdm_bot orqali o‘tish va o‘yinga ilk kirishdan so‘ng bir marta. Boshlang‘ich bonus o‘rniga, unga qo‘shimcha emas. Reklama hisobi uchun rozilik botda alohida so‘raladi va bonusga ta’sir qilmaydi. Havola 24 soat amal qiladi.');
+  $('terms').textContent = t('18+. Бонус — только новому игроку с меткой fbclid из рекламы Meta или по агентской ссылке: один раз после обучения, перехода через @FbAdm_bot и первого входа в игру. Вместо стартового бонуса, не дополнительно. Согласие на рекламный учёт не влияет на бонус. Ссылка действует 24 часа.', '18+. Bonus faqat Meta reklamasidan fbclid belgisi bilan yoki agent havolasi orqali kelgan yangi o‘yinchiga: dars, @FbAdm_bot va o‘yinga ilk kirishdan so‘ng bir marta. Boshlang‘ich bonus o‘rniga, qo‘shimcha emas. Reklama roziligi bonusga ta’sir qilmaydi. Havola 24 soat amal qiladi.');
+  $('advertising-title').textContent = t('Разрешить рекламный учёт Meta?', 'Meta reklama hisobiga rozimisiz?');
+  $('advertising-description').textContent = t('Передадим Meta сведения о посещении, обучении, регистрации, играх и покупках P2P, а также рекламную метку, IP и данные браузера. Это помогает оценивать рекламу. Бонус не зависит от согласия. Отозвать его можно здесь или командой /stop в @FbAdm_bot.', 'Meta’ga tashrif, dars, ro‘yxatdan o‘tish, o‘yinlar va P2P xaridlari, reklama belgisi, IP va brauzer ma’lumotlarini yuboramiz. Bu reklamani baholashga yordam beradi. Bonus rozilikka bog‘liq emas. Rozilikni shu yerda yoki @FbAdm_bot’da /stop orqali bekor qilish mumkin.');
+  $('advertising-accept').textContent = t('Разрешить', 'Roziman');
+  $('advertising-decline').textContent = t('Без рекламного учёта', 'Reklama hisobisiz');
+  $('advertising-revoke').textContent = t('Отключить рекламный учёт', 'Reklama hisobini o‘chirish');
+  $('advertising-choice').hidden = !info?.advertising?.pixelId || !!lesson?.advertising?.choice;
+  $('advertising-revoke').hidden = lesson?.advertising?.choice !== 'accepted';
   $('retry').textContent = t('Повторить попытку', 'Qayta urinish');
   $('error').textContent = errorCode ? message(errorCode) : '';
 }
@@ -104,7 +112,7 @@ async function run(action) {
 
 function setDisabled() {
   document.querySelectorAll('button').forEach(button => { button.disabled = busy; });
-  $('begin').disabled = busy || !info?.trainingAvailable;
+  $('begin').disabled = busy || !info?.trainingAvailable || !!(info?.advertising?.pixelId && !lesson?.advertising?.choice);
   $('advance').disabled = busy || !reviewed();
   document.querySelectorAll('#choices button').forEach(button => { button.disabled = busy || reviewed(); });
   $('navigation').setAttribute('aria-busy', String(busy));
@@ -195,10 +203,26 @@ function show(next) {
 
 $('begin').onclick = () => run(async () => {
   if (lesson) { show(lesson.step); return; }
+  if(info?.advertising){await chooseAdvertising('declined');show(lesson.step);return;}
   const payload = { campaign, language: lang }; if (query.has('fbclid')) payload.fbclid = query.get('fbclid');
   const data = await request('/traffic/training/start', payload);
   session = data.session; lesson = data.lesson; save('', session); show(lesson.step);
 });
+function consentPayload(choice) {
+  return {advertisingConsent:{version:'landing-v3',choice},...(query.has('fbclid')?{fbclid:query.get('fbclid')}:{})};
+}
+async function chooseAdvertising(choice) {
+  if(session) lesson=await request('/traffic/training/advertising',{session,...consentPayload(choice)});
+  else {
+    const utm={};for(const field of ['source','medium','campaign','content','term'])if(query.has('utm_'+field))utm[field]=query.get('utm_'+field).slice(0,120);
+    const data=await request('/traffic/training/start',{campaign,language:lang,...consentPayload(choice),utm});
+    session=data.session;lesson=data.lesson;save('',session);
+  }
+  advertisingPixel(lesson.advertising);render();
+}
+$('advertising-accept').onclick=()=>run(()=>chooseAdvertising('accepted'));
+$('advertising-decline').onclick=()=>run(()=>chooseAdvertising('declined'));
+$('advertising-revoke').onclick=()=>{advertisingPixel({choice:'declined'});void run(()=>chooseAdvertising('declined'));};
 function submitAnswer(answer) {
   if (busy || reviewed()) return;
   // Capture the exact request for a safe retry if the response is lost after commit.
@@ -225,7 +249,7 @@ $('bot').onclick = event => {
 document.querySelectorAll('[data-lang]').forEach(button => button.onclick = () => run(async () => {
   const before = lang; lang = button.dataset.lang;
   try {
-    if (session) lesson = await request('/traffic/training/state', { session, language: lang });
+    if (session) {lesson = await request('/traffic/training/state', { session, language: lang });advertisingPixel(lesson.advertising);}
     // Incorrect feedback is localized by the server; clear it without resubmitting
     // an answer or spending another attempt when switching language.
     feedback = ''; failedAnswer = ''; render();
@@ -235,11 +259,14 @@ document.querySelectorAll('[data-lang]').forEach(button => button.onclick = () =
 render();
 void run(async () => {
   info = await request('/traffic/campaign?campaign=' + encodeURIComponent(campaign));
+  if(info.bonusRequiresFacebookClick&&!query.get('fbclid'))info.bonusAmount=0;
   session = stored('') || '';
   if (session) {
     lesson = await request('/traffic/training/state', { session, language: lang });
+    advertisingPixel(lesson.advertising);
     const candidate = initialView === null ? lesson.step : Number(initialView);
     view = Number.isInteger(candidate) && candidate >= -1 && candidate <= lesson.step ? candidate : lesson.step;
+    if(info.advertising&&!lesson.advertising?.choice)view=-1;
   }
   render(true);
 });
