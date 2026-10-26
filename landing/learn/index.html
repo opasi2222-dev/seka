@@ -7,8 +7,8 @@
   <meta name="traffic-api" content="https://game.sekagames.org">
   <meta name="theme-color" content="#102520">
   <title>Poker · O‘rganing va boshlang</title>
-  <link rel="stylesheet" href="./learn.css?v=20261024-design1">
-  <script type="module" src="./learn.js?v=20261024-design1"></script>
+  <link rel="stylesheet" href="./learn.css?v=20261026-consent">
+  <script type="module" src="./learn.js?v=20261026-consent"></script>
 </head>
 <body>
 <main class="app">
@@ -30,6 +30,10 @@
       <h1 id="title" tabindex="-1"></h1>
       <p class="lead" id="intro"></p>
       <div class="reward"><span id="reward-label"></span><div><strong id="amount">—</strong></div></div>
+      <section class="advertising-choice" id="advertising-choice" hidden aria-labelledby="advertising-title">
+        <h2 id="advertising-title"></h2><p id="advertising-description"></p>
+        <div><button id="advertising-accept" type="button"></button><button id="advertising-decline" type="button"></button></div>
+      </section>
       <div class="navigation" id="navigation">
         <div class="error-state"><p id="error" role="alert"></p><button id="retry" class="retry" hidden></button></div>
         <div class="navigation-row"><button id="back" class="back" hidden><span aria-hidden="true">←</span><span id="back-label"></span></button><button class="primary" id="begin" disabled></button><span class="answer-action" id="answer-action" role="status" hidden></span><button class="primary" id="advance" hidden></button><a class="primary" id="bot" hidden></a></div>
@@ -56,7 +60,7 @@
       <p class="bonus-note" id="bonus-note"></p><p class="minor" id="bot-route"></p>
     </section>
   </div>
-  <aside id="terms"></aside><footer>18+ · Texas Hold’em · Telegram</footer>
+  <aside id="terms"></aside><button id="advertising-revoke" type="button" hidden></button><footer>18+ · Texas Hold’em · Telegram</footer>
 </main>
 </body>
 </html>
