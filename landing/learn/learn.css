@@ -135,3 +135,10 @@ h1:focus { outline: none; }
     100% { opacity: 1; transform: translateY(var(--lift)) rotate(var(--tilt)); }
   }
 }
+/* The two consent choices have the same visual weight and touch target. */
+.advertising-choice { margin: 24px 0; padding: 20px; border: 1px solid #718a79; border-radius: 18px; text-align: left; }
+.advertising-choice h2 { font-size: 20px; margin: 0 0 12px; }
+.advertising-choice p { font-size: 15px; line-height: 1.6; }
+.advertising-choice > div { display: flex; flex-wrap: wrap; gap: 12px; }
+.advertising-choice button { flex: 1 1 180px; min-height: 48px; padding: 12px; border: 1px solid #b7c4b9; border-radius: 12px; color: #fff; background: #1a392e; font: inherit; }
+#advertising-revoke { padding: 12px; margin-block: 12px; border-radius: 12px; font: inherit; color: #fff; background: #1a392e; }
