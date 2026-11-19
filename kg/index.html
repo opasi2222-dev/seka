@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="ky"><head>
+<html lang="ru"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#061a15">
-    <meta name="description" content="Кыргыз Покер Клубу — жандуу Texas Hold’em оюну.">
-    <title>Кыргыз Клубу</title>
+    <meta name="description" content="Покер для Кыргызстана прямо в Telegram. 1 фишка = 1 сом. Играйте в kangbot без скачивания.">
+    <title>Кыргыз Покер — играйте в Telegram</title>
+    <link rel="canonical" href="https://opasi2222-dev.github.io/seka/kg/">
+    <meta property="og:title" content="Кыргыз Покер — играйте в Telegram">
+    <meta property="og:description" content="Покер прямо в Telegram — без скачивания. 1 фишка = 1 сом.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://opasi2222-dev.github.io/seka/kg/">
+    <meta property="og:locale" content="ru_KG">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&amp;display=swap" rel="stylesheet">
-    <script>
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1063844716330314');
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1063844716330314&ev=PageView&noscript=1"></noscript>
     <style>
       :root { --ink:#061a15; --night:#020a08; --felt:#0d472f; --felt-light:#1c704c; --gold:#d9a94b; --gold-light:#ffe0a0; --paper:#fff7e1; --muted:#b8c8be; --line:rgba(255,227,152,.23); }
       * { box-sizing:border-box; }
@@ -29,9 +29,6 @@
       .brand-mark { display:grid; width:41px; height:41px; flex:0 0 auto; place-items:center; border:1px solid rgba(255,226,155,.76); border-radius:12px; color:var(--gold-light); box-shadow:inset 0 0 17px rgba(224,175,69,.2),0 8px 22px rgba(0,0,0,.24); font:600 25px/1 Georgia,serif; }
       .brand-name { color:var(--gold-light); font:600 21px/1 "Playfair Display",Georgia,serif; letter-spacing:.075em; white-space:nowrap; }
       .brand-name small { display:block; margin-top:4px; color:#c8ad79; font:700 8px/1 Manrope,sans-serif; letter-spacing:.21em; }
-      .langs { display:flex; flex:0 0 auto; gap:2px; padding:3px; border:1px solid var(--line); border-radius:20px; background:rgba(0,0,0,.22); }
-      .lang { border:0; border-radius:16px; padding:7px 10px; color:#c4d0c7; background:transparent; cursor:pointer; font:800 10px/1 Manrope,sans-serif; letter-spacing:.08em; }
-      .lang[aria-pressed="true"] { color:#211807; background:var(--gold-light); }
       .hero { display:grid; grid-template-columns:minmax(0,.82fr) minmax(440px,1.18fr); align-items:center; gap:clamp(20px,4vw,68px); min-height:0; }
       .intro { align-self:center; padding-bottom:clamp(25px,5vh,55px); }
       .eyebrow { display:inline-flex; align-items:center; gap:9px; margin:0 0 10px; color:var(--gold-light); font-size:clamp(14px,1.25vw,18px); font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
@@ -45,7 +42,7 @@
       .halo { position:absolute; top:50%; left:50%; width:92%; aspect-ratio:1; transform:translate(-50%,-49%); border-radius:50%; background:radial-gradient(circle,rgba(70,165,108,.28),rgba(6,29,21,.1) 48%,transparent 70%); filter:blur(2px); }
       .poker-table { position:absolute; top:50%; left:50%; width:min(555px,88%); aspect-ratio:1.52; transform:translate(-50%,-44%); border:13px solid #111713; border-radius:50%; background:radial-gradient(ellipse at 50% 42%,#21714e,#0d402e 58%,#072319 100%); box-shadow:0 0 0 2px #c69a4b,0 0 0 8px rgba(203,163,79,.2),0 30px 55px rgba(0,0,0,.52),inset 0 0 76px rgba(0,0,0,.48); }
       .poker-table::before { content:""; position:absolute; inset:13px; border:1px solid rgba(255,222,142,.5); border-radius:50%; }
-      .poker-table::after { content:"КЫРГЫЗ ПОКЕР КЛУБУ"; position:absolute; top:68%; left:50%; transform:translate(-50%,-50%); width:max-content; color:rgba(255,222,143,.9); font:600 clamp(13px,1.7vw,19px)/1 "Playfair Display",Georgia,serif; letter-spacing:.08em; text-shadow:0 2px 8px #052016; }
+      .poker-table::after { content:"КЫРГЫЗ ПОКЕР"; position:absolute; top:68%; left:50%; transform:translate(-50%,-50%); width:max-content; color:rgba(255,222,143,.9); font:600 clamp(13px,1.7vw,19px)/1 "Playfair Display",Georgia,serif; letter-spacing:.08em; text-shadow:0 2px 8px #052016; }
       .community { position:absolute; z-index:3; top:clamp(-60px,-5vw,-38px); left:50%; display:flex; transform:translateX(-50%); }
       .card { width:clamp(48px,5.5vw,69px); height:clamp(71px,7.9vw,99px); margin-left:-14px; padding:clamp(7px,.85vw,10px) clamp(5px,.7vw,8px); border:2px solid #e8c878; border-radius:8px; color:#b92f34; background:linear-gradient(135deg,#fffdf5,#e8dcb9); box-shadow:0 11px 17px rgba(0,0,0,.38); font:700 clamp(17px,2vw,22px)/.9 Georgia,serif; transform:translateY(0); z-index:0; }
       .card:nth-child(2) { z-index:1; }.card:nth-child(3) { z-index:2; }.card:nth-child(4) { z-index:3; }.card:nth-child(5) { z-index:4; }.card small { display:block; margin-top:4px; font-size:1em; }
@@ -79,89 +76,54 @@
         .table-stage { top:clamp(250px,26svh,280px); }.community { top:-38px; }.player.one,.player.seven { top:-20px; }.player.two,.player.five { top:31%; }
       }
       @media (max-height:700px) and (max-width:800px) {
-        .shell { padding-top:11px; }.topbar { top:11px; }.brand-mark { width:29px; height:29px; font-size:18px; }.brand-name { font-size:13px; }.brand-name small { display:none; }.langs { transform:scale(.9); transform-origin:right center; }
+        .shell { padding-top:11px; }.topbar { top:11px; }.brand-mark { width:29px; height:29px; font-size:18px; }.brand-name { font-size:13px; }.brand-name small { display:none; }
         .intro { top:48px; }.eyebrow { display:inline-flex; margin:0 0 3px; font-size:9px; letter-spacing:.13em; }.lead { display:block; max-width:292px; font-size:9px; line-height:1.28; }.intro h1 { margin:0 auto 3px; font-size:26px; line-height:.93; }.table-stage { top:174px; height:292px; }.poker-table { top:47px; width:min(305px,82%); border-width:8px; }.community { top:-16px; }.player.one,.player.seven { top:-7px; }.card { margin-left:-11px; }.poker-table::after { font-size:11px; }.pot { bottom:16%; }.player { min-width:78px; padding:4px; font-size:7px; }.avatar { width:17px; height:17px; }.player-info small { font-size:7px; }.mini-stack { display:block; transform:scale(.7); transform-origin:right center; }.player.two,.player.five { top:29%; }.stage-action { min-width:195px; min-height:48px; font-size:11px; }.stage-action i { font-size:17px; }.bottom { bottom:11px; }.trust { display:none; }.mobile-chat { margin-top:0; font-size:9px; }
       }
       @media (prefers-reduced-motion:reduce) { .stage-action { transition:none; } }
+    
+      .age-label { flex:0 0 auto; color:var(--muted); font-weight:700; font-size:13px; padding:8px; border:1px solid var(--line); border-radius:12px; }
+      .brand-name { white-space:normal; }
+      .desktop-chat,.mobile-chat { min-height:44px; align-items:center; justify-content:center; }
+      .mobile-chat { display:inline-flex; font-size:13px; }
+      a:focus-visible { outline:3px solid var(--gold-light); outline-offset:5px; }
+      @media (min-width:801px) { .desktop-chat { font-size:14px; } }
+      @media (max-width:800px) { .lead { font-size:14px; max-width:310px; } .eyebrow { font-size:12px; } .brand-name { font-size:16px; } }
+      @media (max-height:700px) and (max-width:800px) { .lead { font-size:12px; line-height:1.4; } .eyebrow { font-size:11px; } .brand-name { font-size:14px; } }
+      @media (max-height:520px) { html,body { overflow:auto; } .landing,.shell { min-height:620px; height:620px; } .table-stage { top:196px; } }
     </style>
   </head>
   <body>
     <main class="landing" aria-labelledby="hero-title">
       <div class="shell">
         <header class="topbar">
-          <a class="brand" href="./" aria-label="Кыргыз Покер Клубу"><span class="brand-mark">♠</span><span class="brand-name">КЫРГЫЗ ПОКЕР КЛУБУ<small>PREMIUM GAME CLUB</small></span></a>
-          <div class="langs" data-i18n-aria="languageLabel" aria-label="Тилди тандоо"><button class="lang" type="button" data-lang="ky" aria-pressed="true">КЫР</button><button class="lang" type="button" data-lang="ru" aria-pressed="false">РУС</button></div>
+          <a class="brand" href="./" aria-label="Кыргыз Покер"><span class="brand-mark">♠</span><span class="brand-name">КЫРГЫЗ ПОКЕР<small>КЛУБ В TELEGRAM</small></span></a><span class="age-label" aria-label="Для игроков старше 18 лет">18+</span>
         </header>
         <section class="hero">
           <div class="intro">
-            <h1 id="hero-title" data-i18n-html="title">Оюн<br><em>башталсын</em></h1>
-            <div class="eyebrow" data-i18n="eyebrow">ЖАНДУУ TEXAS HOLD’EM</div>
-            <p class="lead" data-i18n="lead">Атаандаштар даяр. Үстөлдөн орун алып, күчтүү комбинация менен ойноңуз.</p>
-            <a class="desktop-chat" href="https://t.me/+Nev6mkmRSREyNmMx" target="_blank" rel="noopener" data-i18n="chat">Оюнчулардын чаты</a>
+            <h1 id="hero-title">Игра<br><em>начинается</em></h1>
+            <div class="eyebrow">ТЕХАССКИЙ ХОЛДЕМ</div>
+            <p class="lead">Играйте прямо в Telegram — без скачивания.<br>1 фишка = 1 сом.</p>
+            <a class="desktop-chat" href="https://t.me/+KqhOMbNh4bxmYjkx" target="_blank" rel="noopener noreferrer">Чат игроков</a>
           </div>
-          <div class="table-stage" data-i18n-aria="tableLabel" aria-label="Роял-флеш коюлган покер үстөлү">
+          <div class="table-stage" aria-label="Иллюстрация покерного стола с роял-флешем">
             <div class="halo"></div>
-            <div class="player one"><span class="avatar"></span><span class="player-info">Aziz<small>425 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
-            <div class="player seven"><span class="avatar"></span><span class="player-info">Jasur<small>364 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
-            <div class="player two"><span class="avatar"></span><span class="player-info">Madina<small>312 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
-            <div class="player three"><span class="avatar"></span><span class="player-info">Bobur<small>580 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
-            <div class="player four"><span class="avatar"></span><span class="player-info">Dilshod<small>278 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
-            <div class="player five"><span class="avatar"></span><span class="player-info">Malika<small>196 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
-            <div class="player you"><span class="avatar"></span><span class="player-info"><span data-i18n="you">Сиз</span><small>500 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
+            <div class="player one"><span class="avatar"></span><span class="player-info">Азат<small>425 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
+            <div class="player seven"><span class="avatar"></span><span class="player-info">Нурлан<small>364 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
+            <div class="player two"><span class="avatar"></span><span class="player-info">Алина<small>312 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
+            <div class="player three"><span class="avatar"></span><span class="player-info">Тимур<small>580 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
+            <div class="player four"><span class="avatar"></span><span class="player-info">Эмиль<small>278 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
+            <div class="player five"><span class="avatar"></span><span class="player-info">Айдана<small>196 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
+            <div class="player you"><span class="avatar"></span><span class="player-info"><span>Вы</span><small>500 000</small></span><span class="mini-stack"><i></i><i></i><i></i></span></div>
             <div class="poker-table">
-              <div class="community" data-i18n-aria="cardsLabel" aria-label="Роял-флеш"><span class="card">10<small>♥</small></span><span class="card">J<small>♥</small></span><span class="card">Q<small>♥</small></span><span class="card">K<small>♥</small></span><span class="card">A<small>♥</small></span></div>
+              <div class="community" aria-label="Роял-флеш"><span class="card">10<small>♥</small></span><span class="card">J<small>♥</small></span><span class="card">Q<small>♥</small></span><span class="card">K<small>♥</small></span><span class="card">A<small>♥</small></span></div>
               <div class="pot"><strong>1 250 000</strong></div>
-              <a class="stage-action" href="https://t.me/+Nev6mkmRSREyNmMx" data-event="Play"><i>♠</i><span data-i18n="play">Ойноо</span></a>
+              <a class="stage-action" href="https://t.me/kangcom_bot"><i aria-hidden="true">♠</i><span>Играть</span></a>
             </div>
           </div>
         </section>
-        <footer class="bottom"><div class="trust"><span><b>♛</b><span data-i18n="trust1">Жандуу оюн</span></span><span><b>✦</b><span data-i18n="trust2">Калыс оюн</span></span><span><b>♠</b><span data-i18n="trust3">Күн сайын жаңы оюн</span></span></div><a class="mobile-chat" href="https://t.me/+Nev6mkmRSREyNmMx" target="_blank" rel="noopener" data-i18n="chat">Оюнчулардын чаты</a></footer>
+        <footer class="bottom"><div class="trust"><span><b>♛</b><span>Покер в Telegram</span></span><span><b>✦</b><span>На русском языке</span></span><span><b>♠</b><span>1 фишка = 1 сом</span></span></div><a class="mobile-chat" href="https://t.me/+KqhOMbNh4bxmYjkx" target="_blank" rel="noopener noreferrer">Чат игроков</a></footer>
       </div>
     </main>
-    <script>
-      const copy = {
-  "ky": {
-    "eyebrow": "ЖАНДУУ TEXAS HOLD’EM",
-    "title": "Оюн<br><em>башталсын</em>",
-    "lead": "Атаандаштар даяр. Үстөлдөн орун алып, күчтүү комбинация менен ойноңуз.",
-    "play": "Ойноо",
-    "you": "Сиз",
-    "trust1": "Жандуу оюн",
-    "trust2": "Калыс оюн",
-    "trust3": "Күн сайын жаңы оюн",
-    "chat": "Оюнчулардын чаты",
-    "languageLabel": "Тилди тандоо",
-    "tableLabel": "Роял-флеш коюлган покер үстөлү",
-    "cardsLabel": "Роял-флеш",
-    "description": "Кыргыз Покер Клубу — жандуу Texas Hold’em оюну."
-  },
-  "ru": {
-    "eyebrow": "ЖИВОЙ TEXAS HOLD’EM",
-    "title": "Игра<br><em>начинается</em>",
-    "lead": "Соперники готовы. Займите место за столом и сыграйте следующую сильную руку.",
-    "play": "Играть",
-    "you": "Вы",
-    "trust1": "Живая игра",
-    "trust2": "Честный стол",
-    "trust3": "Новая раздача каждый день",
-    "chat": "Чат игроков",
-    "languageLabel": "Выберите язык",
-    "tableLabel": "Покерный стол с роял-флешем",
-    "cardsLabel": "Роял-флеш",
-    "description": "Кыргыз Покер Клубу — живой Texas Hold’em."
-  }
-};
-      function setLanguage(lang) {
-        if (!Object.hasOwn(copy, lang)) return;
-        document.documentElement.lang = lang;
-        document.querySelectorAll('[data-i18n]').forEach(element => { element.textContent = copy[lang][element.dataset.i18n]; });
-        document.querySelectorAll('[data-i18n-html]').forEach(element => { element.innerHTML = copy[lang][element.dataset.i18nHtml]; });
-        document.querySelectorAll('[data-i18n-aria]').forEach(element => { element.setAttribute('aria-label', copy[lang][element.dataset.i18nAria]); });
-        document.querySelector('meta[name="description"]').content = copy[lang].description;
-        document.querySelectorAll('[data-lang]').forEach(element => element.setAttribute('aria-pressed', String(element.dataset.lang === lang)));
-      }
-      document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
-      document.querySelectorAll('[data-event]').forEach(element => element.addEventListener('click', () => { if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: element.dataset.event }); }));
-    </script>
   </body>
 </html>
+
